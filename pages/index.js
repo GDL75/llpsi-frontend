@@ -1,7 +1,13 @@
-import Home from '../components/Home';
+import Home from "../components/Home";
+import TextHighlightExamples from "../components/TextHighlightExamples";
+import FramedImage from "../components/FramedImage";
 
 function Index() {
-  return <Home />;
+  return (
+    // <TextHighlightExamples />
+    <Home />
+    // <FramedImage />
+  );
 }
 
 export default Index;
