@@ -1,0 +1,28 @@
+.button {
+  font-family: var(--font-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-regular);
+  width: 150px;
+  height: 40px;
+  border: 1px solid var(--color-famRomBrown);
+  border-radius: 20px;
+  margin: 0px 10px 0px 10px
+}
+.darkButton {
+  background-color: var(--color-famRomBrown);
+  color: var(--color-famRomLightYellow);
+  transition: all 0.5s;
+}
+.darkButton:hover {
+  background-color: var(--color-famRomLightYellow);
+  color: var(--color-famRomBrown)
+}
+.lightButton {
+  background-color: var(--color-famRomLightYellow);
+  color: var(--color-famRomBrown);
+  transition: all 0.5s;
+}
+.lightButton:hover {
+  background-color: var(--color-famRomBrown);
+  color: var(--color-famRomLightYellow);
+}

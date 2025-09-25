@@ -1,24 +1,45 @@
+/* ========== GLOBAL VARIABLES ========== */
+:root {
+  /* Colours */
+  --color-famRomOrange: #e77835;
+  --color-famRomBrown: #924311;
+  --color-famRomLightYellow: #FFFDD6;
+
+  /* Fonts */
+  --font-body: "GentiumW", sans-serif;
+  --font-heading: "Herculanum", serif;
+
+  /* Font Weight */
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 800;
+
+  /* Font Size */
+  --fs-h1: 5rem;
+  --fs-h2: 2.5rem;
+  --fs-h3: 2rem;
+  --fs-h4: 2rem;
+  --fs-p: 1.4rem;
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+  box-sizing: border-box;
+  /* border: 1px black solid; */
+}
+
 body {
   padding: 0;
   margin: 0;
-  font-family: GentiumW, sans-serif;
-    /* fall back to sans serif so that it's really obvious if the fonts don't load */
+  font-family: var(--font-body);
 }
 
-* {
-  box-sizing: border-box;
-  /* border: 1px black solid */
-}
-
-:root {
-  --color-famRomOrange: #e77835;
-  --color-famRomLightYellow: #FFFDD6;
-}
-
+/* ========== TYPOGRAPHY ========== */
 h1 {
   line-height: 1.15;
-  font-family: "Herculanum", serif;
-  font-size: 5rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
   color: white;
   text-shadow: 2px 4px 4px black;
   text-align: center;
@@ -26,8 +47,9 @@ h1 {
 }
 
 h2 {
-  font-family: "Herculanum", serif;
-  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
   color: white;
   text-shadow: 2px 4px 4px black;
   text-align: center;
@@ -35,13 +57,19 @@ h2 {
 }
 
 h3 {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
   margin: 20px;
 }
 
 h4 {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  margin: 10px;
+}
+
+p {
+  font-size: var(--fs-p);
+  font-weight: var(--fw-regular);
   margin: 10px;
 }

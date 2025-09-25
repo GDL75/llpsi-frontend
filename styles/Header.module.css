@@ -5,16 +5,24 @@
 	justify-content: space-between;
 	align-items: center;
   padding: 5px 10px 5px 10px;
-	border-bottom: 1px #924311 solid;
   background-color: var(--color-famRomOrange);
+  height: 60px;
 }
-
 .connection {
   display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-  padding: 5px 10px 5px 10px;
-  width: 40vw
-
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+}
+.modal {
+    position: absolute;   /* la rend indépendante du flux */
+  top: 60px;            /* hauteur de ton header */
+  right: 20px;          /* alignée avec ton bouton */
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 1000;        /* pour passer au-dessus du reste */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
