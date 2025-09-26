@@ -1,0 +1,20 @@
+.overlay {
+  position: fixed;
+  inset: 0; 
+  background: rgba(0, 0, 0, 0.2); /* léger voile gris */
+  z-index: 999; /* sous la modale */
+}
+.modal {
+  position: fixed; 
+  background: var(--color-secondary);
+  top: 60px; 
+  right: 20px; 
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 1000; /* pour passer au-dessus du reste */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.homeModal {
+  background: var(--color-background);
+}

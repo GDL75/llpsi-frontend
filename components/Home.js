@@ -1,13 +1,27 @@
 import styles from "../styles/Home.module.css";
-import Header from "./Header";
+import { useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "../assets/translation/useTranslation";
+import CustomButton from "./CustomButton";
+import Settings from "./Settings";
 
 function Home() {
+  const t = useTranslation();
+  const [isSettings, setIsSettings] = useState(false);
+
   return (
     <>
-      <Header />
       <main className={styles.main}>
-        <h3>Hans H. Ørberg</h3>
+        <div className={styles.headerContainer}>
+          <h5>llpsi coloribus</h5>
+          <h3>Hans H. Ørberg</h3>
+          <CustomButton
+            bColor="3"
+            tColor="0"
+            text={t("settings")}
+            handleFunction={() => setIsSettings((prev) => !prev)}
+          />
+        </div>
         <h1>
           Lingua latīna
           <br /> per sē illūstrāta
@@ -16,16 +30,7 @@ function Home() {
         <h4 style={{ marginBottom: "40px", marginTop: "0px" }}>
           Familia rōmāna
         </h4>
-        <div
-          style={{
-            border: "2px solid #000000",
-            borderRadius: "50px",
-            overflow: "hidden",
-            lineHeight: 0,
-            borderColor: "#924311",
-            boxShadow: "8px 8px 15px rgba(0, 0, 0, 0.6)",
-          }}
-        >
+        <div className={styles.picContainer}>
           <Image
             src="/images/caveCanem.png"
             alt="A dog guarding a Roman villa"
@@ -34,6 +39,8 @@ function Home() {
           />
         </div>
       </main>
+      {/* The Settings modal needs to be outside of <main> */}
+      {isSettings && <Settings onClose={() => setIsSettings(false)} />}
     </>
   );
 }

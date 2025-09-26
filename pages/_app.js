@@ -4,9 +4,9 @@ import Head from 'next/head';
 // Redux:
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import language from "../reducers/language";
+import settings from "../reducers/settings";
 const store = configureStore({
-  reducer: { language }, 
+  reducer: { settings }, 
 });
 
 

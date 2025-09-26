@@ -1,12 +1,16 @@
 import styles from "../styles/CustomButton.module.css";
 
-function CustomButton({appearance, text, handleFunction}) {
-  const buttonStyle = `${styles.button} ${
-    appearance === "dark" ? styles.darkButton : styles.lightButton
-  }`;
+function CustomButton({ bColor, tColor, text, handleFunction }) {
 
   return (
-    <button className={buttonStyle} onClick={handleFunction}>
+    <button
+      className={styles.button}
+      style={{
+        "--bColor": `var(--color-${bColor})`,
+        "--tColor": `var(--color-${tColor})`,
+      }}
+      onClick={handleFunction}
+    >
       {text}
     </button>
   );
