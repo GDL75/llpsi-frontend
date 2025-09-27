@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: {language: "fr", theme: "light"},
+  value: {book: "book1", language: "en", theme: "light"},
 };
 
 export const settingsSlice = createSlice({
   name: "settings",
   initialState,
   reducers: {
+    setBook: (state, action) => {
+      state.value.book = action.payload;
+    },
     setLanguage: (state, action) => {
       state.value.language = action.payload;
     },
@@ -17,5 +20,5 @@ export const settingsSlice = createSlice({
   },
 });
 
-export const { setLanguage, setTheme } = settingsSlice.actions;
+export const { setBook, setLanguage, setTheme } = settingsSlice.actions;
 export default settingsSlice.reducer;

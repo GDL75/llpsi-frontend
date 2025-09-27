@@ -13,11 +13,19 @@
   width: 100vw;
   padding: 10px 20px 10px 20px
 }
+.connectionContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 644px;
+  height: 100px;
+}
 .picContainer {
   border: 2px solid #000000;
   border-radius: 20px;
   overflow: hidden;
   line-height: 0;
-  border-color: #924311;
+  border-color: var(--color-3);
   box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6);
 }

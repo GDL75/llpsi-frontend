@@ -25,12 +25,28 @@
   --fs-p: 1.4rem;
 }
 
-/* Dark theme */
-[data-theme="dark"] {
+/* Color themes */
+[data-theme="book1-dark"] {
   --color-0: #000000;
   --color-1: #9a4109;
   --color-2: #f27122;
   --color-3: #f69c65;
+  --text: #ffffff;
+}
+
+[data-theme="book2-light"] {
+  --color-0: #E6FFF7;
+  --color-1: #00D18F;
+  --color-2: #008A5E;
+  --color-3: #004731;
+  --text: #000000;
+}
+
+[data-theme="book2-dark"] {
+  --color-0: #000000;
+  --color-1: #004731;
+  --color-2: #008A5E;
+  --color-3: #00D18F;
   --text: #ffffff;
 }
 

@@ -7,6 +7,8 @@ const translations = {
   theme: { en: "Theme", fr: "Thème", la: "Thema" },
   light: { en: "Light", fr: "Clair", la: "Clarus" },
   dark: { en: "Dark", fr: "Sombre", la: "Obscurus" },
+  book1: { en: "Book 1", fr: "Partie 1", la: "Pars I" },
+  book2: { en: "Book 2", fr: "Partie 2", la: "Pars II" },
 };
 
 export default translations;
