@@ -1,20 +1,72 @@
+/* ---------- Modal ---------- */
 .overlay {
   position: fixed;
   inset: 0; 
-  background: rgba(0, 0, 0, 0.2); /* léger voile gris */
-  z-index: 999; /* sous la modale */
+  /* background: rgba(0, 0, 0, 0.2); léger voile gris */
+  z-index: 999; /* i.e. below the modal, brought to back */
 }
 .modal {
   position: fixed; 
-  background: var(--color-secondary);
+  background: var(--bColor);
   top: 60px; 
-  right: 20px; 
-  border: 1px solid #ccc;
+  right: 25px; 
+  width: 200px;
+  border: 1px solid var(--color-3);
   padding: 1rem;
   border-radius: 8px;
-  z-index: 1000; /* pour passer au-dessus du reste */
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* i.e. above the rest, brought to front */
+  box-shadow: 4px 4px 8px rgba(2, 2, 2, 0.5);
 }
-.homeModal {
-  background: var(--color-background);
+.separator {
+  border-bottom: 2px solid var(--color-3);
+  margin: 10px 0px;
+}
+
+/* ---------- Customised Radio buttons ---------- */
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--fs-p);
+}
+
+/* The native input radio button needs to be hidden */
+.radioInput {
+  display: none;
+}
+
+/* External circle */
+.customRadio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-3);
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  transition: border-color 0.3s;
+}
+
+/* Internal circle (selected dot) */
+.customRadio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-2);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* When the radio button is selected */
+.radioInput:checked + .customRadio::after {
+  transform: translate(-50%, -50%) scale(1);
 }

@@ -1,11 +1,11 @@
 /* ========== GLOBAL VARIABLES ========== */
 :root {
   /* Colours, #2 is the official colour for Familia Romana (llpsi part 1) */
-  --color-0: #FEF0E7;
-  --color-1: #F69C65;
+  --color-0: #fef0e7;
+  --color-1: #f69c65;
   --color-2: #f27122;
-  --color-3: #9A4109;
-  --text: "black";
+  --color-3: #9a4109;
+  --text: #000000;
 
   /* Fonts */
   --font-body: "GentiumW", sans-serif;
@@ -25,6 +25,15 @@
   --fs-p: 1.4rem;
 }
 
+/* Dark theme */
+[data-theme="dark"] {
+  --color-0: #000000;
+  --color-1: #9a4109;
+  --color-2: #f27122;
+  --color-3: #f69c65;
+  --text: #ffffff;
+}
+
 /* ========== GLOBAL RESET ========== */
 * {
   box-sizing: border-box;
@@ -35,6 +44,7 @@
 
 body {
   font-family: var(--font-body);
+  color: var(--text);
 }
 
 /* ========== TYPOGRAPHY ========== */
@@ -72,6 +82,7 @@ h4 {
 h5 {
   font-size: var(--fs-h5);
   font-weight: var(--fw-semibold);
+  margin-bottom: 10px;
 }
 
 p {

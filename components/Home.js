@@ -40,7 +40,7 @@ function Home() {
         </div>
       </main>
       {/* The Settings modal needs to be outside of <main> */}
-      {isSettings && <Settings onClose={() => setIsSettings(false)} />}
+      {isSettings && <Settings bColor = "0" onClose={() => setIsSettings(false)} />}
     </>
   );
 }
