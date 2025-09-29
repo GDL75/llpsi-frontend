@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../styles/ToggleButton.module.css";
+import styles from "styles/ToggleButton.module.css";
 
 export default function ToggleButton({ options, onChange }) {
   const [activeIndex, setActiveIndex] = useState(0);

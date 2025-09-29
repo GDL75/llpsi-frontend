@@ -1,4 +1,4 @@
-import styles from "../styles/TextHighlightExamples.module.css";
+import styles from "styles/TextHighlightExamples.module.css";
 
 export default function TextHighlightExamples() {
   const examples = [

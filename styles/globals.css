@@ -70,7 +70,7 @@ h1 {
   font-size: var(--fs-h1);
   font-weight: var(--fw-bold);
   color: white;
-  text-shadow: 2px 4px 4px black;
+  text-shadow: 5px 5px 4px black;
   text-align: center;
   margin: 20px;
 }

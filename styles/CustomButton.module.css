@@ -4,6 +4,7 @@
   font-weight: var(--fw-regular);
   width: 200px;
   height: 40px;
+  /* border: 1px solid var(--tColor); */
   border: none;
   border-radius: 20px;
   margin: 0px 10px 0px 10px;

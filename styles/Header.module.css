@@ -1,16 +1,60 @@
 .header {
+  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px 5px 10px;
-  background-color: var(--color-home);
-  height: 60px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  background: var(--color-0);
 }
-.connection {
+
+/* gauche : groupe de sections */
+.sectionContainer {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  width: 50vw;
+  height: 40px;
+  /* border-radius: 20px;
+  background-color: var(--color-3); */
+  overflow: hidden;
+}
+
+.sectionButton {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--color-2);
+  z-index: 2;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-regular);
+  transition: color 0.3s;
+}
+
+.sectionButton:hover {
+  color: var(--color-3);
+}
+
+.sectionButton.active {
+  color: var(--color-0); 
+}
+
+/* Slider */
+.sectionSlider {
+  position: absolute;
+  top: 0;
+  width: 25%; /* 4 boutons → 25% chacun */
+  height: 100%;
+  background-color: var(--color-2);
+  border-radius: 20px;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+/* droite : settings / profile */
+.rightGroup {
+  display: flex;
   align-items: center;
-  padding: 0px;
+  gap: 8px;
 }

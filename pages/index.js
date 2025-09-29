@@ -5,7 +5,6 @@ function Index() {
   return (
     // <TextHighlightExamples />
     <Home />
-    // <FramedImage />
   );
 }
 

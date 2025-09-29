@@ -1,4 +1,4 @@
-import styles from "../styles/CustomButton.module.css";
+import styles from "styles/CustomButton.module.css";
 
 function CustomButton({ bColor, tColor, text, handleFunction }) {
 

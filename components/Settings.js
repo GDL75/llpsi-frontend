@@ -1,7 +1,7 @@
-import styles from "../styles/Settings.module.css";
+import styles from "styles/Settings.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setLanguage, setTheme } from "../reducers/settings";
-import { useTranslation } from "../assets/translation/useTranslation";
+import { setLanguage, setTheme } from "reducers/settings";
+import { useTranslation } from "assets/translation/useTranslation";
 
 function Settings({ bColor, tColor, onClose }) {
   const t = useTranslation();
