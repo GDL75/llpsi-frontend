@@ -21,7 +21,7 @@ export default function SidebarRight() {
             <CustomCheckbox
               key={morph.key}
               label={t(morph.key)}
-              labelClassName={morph.styleClass}
+              labelClassName={morph.key}
               checked={enabled[morph.key]}
               onChange={() => dispatch(toggleMorphology(morph.key))}
             />
