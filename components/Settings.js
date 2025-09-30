@@ -2,6 +2,7 @@ import styles from "styles/Settings.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, setTheme } from "reducers/settings";
 import { useTranslation } from "assets/translation/useTranslation";
+import CustomRadio from "ui/CustomRadio";
 
 function Settings({ bColor, tColor, onClose }) {
   const t = useTranslation();
@@ -35,18 +36,14 @@ function Settings({ bColor, tColor, onClose }) {
         <h5>{t("language")}</h5>
         <div className={styles.radioGroup}>
           {languages.map(({ value, label }) => (
-            <label key={value} className={styles.radioLabel}>
-              <input
-                type="radio"
-                name="language"
-                value={value}
-                checked={language === value}
-                onChange={() => dispatch(setLanguage(value))}
-                className={styles.radioInput}
-              />
-              <span className={styles.customRadio}></span>
-              {label}
-            </label>
+            <CustomRadio
+              key={value}
+              label={label}
+              value={value}
+              name="language"
+              checked={language === value}
+              onChange={() => dispatch(setLanguage(value))}
+            />
           ))}
         </div>
 
@@ -56,18 +53,14 @@ function Settings({ bColor, tColor, onClose }) {
         <h5>{t("theme")}</h5>
         <div className={styles.radioGroup}>
           {themes.map(({ value, label }) => (
-            <label key={value} className={styles.radioLabel}>
-              <input
-                type="radio"
-                name="theme"
-                value={value}
-                checked={theme === value}
-                onChange={() => dispatch(setTheme(value))}
-                className={styles.radioInput}
-              />
-              <span className={styles.customRadio}></span>
-              {label}
-            </label>
+            <CustomRadio
+              key={value}
+              label={label}
+              value={value}
+              name="theme"
+              checked={theme === value}
+              onChange={() => dispatch(setTheme(value))}
+            />
           ))}
         </div>
       </div>

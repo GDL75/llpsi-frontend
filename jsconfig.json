@@ -10,7 +10,8 @@
       "styles/*": ["styles/*"],
       "images/*": ["public/images/*"],
       "fonts/*": ["public/fonts/*"],
-      "pages/*": ["pages/*"]
+      "pages/*": ["pages/*"],
+      "utils/*": ["utils/*"]
     }
   }
 }

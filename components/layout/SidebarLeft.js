@@ -1,17 +1,54 @@
-import Link from "next/link";
+import styles from "styles/SidebarLeft.module.css";
+import { setChapter } from "reducers/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "assets/translation/useTranslation";
+import { romanNumber } from "utils/romanNumber";
 
 export default function SidebarLeft() {
-  const chapters = Array.from({ length: 50 }, (_, i) => i + 1);
+  const dispatch = useDispatch();
+  const t = useTranslation();
+
+  // État global
+  const currentBook = useSelector((state) => state.navigation.value.book);
+  const currentChapter = useSelector((state) => state.navigation.value.chapter);
+  const currentLanguage = useSelector((state) => state.settings.value.language);
+
+  // Construction de la liste des chapitres
+  const chapterList = {
+    book1: { from: 1, to: 35 },
+    book2: { from: 36, to: 56 },
+  };
+  const bookRange = chapterList[currentBook];
+  const chapters = Array.from(
+    { length: bookRange.to - bookRange.from + 1 },
+    (_, i) => i + bookRange.from
+  );
+
+  const activeIndex = chapters.findIndex((c) => c === currentChapter);
 
   return (
-    <aside>
-      <ul>
+    <aside className={styles.leftSide}>
+      <div className={styles.chaptersContainer}>
+        {/* Slider */}
+        <div
+          className={styles.chapterSlider}
+          style={{
+            top: `${activeIndex * (100 / chapters.length)}%`,
+            height: `${100 / chapters.length}%`,
+          }}
+        />
         {chapters.map((num) => (
-          <li key={num}>
-            {/* <Link href={`/chapter/${num}/text`}>Chapitre {num}</Link> */}
-          </li>
+          <button
+            key={num}
+            className={`${styles.chapterButton} ${
+              currentChapter === num ? styles.active : ""
+            }`}
+            onClick={() => dispatch(setChapter(num))}
+          >
+            {t("chapter")} {currentLanguage === "la" ? romanNumber(num) : num}
+          </button>
         ))}
-      </ul>
+      </div>
     </aside>
   );
 }

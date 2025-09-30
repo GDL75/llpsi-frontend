@@ -1,0 +1,50 @@
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 240px;
+  padding: 12px 0;
+  box-sizing: border-box;
+  background: var(--color-0);
+  border-right: 1px solid var(--color-2);
+}
+
+.chaptersContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chapterButton {
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--color-2);
+  text-align: left;
+  padding-left: 40px;
+  font-family: var(--font-body);
+  font-size: var(--fs-p);
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s;
+}
+
+.chapterButton:hover {
+  color: var(--color-3);
+}
+
+.chapterButton.active {
+  color: var(--color-0);
+  font-weight: bold;
+}
+
+.chapterSlider {
+  position: absolute;
+  left: 20px;
+  width: 200px;
+  background: var(--color-2);
+  border-radius: 50px;
+  transition: top 0.3s ease;
+  z-index: 1;
+}

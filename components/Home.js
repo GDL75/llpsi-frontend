@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "assets/translation/useTranslation";
-import { setBook } from "reducers/settings";
+import { setBook, setChapter } from "reducers/navigation";
 import CustomButton from "ui/CustomButton";
 import ToggleButton from "ui/ToggleButton";
 import Settings from "./Settings";
@@ -14,7 +14,7 @@ function Home() {
   const dispatch = useDispatch();
   const router = useRouter();
   const [isSettings, setIsSettings] = useState(false);
-  const book = useSelector((state) => state.settings.value.book);
+  const book = useSelector((state) => state.navigation.value.book);
   const image =
     book === "book1" ? "/images/caveCanem.png" : "/images/romaAeterna.png";
 
@@ -27,7 +27,10 @@ function Home() {
               { value: "book1", label: t("book1") },
               { value: "book2", label: t("book2") },
             ]}
-            onChange={(value) => dispatch(setBook(value))}
+            onChange={(value) => {
+              dispatch(setBook(value))
+              value === "book2" && dispatch(setChapter(36))
+            }}
           />
           <h4>Hans H. Ørberg</h4>
           <CustomButton
@@ -56,7 +59,10 @@ function Home() {
             bColor="3"
             tColor="0"
             text={t("signin")}
-            handleFunction={() => router.push("/test")}
+            handleFunction={() => {
+              dispatch(setChapter(book==="book1" ? 9 :36))
+              router.push("/chapter/09/content")
+            }}
           />
         </div>
         <div className={styles.picContainer}>

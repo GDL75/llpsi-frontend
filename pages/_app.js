@@ -6,14 +6,16 @@ import { useEffect } from "react";
 import { configureStore } from "@reduxjs/toolkit";
 import settings from "reducers/settings";
 import navigation from "reducers/navigation";
+import morphology from "reducers/morphology";
+import morphologyConfig from "assets/morphologyConfig";
 
 const store = configureStore({
-  reducer: { settings, navigation },
+  reducer: { settings, navigation, morphology },
 });
 
 // The theme component must be inside the <Provider>, therefore this part is isolated in a function
 function ThemeWrapper({ children }) {
-  const book = useSelector((state) => state.settings.value.book);
+  const book = useSelector((state) => state.navigation.value.book);
   const theme = useSelector((state) => state.settings.value.theme);
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", `${book}-${theme}`);
@@ -22,14 +24,34 @@ function ThemeWrapper({ children }) {
   return children;
 }
 
+// Same here, the body styles mus be inside the <Provider>
+function BodyClasses({ children }) {
+  const morphState = useSelector((state) => state.morphology);
+
+  useEffect(() => {
+    morphologyConfig.forEach((morph) => {
+      if (morphState[morph.key]) {
+        document.body.classList.add(morph.styleClass);
+      } else {
+        document.body.classList.remove(morph.styleClass);
+      }
+    });
+  }, [morphState]);
+
+  return children;
+}
+
 function App({ Component, pageProps }) {
+
   return (
     <Provider store={store}>
       <Head>
         <title>llpsi</title>
       </Head>
       <ThemeWrapper>
-        <Component {...pageProps} />
+        <BodyClasses>
+          <Component {...pageProps} />
+        </BodyClasses>
       </ThemeWrapper>
     </Provider>
   );

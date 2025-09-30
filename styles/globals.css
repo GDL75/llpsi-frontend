@@ -31,6 +31,7 @@
   --color-1: #9a4109;
   --color-2: #f27122;
   --color-3: #f69c65;
+  background: #000000;
   --text: #ffffff;
 }
 
@@ -48,6 +49,41 @@
   --color-2: #008A5E;
   --color-3: #00D18F;
   --text: #ffffff;
+}
+
+/* ========== Latin morphology ========== */
+body.morph-masculine .masculine {
+  text-shadow: 0px 10px 10px lightskyblue;;
+}
+body.morph-feminine .feminine {
+  text-shadow: 0px 10px 10px pink;;
+}
+body.morph-neuter .neuter {
+  text-shadow: 0px 10px 10px yellow;;
+}
+body.morph-nominative .nominative {
+  color: #0073FF;
+}
+body.morph-accusative .accusative {
+  color: red;
+}
+body.morph-genitive .genitive {
+  color: #00C302;
+}
+body.morph-dative .dative {
+  color: #FFAC00;
+}
+body.morph-ablative .ablative {
+  color: #CC00FF;
+}
+body.morph-vocative .vocative {
+  color: #996633;
+}
+body.morph-locative .locative {
+  color: #008000;
+}
+body.morph-subjunctive .subjunctive {
+  text-decoration: underline dotted;
 }
 
 /* ========== GLOBAL RESET ========== */

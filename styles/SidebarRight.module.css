@@ -1,0 +1,21 @@
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 240px;
+  box-sizing: border-box;
+  background: var(--color-0);
+  border-left: 1px solid var(--color-2);
+}
+
+.checkboxList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.title {
+  margin: 20px
+}

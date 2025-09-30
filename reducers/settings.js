@@ -1,16 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: {book: "book1", language: "en", theme: "light"},
+  value: { language: "en", theme: "light"},
 };
 
 export const settingsSlice = createSlice({
   name: "settings",
   initialState,
   reducers: {
-    setBook: (state, action) => {
-      state.value.book = action.payload;
-    },
     setLanguage: (state, action) => {
       state.value.language = action.payload;
     },
