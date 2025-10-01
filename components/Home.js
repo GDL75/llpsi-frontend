@@ -2,7 +2,7 @@ import styles from "styles/Home.module.css";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useTranslation } from "assets/translation/useTranslation";
+import { useTranslation } from "data/translation/useTranslation";
 import { setBook, setChapter } from "reducers/navigation";
 import CustomButton from "ui/CustomButton";
 import ToggleButton from "ui/ToggleButton";
@@ -28,8 +28,8 @@ function Home() {
               { value: "book2", label: t("book2") },
             ]}
             onChange={(value) => {
-              dispatch(setBook(value))
-              value === "book2" && dispatch(setChapter(36))
+              dispatch(setBook(value));
+              value === "book2" && dispatch(setChapter(36));
             }}
           />
           <h4>Hans H. Ørberg</h4>
@@ -60,8 +60,8 @@ function Home() {
             tColor="0"
             text={t("signin")}
             handleFunction={() => {
-              dispatch(setChapter(book==="book1" ? 9 :36))
-              router.push("/chapter/09/content")
+              dispatch(setChapter(book === "book1" ? 9 : 36));
+              router.push("/chapter/09/content");
             }}
           />
         </div>

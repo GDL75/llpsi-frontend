@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import morphologyConfig from "assets/morphologyConfig";
+import morphologyConfig from "data/morphologyConfig";
 
 const initialState = morphologyConfig.reduce((acc, morph) => {
   acc[morph.key] = true;
@@ -17,5 +17,5 @@ const morphologySlice = createSlice({
   },
 });
 
-export const { toggleMorphology  } = morphologySlice.actions;
+export const { toggleMorphology } = morphologySlice.actions;
 export default morphologySlice.reducer;

@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import CustomButton from "ui/CustomButton";
 import { setSection } from "reducers/navigation";
-import { useTranslation } from "assets/translation/useTranslation";
+import { useTranslation } from "data/translation/useTranslation";
 import Settings from "components/Settings";
+import titles from "data/chapterTitles";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ export default function Header() {
 
   // section courante stockée en Redux (ex: "text", "grammar", "exercises", "vocabulary")
   const currentSection = useSelector((state) => state.navigation.value.section);
+  const currentChapter = useSelector((state) => state.navigation.value.chapter);
 
   const sections = [
     { value: "text", label: t("text") },
@@ -32,45 +34,65 @@ export default function Header() {
 
   return (
     <>
-      <header className={styles.header}>
-        {/* gauche : sections */}
-        <div className={styles.sectionHeader}>
-          <div className={styles.sectionContainer}>
-            {/* Slider */}
-            <div
-              className={styles.sectionSlider}
-              style={{ left: `${activeIndex * 25}%` }}
+      <div className={styles.headerWrapper}>
+        <header className={styles.header}>
+          {/* gauche : sections */}
+          <div className={styles.sectionHeader}>
+            <div className={styles.sectionContainer}>
+              {/* Slider */}
+              <div
+                className={styles.sectionSlider}
+                style={{ left: `${activeIndex * 25}%` }}
+              />
+              {sections.map((s, i) => (
+                <button
+                  key={s.value}
+                  className={`${styles.sectionButton} ${
+                    currentSection === s.value ? styles.active : ""
+                  }`}
+                  onClick={() => dispatch(setSection(s.value))}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* droite : settings / profile */}
+          <div className={styles.rightGroup}>
+            <CustomButton
+              bColor="3"
+              tColor="0"
+              text={t("profile")}
+              handleFunction={() => {}}
             />
-            {sections.map((s, i) => (
-              <button
-                key={s.value}
-                className={`${styles.sectionButton} ${
-                  currentSection === s.value ? styles.active : ""
-                }`}
-                onClick={() => dispatch(setSection(s.value))}
-              >
-                {s.label}
-              </button>
-            ))}
+            <CustomButton
+              bColor="3"
+              tColor="0"
+              text={t("settings")}
+              handleFunction={() => setIsSettings((prev) => !prev)}
+            />
+          </div>
+        </header>
+
+        {/* anciens ColumnCapitals */}
+        <div className={styles.container}>
+          <div className={styles.leftCapital}>
+            <div className={styles.layerLeft1}></div>
+            <div className={styles.layerLeft2}></div>
+            <div className={styles.layerLeft3}></div>
+            <div className={styles.layerLeft4}></div>
+          </div>
+          <h2 className={styles.title}>{titles[currentChapter - 1]}</h2>
+          <div className={styles.rightCapital}>
+            <div className={styles.layerRight1}></div>
+            <div className={styles.layerRight2}></div>
+            <div className={styles.layerRight3}></div>
+            <div className={styles.layerRight4}></div>
           </div>
         </div>
+      </div>
 
-        {/* droite : settings / profile */}
-        <div className={styles.rightGroup}>
-          <CustomButton
-            bColor="3"
-            tColor="0"
-            text={t("profile")}
-            handleFunction={() => {}}
-          />
-          <CustomButton
-            bColor="3"
-            tColor="0"
-            text={t("settings")}
-            handleFunction={() => setIsSettings((prev) => !prev)}
-          />
-        </div>
-      </header>
       {/* The Settings modal needs to be outside of the main return */}
       {isSettings && (
         <Settings bColor="0" onClose={() => setIsSettings(false)} />

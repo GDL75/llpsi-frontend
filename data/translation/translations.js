@@ -19,6 +19,7 @@ const translations = {
   light: { en: "Light", fr: "Clair", la: "Clarus" },
   locative: { en: "Locative", fr: "Locatif", la: "Locativus" },
   masculine: { en: "Masculine", fr: "Masculin", la: "Masculinus" },
+  morphology: { en: "Morphology", fr: "Morphologie", la: "Stylus" },
   neuter: { en: "Neuter", fr: "Neutre", la: "Neutrum" },
   nominative: { en: "Nominative", fr: "Nominatif", la: "Nōminātīvus" },
   participle: { en: "Participle", fr: "Participe", la: "Participium" },

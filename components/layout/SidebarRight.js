@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import morphologyConfig from "assets/morphologyConfig";
+import morphologyConfig from "data/morphologyConfig";
 import { toggleMorphology } from "reducers/morphology";
 import styles from "styles/SidebarRight.module.css";
 import CustomCheckbox from "ui/CustomCheckbox";
-import { useTranslation } from "assets/translation/useTranslation";
+import { useTranslation } from "data/translation/useTranslation";
 
 export default function SidebarRight() {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export default function SidebarRight() {
 
   return (
     <aside className={styles.rightSide}>
-      <h5 className={styles.title}>Morphologie</h5>
+      <h5 className={styles.title}>{t("morphology")}</h5>
       <div className={styles.checkboxList}>
         {morphologyConfig
           .filter((morph) => morph.fromChapter <= currentChapter)

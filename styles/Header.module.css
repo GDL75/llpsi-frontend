@@ -1,3 +1,16 @@
+/* wrapper qui englobe Header + Capitals */
+.headerWrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ajoute un espace sous le header pour ne pas cacher le contenu */
+.body {
+  padding-top: 160px; /* ajuste selon la hauteur totale header + capitals */
+}
+
 .header {
   width: 100%;
   display: flex;
@@ -59,4 +72,126 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* --- anciens ColumnCapitals (fusionnés ici) --- */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background: white;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+}
+.leftCapital {
+  display: flex;
+  flex-direction: column;
+}
+.layerLeft1 {  
+  width: 300px; 
+  height: 30px;
+  background: repeating-linear-gradient(90deg in oklab, var(--color-0), var(--color-1) 40px);
+  border-bottom: 1px solid var(--color-2);
+  border-right: 1px solid var(--color-2);
+}
+.layerLeft2 {  
+  width: 290px; 
+  height: 30px;
+  background: linear-gradient(
+  to right,
+  var(--color-1) 0%, 
+  var(--color-0) 20%, 
+  var(--color-0) 80%, 
+  var(--color-1) 100% 
+);
+  border-radius: 0px 0px 30px 0px;
+  border-bottom: 1px solid var(--color-2);
+  border-right: 1px solid var(--color-2);
+}
+.layerLeft3 {  
+  width: 260px; 
+  height: 30px;
+  background: linear-gradient(
+  to right,
+  var(--color-1) 0%, 
+  var(--color-0) 20%, 
+  var(--color-0) 80%, 
+  var(--color-1) 100% 
+);
+  border-radius: 0px 0px 5px 0px;
+  border-bottom: 1px solid var(--color-2);
+  border-right: 1px solid var(--color-2);
+}
+.layerLeft4 {  
+  width: 250px; 
+  height: 10px;
+  background: linear-gradient(
+  to right,
+  var(--color-1) 0%, 
+  var(--color-0) 20%, 
+  var(--color-0) 80%, 
+  var(--color-1) 100% 
+);
+  border-radius: 0px 5px 5px 0px;
+  border-bottom: 1px solid var(--color-2);
+  border-right: 1px solid var(--color-2);
+}
+.rightCapital {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.layerRight1 {  
+  width: 300px; 
+  height: 30px;
+  background: repeating-linear-gradient(90deg in oklab, var(--color-0), var(--color-1) 40px);
+  border-bottom: 1px solid var(--color-2);
+  border-left: 1px solid var(--color-2);
+}
+.layerRight2 {  
+  width: 290px; 
+  height: 30px;
+  background: linear-gradient(
+  to right,
+  var(--color-1) 0%, 
+  var(--color-0) 20%, 
+  var(--color-0) 80%, 
+  var(--color-1) 100% 
+);
+  border-radius: 0px 0px 0px 30px;
+  border-bottom: 1px solid var(--color-2);
+  border-left: 1px solid var(--color-2);
+}
+.layerRight3 {  
+  width: 260px; 
+  height: 30px;
+  background: linear-gradient(
+  to right,
+  var(--color-1) 0%, 
+  var(--color-0) 20%, 
+  var(--color-0) 80%, 
+  var(--color-1) 100% 
+);
+  border-radius: 0px 0px 0px 5px;
+  border-bottom: 1px solid var(--color-2);
+  border-left: 1px solid var(--color-2);
+}
+.layerRight4 {  
+  width: 250px; 
+  height: 10px;
+  background: linear-gradient(
+  to right,
+  var(--color-1) 0%, 
+  var(--color-0) 20%, 
+  var(--color-0) 80%, 
+  var(--color-1) 100% 
+);
+  border-radius: 5px 0px 0px 5px;
+  border-bottom: 1px solid var(--color-2);
+  border-left: 1px solid var(--color-2);
 }

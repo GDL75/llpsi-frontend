@@ -1,7 +1,7 @@
 import styles from "styles/Settings.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, setTheme } from "reducers/settings";
-import { useTranslation } from "assets/translation/useTranslation";
+import { useTranslation } from "data/translation/useTranslation";
 import CustomRadio from "ui/CustomRadio";
 
 function Settings({ bColor, tColor, onClose }) {

@@ -1,5 +1,5 @@
 import React from "react";
-import morphologyConfig from "assets/morphologyConfig";
+import morphologyConfig from "data/morphologyConfig";
 
 /**
  * Génère un span JSX pour un mot latin avec classes morphologiques.

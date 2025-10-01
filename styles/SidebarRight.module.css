@@ -1,10 +1,20 @@
 .rightSide {
+  position: sticky;
+  top: 160px;
+  align-self: start;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   width: 240px;
+  height: 100vh;
   box-sizing: border-box;
-  background: var(--color-0);
+  background: linear-gradient(
+  to right,
+  var(--color-1) 0%, 
+  var(--color-0) 10%, 
+  var(--color-0) 80%, 
+  var(--color-1) 100% 
+);
   border-left: 1px solid var(--color-2);
 }
 

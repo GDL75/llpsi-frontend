@@ -2,7 +2,7 @@
 :root {
   /* Colours, #2 is the official colour for Familia Romana (llpsi part 1) */
   --color-0: #fef0e7;
-  --color-1: #f69c65;
+  --color-1: #FBD4BC;
   --color-2: #f27122;
   --color-3: #9a4109;
   --text: #000000;
@@ -37,7 +37,7 @@
 
 [data-theme="book2-light"] {
   --color-0: #E6FFF7;
-  --color-1: #00D18F;
+  --color-1: #B8FFE8;
   --color-2: #008A5E;
   --color-3: #004731;
   --text: #000000;
@@ -53,13 +53,13 @@
 
 /* ========== Latin morphology ========== */
 body.morph-masculine .masculine {
-  text-shadow: 0px 10px 10px lightskyblue;;
+  text-shadow: 0px 10px 8px lightskyblue;;
 }
 body.morph-feminine .feminine {
-  text-shadow: 0px 10px 10px pink;;
+  text-shadow: 0px 10px 8px pink;;
 }
 body.morph-neuter .neuter {
-  text-shadow: 0px 10px 10px yellow;;
+  text-shadow: 0px 10px 8px yellow;;
 }
 body.morph-nominative .nominative {
   color: #0073FF;
@@ -116,7 +116,7 @@ h2 {
   font-size: var(--fs-h2);
   font-weight: var(--fw-bold);
   color: white;
-  text-shadow: 2px 4px 4px black;
+  /* text-shadow: 2px 4px 4px black; */
   text-align: center;
   margin: 5px;
 }

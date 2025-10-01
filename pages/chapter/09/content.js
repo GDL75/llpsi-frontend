@@ -29,7 +29,8 @@ export default function ChapterPage() {
               </span>
             </p>
             <p>
-              {m("Domin-us", "mas-nom")} {m("can-em", "mas-acc")} videt
+              {m("Domin-us", "mas-nom")} {m("can-em", "mas-acc")} videt dum{" "}
+              {m("puell-a", "fem-nom")} {m("ros-am", "fem-acc")} carpit.
             </p>
           </>
         );

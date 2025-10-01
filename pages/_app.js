@@ -7,7 +7,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import settings from "reducers/settings";
 import navigation from "reducers/navigation";
 import morphology from "reducers/morphology";
-import morphologyConfig from "assets/morphologyConfig";
+import morphologyConfig from "data/morphologyConfig";
 
 const store = configureStore({
   reducer: { settings, navigation, morphology },
@@ -42,7 +42,6 @@ function BodyClasses({ children }) {
 }
 
 function App({ Component, pageProps }) {
-
   return (
     <Provider store={store}>
       <Head>
