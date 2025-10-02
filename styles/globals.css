@@ -2,9 +2,10 @@
 :root {
   /* Colours, #2 is the official colour for Familia Romana (llpsi part 1) */
   --color-0: #fef0e7;
-  --color-1: #FBD4BC;
+  --color-1: #fbd4bc;
   --color-2: #f27122;
   --color-3: #9a4109;
+  --background: #ffffff;
   --text: #000000;
 
   /* Fonts */
@@ -27,54 +28,56 @@
 
 /* Color themes */
 [data-theme="book1-dark"] {
-  --color-0: #000000;
+  --color-0: #431C04;
   --color-1: #9a4109;
   --color-2: #f27122;
   --color-3: #f69c65;
-  background: #000000;
+  --background: #000000;
   --text: #ffffff;
 }
 
 [data-theme="book2-light"] {
-  --color-0: #E6FFF7;
-  --color-1: #B8FFE8;
-  --color-2: #008A5E;
+  --color-0: #e6fff7;
+  --color-1: #00D18F;
+  --color-2: #008a5e;
   --color-3: #004731;
+  --background: #ffffff;
   --text: #000000;
 }
 
 [data-theme="book2-dark"] {
-  --color-0: #000000;
-  --color-1: #004731;
-  --color-2: #008A5E;
-  --color-3: #00D18F;
+  --color-0: #004731;
+  --color-1: #008a5e;
+  --color-2: #00D18F;
+  --color-3: #E6FFF7;
+  --background: #000000;
   --text: #ffffff;
 }
 
 /* ========== Latin morphology ========== */
 body.morph-masculine .masculine {
-  text-shadow: 0px 10px 8px lightskyblue;;
+  text-shadow: 0px 2px 8px lightskyblue;
 }
 body.morph-feminine .feminine {
-  text-shadow: 0px 10px 8px pink;;
+  text-shadow: 0px 2px 8px #FCBBE7;
 }
 body.morph-neuter .neuter {
-  text-shadow: 0px 10px 8px yellow;;
+  text-shadow: 0px 2px 8px yellow;
 }
 body.morph-nominative .nominative {
-  color: #0073FF;
+  color: #0073ff;
 }
 body.morph-accusative .accusative {
   color: red;
 }
 body.morph-genitive .genitive {
-  color: #00C302;
+  color: #00c302;
 }
 body.morph-dative .dative {
-  color: #FFAC00;
+  color: #ffac00;
 }
 body.morph-ablative .ablative {
-  color: #CC00FF;
+  color: #cc00ff;
 }
 body.morph-vocative .vocative {
   color: #996633;

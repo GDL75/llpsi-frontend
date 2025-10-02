@@ -1,5 +1,6 @@
 const translations = {
   ablative: { en: "Ablative", fr: "Ablatif", la: "Ablativus" },
+  all: { en: "All", fr: "Tous", la: "Omnia" },
   accusative: { en: "Accusative", fr: "Accusatif", la: "Accūsātīvus" },
   book1: { en: "Book 1", fr: "Livre 1", la: "Liber Iº" },
   book2: { en: "Book 2", fr: "Livre 2", la: "Liber IIº" },
@@ -20,6 +21,7 @@ const translations = {
   locative: { en: "Locative", fr: "Locatif", la: "Locativus" },
   masculine: { en: "Masculine", fr: "Masculin", la: "Masculinus" },
   morphology: { en: "Morphology", fr: "Morphologie", la: "Stylus" },
+  none: { en: "None", fr: "Aucun", la: "Nullus" },
   neuter: { en: "Neuter", fr: "Neutre", la: "Neutrum" },
   nominative: { en: "Nominative", fr: "Nominatif", la: "Nōminātīvus" },
   participle: { en: "Participle", fr: "Participe", la: "Participium" },

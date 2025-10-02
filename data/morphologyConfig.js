@@ -1,9 +1,9 @@
 const morphologyConfig = [
   {
-    key: "masculine",
-    short: "mas",
-    styleClass: "morph-masculine",
-    fromChapter: 1,
+    key: "masculine", // to update the corresponding words
+    short: "mas", // to ease the text population
+    styleClass: "morph-masculine", // to update the body
+    fromChapter: 1, // where the concept appears
   },
   {
     key: "feminine",
@@ -108,5 +108,10 @@ const morphologyConfig = [
     fromChapter: 16,
   },
 ];
+
+// Derived object to ease the morphFunction : { mas: "masculine", fem: "feminine",...}
+export const morphMap = Object.fromEntries(
+  morphologyConfig.map((m) => [m.short, m.key])
+);
 
 export default morphologyConfig;

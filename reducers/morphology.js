@@ -14,8 +14,14 @@ const morphologySlice = createSlice({
       const key = action.payload;
       state[key] = !state[key];
     },
+    setAll: (state, action) => {
+      return morphologyConfig.reduce((acc, morph) => {
+        acc[morph.key] = action.payload;
+        return acc;
+      }, {});
+    },
   },
 });
 
-export const { toggleMorphology } = morphologySlice.actions;
+export const { toggleMorphology, setAll } = morphologySlice.actions;
 export default morphologySlice.reducer;

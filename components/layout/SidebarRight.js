@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import morphologyConfig from "data/morphologyConfig";
-import { toggleMorphology } from "reducers/morphology";
+import { toggleMorphology, setAll } from "reducers/morphology";
 import styles from "styles/SidebarRight.module.css";
 import CustomCheckbox from "ui/CustomCheckbox";
+import CustomButton from "ui/CustomButton";
 import { useTranslation } from "data/translation/useTranslation";
 
 export default function SidebarRight() {
@@ -13,19 +14,37 @@ export default function SidebarRight() {
 
   return (
     <aside className={styles.rightSide}>
-      <h5 className={styles.title}>{t("morphology")}</h5>
-      <div className={styles.checkboxList}>
-        {morphologyConfig
-          .filter((morph) => morph.fromChapter <= currentChapter)
-          .map((morph) => (
-            <CustomCheckbox
-              key={morph.key}
-              label={t(morph.key)}
-              labelClassName={morph.key}
-              checked={enabled[morph.key]}
-              onChange={() => dispatch(toggleMorphology(morph.key))}
-            />
-          ))}
+      <div className={styles.fixedContainer}>
+        <h5 className={styles.title}>{t("morphology")}</h5>
+        <div className={styles.btnContainer}>
+          <CustomButton
+            bColor="2"
+            tColor="0"
+            wSize="80px"
+            text={t("all")}
+            handleFunction={() => dispatch(setAll(true))}
+          />
+          <CustomButton
+            bColor="2"
+            tColor="0"
+            wSize="80px"
+            text={t("none")}
+            handleFunction={() => dispatch(setAll(false))}
+          />
+        </div>
+        <div className={styles.checkboxList}>
+          {morphologyConfig
+            .filter((morph) => morph.fromChapter <= currentChapter)
+            .map((morph) => (
+              <CustomCheckbox
+                key={morph.key}
+                label={t(morph.key)}
+                labelClassName={morph.key}
+                checked={enabled[morph.key]}
+                onChange={() => dispatch(toggleMorphology(morph.key))}
+              />
+            ))}
+        </div>
       </div>
     </aside>
   );

@@ -22,7 +22,7 @@
   height: 100px;
 }
 .picContainer {
-  border: 2px solid #000000;
+  border: 2px solid var(--color-3);
   border-radius: 20px;
   overflow: hidden;
   line-height: 0;

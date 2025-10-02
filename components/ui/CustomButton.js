@@ -1,6 +1,6 @@
 import styles from "styles/CustomButton.module.css";
 
-function CustomButton({ bColor, tColor, text, handleFunction }) {
+function CustomButton({ bColor, tColor, text, wSize, handleFunction }) {
 
   return (
     <button
@@ -8,6 +8,7 @@ function CustomButton({ bColor, tColor, text, handleFunction }) {
       style={{
         "--bColor": `var(--color-${bColor})`,
         "--tColor": `var(--color-${tColor})`,
+        "--wSize": `${wSize}`,
       }}
       onClick={handleFunction}
     >

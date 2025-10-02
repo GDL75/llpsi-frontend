@@ -63,19 +63,21 @@ export default function Header() {
             <CustomButton
               bColor="3"
               tColor="0"
+              wSize="150px"
               text={t("profile")}
               handleFunction={() => {}}
             />
             <CustomButton
               bColor="3"
               tColor="0"
+              wSize="150px"
               text={t("settings")}
               handleFunction={() => setIsSettings((prev) => !prev)}
             />
           </div>
         </header>
 
-        {/* anciens ColumnCapitals */}
+        {/* Column Capitals */}
         <div className={styles.container}>
           <div className={styles.leftCapital}>
             <div className={styles.layerLeft1}></div>
