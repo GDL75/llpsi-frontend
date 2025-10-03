@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, setTheme } from "reducers/settings";
 import { useTranslation } from "data/translation/useTranslation";
 import CustomRadio from "ui/CustomRadio";
+import ModalPortal from "components/ui/ModalPortal";
 
 function Settings({ bColor, tColor, onClose }) {
   const t = useTranslation();
@@ -23,48 +24,50 @@ function Settings({ bColor, tColor, onClose }) {
   ];
 
   return (
-    <>
-      <div className={styles.overlay} onClick={onClose}></div>
-      <div
-        className={styles.modal}
-        style={{
-          "--bColor": `var(--color-${bColor})`,
-          "--tColor": `var(--color-${tColor})`,
-        }}
-      >
-        {/* ---------- Language ---------- */}
-        <h5>{t("language")}</h5>
-        <div className={styles.radioGroup}>
-          {languages.map(({ value, label }) => (
-            <CustomRadio
-              key={value}
-              label={label}
-              value={value}
-              name="language"
-              checked={language === value}
-              onChange={() => dispatch(setLanguage(value))}
-            />
-          ))}
-        </div>
+    <ModalPortal>
+      <div className={styles.overlay} onClick={onClose}>
+        <div
+          className={styles.modal}
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            "--bColor": `var(--color-${bColor})`,
+            "--tColor": `var(--color-${tColor})`,
+          }}
+        >
+          {/* ---------- Language ---------- */}
+          <h5>{t("language")}</h5>
+          <div className={styles.radioGroup}>
+            {languages.map(({ value, label }) => (
+              <CustomRadio
+                key={value}
+                label={label}
+                value={value}
+                name="language"
+                checked={language === value}
+                onChange={() => dispatch(setLanguage(value))}
+              />
+            ))}
+          </div>
 
-        <div className={styles.separator}></div>
+          <div className={styles.separator}></div>
 
-        {/* ---------- Theme ---------- */}
-        <h5>{t("theme")}</h5>
-        <div className={styles.radioGroup}>
-          {themes.map(({ value, label }) => (
-            <CustomRadio
-              key={value}
-              label={label}
-              value={value}
-              name="theme"
-              checked={theme === value}
-              onChange={() => dispatch(setTheme(value))}
-            />
-          ))}
+          {/* ---------- Theme ---------- */}
+          <h5>{t("theme")}</h5>
+          <div className={styles.radioGroup}>
+            {themes.map(({ value, label }) => (
+              <CustomRadio
+                key={value}
+                label={label}
+                value={value}
+                name="theme"
+                checked={theme === value}
+                onChange={() => dispatch(setTheme(value))}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </>
+    </ModalPortal>
   );
 }
 

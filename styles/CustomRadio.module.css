@@ -3,6 +3,7 @@
   align-items: center;
   cursor: pointer;
   font-size: var(--fs-p);
+  margin-bottom: 5px;
 }
 
 .radioInput {

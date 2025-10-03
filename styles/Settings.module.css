@@ -3,10 +3,14 @@
   position: fixed;
   inset: 0; 
   /* background: rgba(0, 0, 0, 0.2); léger voile gris */
-  z-index: 999; /* i.e. below the modal, brought to back */
+  z-index: 9999; /* i.e. below the modal, brought to back */
+  display: flex;
+  justify-content: flex-end; /* aligne à droite */
+  align-items: flex-start;    /* aligné en haut */
+  pointer-events: auto;
 }
 .modal {
-  position: fixed; 
+  position: relative; 
   background: var(--bColor);
   top: 60px; 
   right: 25px; 
@@ -14,7 +18,7 @@
   border: 1px solid var(--color-3);
   padding: 1rem;
   border-radius: 8px;
-  z-index: 1000; /* i.e. above the rest, brought to front */
+  z-index: 10000; /* i.e. above the rest, brought to front */
   box-shadow: 4px 4px 8px rgba(2, 2, 2, 0.5);
 }
 .separator {
