@@ -89,6 +89,16 @@ body.morph-subjunctive .subjunctive {
   text-decoration: underline dotted;
 }
 
+/* ========== Images ========== */
+.responsive-img {
+  display: block;              /* évite le petit espace sous l’image */
+  width: calc(100% - 40px);    /* largeur responsive avec marge incluse */
+  margin: 0 20px;              /* marges gauche et droite */
+  border-radius: 20px;         /* coins arrondis */
+  border: 1px solid var(--color-2); /* couleur de bordure */
+  height: auto;                /* conserve le ratio */
+}
+
 /* ========== GLOBAL RESET ========== */
 * {
   box-sizing: border-box;

@@ -17,14 +17,12 @@ export default function ChapterPage() {
       case "text":
         return (
           <>
-            <div style={{borderRadius: "20px"}}>
-              <Image
-                src="/images/09-main.png"
-                alt="A shepard and his dog"
-                width={624}
-                height={416}
-              />
-            </div>
+            <img
+              src="/images/09-main-commented.png"
+              alt="A shepherd and his dog"
+              loading="lazy"
+              className="responsive-img" // defined in globals.css
+            />
             <p>
               {m("H-ic", "mas-nom")} {m("vir-", "mas-nom")},{" "}
               {m("qu-ī", "mas-nom")} in {m("camp-ō", "mas-abl")} ambulat,{" "}
@@ -32,7 +30,7 @@ export default function ChapterPage() {
               {m("Pāstor-", "mas-nom")} nōn {m("sol-us", "mas-nom")} est in{" "}
               {m("camp-ō", "mas-abl")}, nam {m("can-is", "mas-nom")}{" "}
               {m("nig-er", "mas-nom")} cum {m("e-ō", "mas-abl")} est et centum{" "}
-              {m("ovēs", "mas-nom")}: {m("ūn-a", "fem-nom")}{" "}
+              {m("ov-ēs", "fem-nom")}: {m("ūn-a", "fem-nom")}{" "}
               {m("ov-is", "fem-nom")} {m("nigr-a", "fem-nom")} et ūndēcentum{" "}
               {m("ov-ēs", "fem-nom")} {m("alb-æ", "fem-nom")}.{" "}
               {m("Pāstor-", "mas-nom")} {m("ūn-am", "fem-acc")}{" "}

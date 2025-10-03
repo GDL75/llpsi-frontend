@@ -36,6 +36,7 @@ function Home() {
           <CustomButton
             bColor="3"
             tColor="0"
+            wSize="150px"
             text={t("settings")}
             handleFunction={() => setIsSettings((prev) => !prev)}
           />
@@ -52,12 +53,14 @@ function Home() {
           <CustomButton
             bColor="3"
             tColor="0"
+            wSize="150px"
             text={t("signup")}
             // handleFunction={() => setIsSettings((prev) => !prev)}
           />
           <CustomButton
             bColor="3"
             tColor="0"
+            wSize="150px"
             text={t("signin")}
             handleFunction={() => {
               dispatch(setChapter(book === "book1" ? 9 : 36));

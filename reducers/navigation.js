@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: { book: "book1", chapter: 1, section: "text"},
+  value: { book: "book1", chapter: 9, section: "text"},
 };
 
 export const navigationSlice = createSlice({
