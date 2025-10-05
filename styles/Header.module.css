@@ -1,4 +1,4 @@
-/* wrapper qui englobe Header + Capitals */
+/* wrapper for Header + Capitals */
 .headerWrapper {
   position: fixed;
   top: 0;
@@ -6,9 +6,9 @@
   z-index: 999;
 }
 
-/* ajoute un espace sous le header pour ne pas cacher le contenu */
+/* space below Header so it is always visible */
 .body {
-  padding-top: 160px; /* ajuste selon la hauteur totale header + capitals */
+  padding-top: 160px; /* total height : header + capitals */
 }
 
 .header {
@@ -26,7 +26,7 @@
 .sectionContainer {
   position: relative;
   display: flex;
-  width: 50vw;
+  width: 50%;
   height: 40px;
   overflow: hidden;
 }
@@ -57,8 +57,8 @@
 .sectionSlider {
   position: absolute;
   top: 0;
-  width: 150px;
-  margin-left: 25px;
+  width: 22%;
+  margin: 0px 1.5%;
   height: 100%;
   background-color: var(--color-2);
   border-radius: 20px;

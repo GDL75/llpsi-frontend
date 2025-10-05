@@ -36,8 +36,7 @@ export default function Header() {
     <>
       <div className={styles.headerWrapper}>
         <header className={styles.header}>
-          {/* gauche : sections */}
-          <div className={styles.sectionHeader}>
+          {/* left section */}
             <div className={styles.sectionContainer}>
               {/* Slider */}
               <div
@@ -56,7 +55,6 @@ export default function Header() {
                 </button>
               ))}
             </div>
-          </div>
 
           {/* droite : settings / profile */}
           <div className={styles.rightGroup}>
