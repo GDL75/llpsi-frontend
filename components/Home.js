@@ -64,7 +64,7 @@ function Home() {
             text={t("signin")}
             handleFunction={() => {
               dispatch(setChapter(book === "book1" ? 9 : 36));
-              router.push("/chapter/09/content");
+              router.push("/chapter/09");
             }}
           />
         </div>

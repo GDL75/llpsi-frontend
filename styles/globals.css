@@ -85,6 +85,9 @@ body.morph-vocative .vocative {
 body.morph-locative .locative {
   color: #008000;
 }
+body.morph-imperative .imperative {
+  text-decoration: underline wavy #996633;
+}
 body.morph-subjunctive .subjunctive {
   text-decoration: underline dotted;
 }

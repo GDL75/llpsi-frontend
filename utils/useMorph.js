@@ -4,38 +4,62 @@ import { useSelector } from "react-redux";
 
 // A custom HOOK is required to avoid render errors
 export function useMorph() {
-  // Getting the state morphology from store
   const morphology = useSelector((state) => state.morphology);
 
-  const m = (text, code) => {
-    // Separating radical and flexional ending
-    let [radical, desinence] = text.split("-");
+  const m = ({ token, morph, gender }) => {
+    let result;
 
-    // Separating codes and getting corresponding classes
-    const codes = code.split("-");
-    const classes = codes.map((c) => morphMap[c]);
+    // === 1) Traitement de la morphologie ===
+    if (morph) {
+      const parts = token.split("-");
 
-    const mainClass = classes[0] || "";
-    const endingClass = classes[1] || "";
+      // Cas 1a : aucun tiret
+      if (parts.length === 1) {
+        result = <span className={morph}>{token}</span>;
+      }
 
-    // Special case : word ending with "-" but with no desisnence
-    if (text.endsWith("-") && !desinence) {
-      // "•" is only added if the morphology is active
-      if (morphology[endingClass]) {
-        desinence = "•";
+      // Cas 1b : un seul tiret
+      else if (parts.length === 2) {
+        let [radical, ending] = parts;
+
+        // Si le tiret est final, on remplace par "•" seulement si la morphologie est active
+        if (token.endsWith("-") && morphology[morph]) {
+          ending = "•";
+        }
+
+        result = (
+          <>
+            {radical}
+            {ending && <span className={morph}>{ending}</span>}
+          </>
+        );
+      }
+
+      // Cas 1c : deux tirets
+      else if (parts.length === 3) {
+        const [radical, middle, ending] = parts;
+        result = (
+          <>
+            {radical}
+            <span className={morph}>{middle}</span>
+            {ending}
+          </>
+        );
       }
     }
 
-    if (!desinence) {
-      return <span className={mainClass}>{radical}</span>;
+    // === 2) Si morph n’existe pas ===
+    if (!result) {
+      result = token;
     }
 
-    return (
-      <span className={mainClass}>
-        {radical}
-        <span className={endingClass}>{desinence}</span>
-      </span>
-    );
+    // === 3) Application du genre si présent ===
+    if (gender) {
+      result = <span className={gender}>{result}</span>;
+    }
+
+    return result;
   };
+
   return m;
 }
