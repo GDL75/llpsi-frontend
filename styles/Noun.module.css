@@ -2,7 +2,8 @@
   border-collapse: collapse;
   width: auto;
   margin: 1rem 0;
-  font-family: sans-serif;
+  font-family: var(--font-body);
+  font-size: var(--fs-p);
 }
 
 .headerCell {
