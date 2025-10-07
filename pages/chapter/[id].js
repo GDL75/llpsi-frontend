@@ -19,7 +19,6 @@ export default function ChapterPage() {
 
   const handleOpenLemma = (lemmaId) => {
     const lemma = lemmas[lemmaId];
-    console.log("lemma", lemma);
     setOpenLemma(lemma);
   };
 
