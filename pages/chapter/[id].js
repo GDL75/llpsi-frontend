@@ -6,6 +6,7 @@ import Text from "components/layout/Text";
 import * as chapters from "data/chapters";
 import lemmas from "data/chapters/09-lemmas";
 import LemmaModal from "ui/LemmaModal";
+import Noun from "ui/Noun";
 
 export default function ChapterPage() {
   const router = useRouter();
@@ -48,6 +49,19 @@ export default function ChapterPage() {
               className="responsive-img" // defined in globals.css
             />
             <Text chapter={chapterData} openLemma={handleOpenLemma} />
+            <Noun
+              data={{
+                gender: "feminine",
+                cases: [
+                  { case: "nominative", singular: "ov-is", plural: "ov-es" },
+                  { case: "accusative", singular: "ov-em", plural: "ov-es" },
+                  { case: "genitive", singular: "ov-is", plural: "ov-ium" },
+                  { case: "dative", singular: "ov-i", plural: "ov-ibus" },
+                  { case: "ablative", singular: "ov-e", plural: "ov-ibus" },
+                  { case: "vocative", singular: "ov-is", plural: "ov-es" },
+                ],
+              }}
+            />
             {openLemma && (
               <LemmaModal lemma={openLemma} onClose={handleCloseLemma} />
             )}

@@ -1,5 +1,6 @@
 import React from "react";
 import { useMorph } from "utils/useMorph";
+import Noun from "ui/Noun";
 
 export default function Text({ chapter, openLemma }) {
   const m = useMorph();
@@ -9,36 +10,69 @@ export default function Text({ chapter, openLemma }) {
   let isItalic = false;
   let isBold = false;
 
-  chapter.text.forEach((word, index) => {
-    let tokenElement = m(word);
+  // --- fonction utilitaire pour vider le paragraphe en cours ---
+  const flushParagraph = (key) => {
+    if (currentParagraph.length > 0) {
+      paragraphs.push(
+        <p key={key} className="chapter-text">
+          {currentParagraph}
+        </p>
+      );
+      currentParagraph = [];
+    }
+  };
 
-    // --- applique les styles actuels ---
-    if (isItalic) tokenElement = <em>{tokenElement}</em>;
-    if (isBold) tokenElement = <strong>{tokenElement}</strong>;
+  chapter.text.forEach((item, index) => {
+    // --- cas d'un mot ---
+    if (item.token) {
+      let tokenElement = m(item);
 
-    // add lemma
-    const styledToken = word.lemma ? (
-      <span
-        key={`word-${index}`}
-        className="lemma"
-        onClick={() => openLemma(word.lemma)}
-      >
-        {tokenElement}
-      </span>
-    ) : (
-      <React.Fragment key={`word-${index}`}>{tokenElement}</React.Fragment>
-    );
+      if (isItalic) tokenElement = <em>{tokenElement}</em>;
+      if (isBold) tokenElement = <strong>{tokenElement}</strong>;
 
-    currentParagraph.push(styledToken);
+      const styledToken = item.lemma ? (
+        <span
+          key={`word-${index}`}
+          className="lemma"
+          onClick={() => openLemma(item.lemma)}
+        >
+          {tokenElement}
+        </span>
+      ) : (
+        <React.Fragment key={`word-${index}`}>{tokenElement}</React.Fragment>
+      );
 
-    // --- ajoute le suffixe (ponctuation / espace) ---
-    if (word.suffix) {
-      currentParagraph.push(word.suffix);
+      currentParagraph.push(styledToken);
+
+      if (item.suffix) currentParagraph.push(item.suffix);
     }
 
-    // --- traite la balise markup si elle existe ---
-    if (word.markup) {
-      switch (word.markup) {
+    // --- cas d'une image ---
+    if (item.image) {
+      flushParagraph(`p-${index}`);
+      paragraphs.push(
+        <img
+          key={`image-${index}`}
+          src={item.image}
+          alt=""
+          style={{ display: "block", margin: "1rem 0" }}
+        />
+      );
+    }
+
+    // --- cas d'un tableau Noun ---
+    if (item.noun) {
+      flushParagraph(`p-${index}`);
+      paragraphs.push(
+        <div key={`noun-${index}`} style={{ margin: "1rem 0" }}>
+          <Noun data={item.noun} />
+        </div>
+      );
+    }
+
+    // --- traite la balise markup ---
+    if (item.markup) {
+      switch (item.markup) {
         case "i":
           isItalic = true;
           break;
@@ -52,15 +86,10 @@ export default function Text({ chapter, openLemma }) {
           isBold = false;
           break;
         case "br":
-          currentParagraph.push(<br key={"br-" + index} />);
+          currentParagraph.push(<br key={`br-${index}`} />);
           break;
         case "/p":
-          paragraphs.push(
-            <p key={`p-${index}`} className="chapter-text">
-              {currentParagraph}
-            </p>
-          );
-          currentParagraph = [];
+          flushParagraph(`p-${index}`);
           break;
         default:
           break;
@@ -69,13 +98,7 @@ export default function Text({ chapter, openLemma }) {
   });
 
   // --- ajoute le dernier paragraphe s'il reste du contenu ---
-  if (currentParagraph.length > 0) {
-    paragraphs.push(
-      <p key="last" className="chapter-text">
-        {currentParagraph}
-      </p>
-    );
-  }
+  flushParagraph("last");
 
   return <div className="chapter">{paragraphs}</div>;
 }

@@ -25,7 +25,7 @@ const chapter09 = {
     { token: "est", suffix: " " },
     { token: "et", suffix: " " },
     { token: "centum", suffix: " " },
-    { token: "ov-ēs", gender: "feminine", morph: "nominative", suffix: ": " },
+    { token: "ov-ēs", gender: "feminine", morph: "nominative", suffix: ": ", lemma: "ovis" },
     { token: "ūn-a", gender: "feminine", morph: "nominative", suffix: " " },
     { token: "ov-is", gender: "feminine", morph: "nominative", suffix: " " },
     { token: "nigr-a", gender: "feminine", morph: "nominative", suffix: " " },

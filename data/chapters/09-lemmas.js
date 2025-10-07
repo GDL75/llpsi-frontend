@@ -9,7 +9,8 @@ const lemmas09 = {
       },
       {
         token: "IC (99)",
-      },]
+      },
+    ],
   },
   rivus: {
     chapterId: 9,
@@ -34,6 +35,25 @@ const lemmas09 = {
       },
     ],
     image: "/images/09-rivus.png",
+  },
+  ovis: {
+    chapterId: 9,
+    title: "Ovis, -is, f, 3ª",
+    text: [
+      {
+        noun: {
+          gender: "feminine",
+          cases: [
+            { case: "nominative", singular: "ov-is", plural: "ov-es" },
+            { case: "accusative", singular: "ov-em", plural: "ov-es" },
+            { case: "genitive", singular: "ov-is", plural: "ov-ium" },
+            { case: "dative", singular: "ov-i", plural: "ov-ibus" },
+            { case: "ablative", singular: "ov-e", plural: "ov-ibus" },
+            { case: "vocative", singular: "ov-is", plural: "ov-es" },
+          ],
+        },
+      },
+    ],
   },
 };
 

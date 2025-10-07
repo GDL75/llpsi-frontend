@@ -24,6 +24,18 @@
   --fs-h4: 2rem;
   --fs-h5: 1.6rem;
   --fs-p: 1.4rem;
+
+  /* Morphology colors */
+  --color-masculine: lightskyblue;
+  --color-feminine: #FCBBE7;
+  --color-neuter: yellow;
+  --color-nominative: #0073ff;
+  --color-accusative: red;
+  --color-genitive: #00C302;
+  --color-dative: #ffac00;
+  --color-ablative: #cc00ff;
+  --color-vocative: #996633;
+  --color-locative: #008000;
 }
 
 /* Color themes */
@@ -56,34 +68,34 @@
 
 /* ========== Latin morphology ========== */
 body.morph-masculine .masculine {
-  text-shadow: 0px 2px 8px lightskyblue;
+  text-shadow: 0px 2px 8px var(--color-masculine);
 }
 body.morph-feminine .feminine {
-  text-shadow: 0px 2px 8px #FCBBE7;
+  text-shadow: 0px 2px 8px var(--color-feminine);
 }
 body.morph-neuter .neuter {
-  text-shadow: 0px 2px 8px yellow;
+  text-shadow: 0px 2px 8px var(--color-neuter);
 }
 body.morph-nominative .nominative {
-  color: #0073ff;
+  color: var(--color-nominative);
 }
 body.morph-accusative .accusative {
-  color: red;
+  color: var(--color-accusative);
 }
 body.morph-genitive .genitive {
-  color: #00c302;
+  color: var(--color-genitive);
 }
 body.morph-dative .dative {
-  color: #ffac00;
+  color: var(--color-dative);
 }
 body.morph-ablative .ablative {
-  color: #cc00ff;
+  color: var(--color-ablative);
 }
 body.morph-vocative .vocative {
-  color: #996633;
+  color: var(--color-vocative);
 }
 body.morph-locative .locative {
-  color: #008000;
+  color: var(--color-locative);
 }
 body.morph-imperative .imperative {
   text-decoration: underline wavy #996633;
