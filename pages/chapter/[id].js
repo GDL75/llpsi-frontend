@@ -1,15 +1,28 @@
 import { useRouter } from "next/router";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import MainLayout from "components/layout/MainLayout";
 import Text from "components/layout/Text";
 import * as chapters from "data/chapters";
+import lemmas from "data/chapters/09-lemmas";
+import LemmaModal from "ui/LemmaModal";
 
 export default function ChapterPage() {
   const router = useRouter();
   const { id } = router.query;
-  if (!id) return null; // needed because id can be null at first render
 
+  const [openLemma, setOpenLemma] = useState(null);
   const currentSection = useSelector((state) => state.navigation.value.section);
+
+  if (!id) return null; // needed because id can be null at first render. Must be placed AFTER all other hooks
+
+  const handleOpenLemma = (lemmaId) => {
+    const lemma = lemmas[lemmaId];
+    console.log("lemma", lemma);
+    setOpenLemma(lemma);
+  };
+
+  const handleCloseLemma = () => setOpenLemma(null);
 
   // Getting data from the requested chapter
   const chapterData = chapters[`chapter${id.padStart(2, "0")}`];
@@ -34,7 +47,10 @@ export default function ChapterPage() {
               loading="lazy"
               className="responsive-img" // defined in globals.css
             />
-            <Text chapter={chapterData} />
+            <Text chapter={chapterData} openLemma={handleOpenLemma} />
+            {openLemma && (
+              <LemmaModal lemma={openLemma} onClose={handleCloseLemma} />
+            )}
           </>
         );
       case "grammar":

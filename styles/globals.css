@@ -158,3 +158,16 @@ p {
   font-weight: var(--fw-regular);
   margin: 10px;
 }
+
+.lemma {
+  text-decoration: underline;
+  text-decoration-thickness: 1px; 
+  text-underline-offset: 2px; 
+  text-decoration-color: gray;
+  cursor: pointer;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.lemma:hover {
+  text-decoration-color: #555; 
+}

@@ -1,7 +1,7 @@
-import chapter09 from "./chapter09";
+import chapter09 from "./09-chapter";
 // tu pourras en ajouter d’autres ensuite :
-// import chapter10 from "./chapter10";
-// import chapter11 from "./chapter11";
+// import chapter10 from "./10-chapter;
+// import chapter11 from "./11-chapter";
 
 export {
   chapter09,

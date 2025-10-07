@@ -1,7 +1,7 @@
 import React from "react";
 import { useMorph } from "utils/useMorph";
 
-export default function Text({ chapter }) {
+export default function Text({ chapter, openLemma }) {
   const m = useMorph();
 
   const paragraphs = [];
@@ -10,12 +10,24 @@ export default function Text({ chapter }) {
   let isBold = false;
 
   chapter.text.forEach((word, index) => {
-    const tokenElement = m(word);
+    let tokenElement = m(word);
 
     // --- applique les styles actuels ---
-    let styledToken = tokenElement;
-    if (isItalic) styledToken = <em key={index}>{styledToken}</em>;
-    if (isBold) styledToken = <strong key={index}>{styledToken}</strong>;
+    if (isItalic) tokenElement = <em>{tokenElement}</em>;
+    if (isBold) tokenElement = <strong>{tokenElement}</strong>;
+
+    // add lemma
+    const styledToken = word.lemma ? (
+      <span
+        key={`word-${index}`}
+        className="lemma"
+        onClick={() => openLemma(word.lemma)}
+      >
+        {tokenElement}
+      </span>
+    ) : (
+      <React.Fragment key={`word-${index}`}>{tokenElement}</React.Fragment>
+    );
 
     currentParagraph.push(styledToken);
 
@@ -44,7 +56,7 @@ export default function Text({ chapter }) {
           break;
         case "/p":
           paragraphs.push(
-            <p key={index} className="chapter-text">
+            <p key={`p-${index}`} className="chapter-text">
               {currentParagraph}
             </p>
           );
