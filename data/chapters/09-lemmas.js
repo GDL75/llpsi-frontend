@@ -15,6 +15,7 @@ const lemmas09 = {
   rivus: {
     chapterId: 9,
     title: "Rīvus, -ī, m, 2ª",
+    image: { path: "/images/09-rivus.png", orientation: "landscape" },
     text: [
       {
         token: "rīv-us",
@@ -34,11 +35,11 @@ const lemmas09 = {
         morph: "nominative",
       },
     ],
-    image: "/images/09-rivus.png",
   },
   ovis: {
     chapterId: 9,
-    title: "Ovis, -is, f, 3ª",
+    title: "ovis, -is, f, 3ª",
+    image: { path: "/images/09-ovis.png", orientation: "landscape" },
     text: [
       {
         table: {
@@ -57,11 +58,11 @@ const lemmas09 = {
         },
       },
     ],
-    image: "/images/09-ovis.png",
   },
   panis: {
     chapterId: 9,
-    title: "Pānis, -is, m, 3ª",
+    title: "pānis, -is, m, 3ª",
+    image: { path: "/images/09-panis.png", orientation: "landscape" },
     text: [
       {
         table: {
@@ -80,7 +81,162 @@ const lemmas09 = {
         },
       },
     ],
-    image: "/images/09-panis.png",
+  },
+  albus: {
+    chapterId: 9,
+    title: "albus, -a, -um",
+    image: { path: "/images/09-albusNiger.png", orientation: "landscape" },
+    text: [
+      {
+        token: "alb-us",
+        morph: "nominative",
+        suffix: " -",
+      },
+      {
+        token: "a",
+        morph: "nominative",
+        suffix: " -",
+      },
+      {
+        token: "um",
+        morph: "nominative",
+        suffix: " ⟷ ",
+      },
+      {
+        token: "nig-er",
+        morph: "nominative",
+        suffix: " -",
+      },
+      {
+        token: "r-a",
+        morph: "nominative",
+        suffix: " -",
+      },
+      {
+        token: "r-um",
+        morph: "nominative",
+      },
+    ],
+  },
+  niger: {
+    chapterId: 9,
+    title: "niger, -ra, -rum",
+    image: { path: "/images/09-albusNiger.png", orientation: "landscape" },
+    text: [
+      {
+        token: "alb-us",
+        morph: "nominative",
+        suffix: " -",
+      },
+      {
+        token: "a",
+        morph: "nominative",
+        suffix: " -",
+      },
+      {
+        token: "um",
+        morph: "nominative",
+        suffix: " ⟷ ",
+      },
+      {
+        token: "nig-er",
+        morph: "nominative",
+        suffix: " -",
+      },
+      {
+        token: "r-a",
+        morph: "nominative",
+        suffix: " -",
+      },
+      {
+        token: "r-um",
+        morph: "nominative",
+      },
+    ],
+  },
+  est: {
+    chapterId: 9,
+    title: "ēst edunt",
+    text: [
+      {
+        token: "vir-",
+        morph: "nominative",
+        suffix: " ",
+      },
+      {
+        token: "pān-em",
+        morph: "accusative",
+        suffix: " ",
+      },
+      {
+        token: "ēst",
+        markup: "br",
+      },
+      {
+        token: "vir-ī",
+        morph: "nominative",
+        suffix: " ",
+      },
+      {
+        token: "pān-em",
+        morph: "accusative",
+        suffix: " ",
+      },
+      {
+        token: "edunt",
+        markup: "/p",
+      },
+      {
+        token: "⚠️ ",
+        markup: "b",
+      },
+      {
+        token: "ē",
+        markup: "/b",
+      },
+      {
+        token: "st ≠ ",
+        markup: "b",
+      },
+      {
+        token: "e",
+        markup: "/b",
+      },
+      {
+        token: "st",
+      },
+    ],
+  },
+  pastor: {
+    chapterId: 9,
+    title: "pāstor, -is, m, 3ª",
+    image: { path: "/images/09-pastor.png", orientation: "portrait" },
+    text: [
+      {
+        table: {
+          name: {
+            title: "masculine",
+            backgroundColor: "--color-masculine",
+          },
+          cells: [
+            { rowName: "nominative", singular: "pāstor-", plural: "pāstōr-ēs" },
+            {
+              rowName: "accusative",
+              singular: "pāstōr-em",
+              plural: "pāstōr-ēs",
+            },
+            { rowName: "genitive", singular: "pāstōr-is", plural: "pāstōr-um" },
+            { rowName: "dative", singular: "pāstōr-ī", plural: "pāstōr-ibus" },
+            {
+              rowName: "ablative",
+              singular: "pāstōr-e",
+              plural: "pāstōr-ibus",
+            },
+            { rowName: "vocative", singular: "pāstor-", plural: "pāstōr-ēs" },
+          ],
+        },
+      },
+    ],
   },
 };
 

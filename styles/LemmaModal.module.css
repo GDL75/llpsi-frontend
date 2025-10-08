@@ -12,7 +12,8 @@
 }
 
 .lemmaModal {
-  background-color: #fff;
+  background-color: var(--background);
+  border: 1px solid var(--color-2);
   border-radius: 10px;
   max-width: 80%;
   max-height: 80%;
@@ -23,6 +24,19 @@
   padding: 20px;
   gap: 20px; /* espace entre image et contenu */
   justify-content: center;
+  align-items: center;
+}
+
+.portraitLayout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.landscapeLayout {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -38,6 +52,7 @@
   border-radius: 8px;
   justify-content: center;
   align-items: center;
+  border: 2px solid grey
 }
 
 .content {
@@ -50,8 +65,4 @@
 
 .content h3 {
   margin: 0 0 10px 0;
-}
-
-.content p {
-  margin: 0;
 }
