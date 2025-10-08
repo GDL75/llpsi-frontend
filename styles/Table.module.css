@@ -1,4 +1,4 @@
-.nounTable {
+.table {
   border-collapse: collapse;
   width: auto;
   margin: 1rem 0;
@@ -9,35 +9,22 @@
 .headerCell {
   border: 1px solid #ccc;
   padding: 0.5rem 1rem;
-  text-align: center;
+  text-align: left;
   background-color: #f5f5f5;
   font-weight: bold;
 }
 
-.caseCell {
+.rowHeader {
   border: 1px solid #ccc;
   padding: 0.5rem 1rem;
-  text-align: center;
+  text-align:left;
   font-weight: bold;
-  background-color: #eaeaea;
+  background-color: #f5f5f5;
 }
 
-.formCell {
+.cell {
   border: 1px solid #ccc;
   padding: 0.5rem 1rem;
-  text-align: center;
+  text-align: left;
   min-width: 60px;
-}
-
-/* gender colors */
-.masculine {
-  background-color: var(--color-masculine);
-}
-
-.feminine {
-  background-color: var(--color-feminine);
-}
-
-.neuter {
-  background-color: var(--color-neuter);
 }

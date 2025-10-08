@@ -49,7 +49,7 @@ function Settings({ bColor, tColor, onClose }) {
             ))}
           </div>
 
-          <div className={styles.separator}></div>
+          <div className="separator"></div>
 
           {/* ---------- Theme ---------- */}
           <h5>{t("theme")}</h5>

@@ -1,10 +1,14 @@
+// Import de tous les éléments du chapitre 09
 import chapter09 from "./09-chapter";
-// tu pourras en ajouter d’autres ensuite :
-// import chapter10 from "./10-chapter;
-// import chapter11 from "./11-chapter";
+import lemmas09 from "./09-lemmas";
+// import grammar09 from "./09-grammar";
+// import exercises09 from "./09-exercises";
 
-export {
-  chapter09,
-  // chapter10,
-  // chapter11,
+export const chapters = {
+  9: {
+    chapter: chapter09,
+    lemmas: lemmas09,
+    // grammar: grammar09,
+    // exercises: exercises09,
+  },
 };

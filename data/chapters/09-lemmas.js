@@ -41,19 +41,46 @@ const lemmas09 = {
     title: "Ovis, -is, f, 3ª",
     text: [
       {
-        noun: {
-          gender: "feminine",
-          cases: [
-            { case: "nominative", singular: "ov-is", plural: "ov-es" },
-            { case: "accusative", singular: "ov-em", plural: "ov-es" },
-            { case: "genitive", singular: "ov-is", plural: "ov-ium" },
-            { case: "dative", singular: "ov-i", plural: "ov-ibus" },
-            { case: "ablative", singular: "ov-e", plural: "ov-ibus" },
-            { case: "vocative", singular: "ov-is", plural: "ov-es" },
+        table: {
+          name: {
+            title: "feminine",
+            backgroundColor: "--color-feminine",
+          },
+          cells: [
+            { rowName: "nominative", singular: "ov-is", plural: "ov-ēs" },
+            { rowName: "accusative", singular: "ov-em", plural: "ov-ēs" },
+            { rowName: "genitive", singular: "ov-is", plural: "ov-ium" },
+            { rowName: "dative", singular: "ov-ī", plural: "ov-ibus" },
+            { rowName: "ablative", singular: "ov-e", plural: "ov-ibus" },
+            { rowName: "vocative", singular: "ov-is", plural: "ov-ēs" },
           ],
         },
       },
     ],
+    image: "/images/09-ovis.png",
+  },
+  panis: {
+    chapterId: 9,
+    title: "Pānis, -is, m, 3ª",
+    text: [
+      {
+        table: {
+          name: {
+            title: "masculine",
+            backgroundColor: "--color-masculine",
+          },
+          cells: [
+            { rowName: "nominative", singular: "pān-is", plural: "pān-ēs" },
+            { rowName: "accusative", singular: "pān-em", plural: "pān-ēs" },
+            { rowName: "genitive", singular: "pān-is", plural: "pān-um" },
+            { rowName: "dative", singular: "pān-ī", plural: "pān-ibus" },
+            { rowName: "ablative", singular: "pān-e", plural: "pān-ibus" },
+            { rowName: "vocative", singular: "pān-is", plural: "pān-ēs" },
+          ],
+        },
+      },
+    ],
+    image: "/images/09-panis.png",
   },
 };
 

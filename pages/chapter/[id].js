@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import MainLayout from "components/layout/MainLayout";
 import Text from "components/layout/Text";
-import * as chapters from "data/chapters";
-import lemmas from "data/chapters/09-lemmas";
+import { chapters } from "data/chapters"; // means: from "data/chapters/index.js";
 import LemmaModal from "ui/LemmaModal";
-import Noun from "ui/Noun";
 
 export default function ChapterPage() {
   const router = useRouter();
@@ -15,17 +13,23 @@ export default function ChapterPage() {
   const [openLemma, setOpenLemma] = useState(null);
   const currentSection = useSelector((state) => state.navigation.value.section);
 
-  if (!id) return null; // needed because id can be null at first render. Must be placed AFTER all other hooks
+  // Getting data from the requested chapter, needs to be AFTER the previous states
+  const chapterData = chapters[Number(id)];
+  if (!chapterData) return;
+  const {
+    chapter,
+    lemmas,
+    // grammar,
+    // exercises
+  } = chapterData;
 
+  if (!id) return null; // needed because id can be null at first render. Must be placed AFTER all other hooks
   const handleOpenLemma = (lemmaId) => {
     const lemma = lemmas[lemmaId];
     setOpenLemma(lemma);
   };
 
   const handleCloseLemma = () => setOpenLemma(null);
-
-  // Getting data from the requested chapter
-  const chapterData = chapters[`chapter${id.padStart(2, "0")}`];
 
   if (!chapterData) {
     return (
@@ -47,7 +51,7 @@ export default function ChapterPage() {
               loading="lazy"
               className="responsive-img" // defined in globals.css
             />
-            <Text chapter={chapterData} openLemma={handleOpenLemma} />
+            <Text chapter={chapter} openLemma={handleOpenLemma} />
             {openLemma && (
               <LemmaModal lemma={openLemma} onClose={handleCloseLemma} />
             )}

@@ -1,5 +1,4 @@
 import React from "react";
-import { morphMap } from "data/morphologyConfig";
 import { useSelector } from "react-redux";
 
 // A custom HOOK is required to avoid render errors

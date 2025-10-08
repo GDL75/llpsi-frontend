@@ -1,6 +1,6 @@
 import React from "react";
 import { useMorph } from "utils/useMorph";
-import Noun from "ui/Noun";
+import Table from "ui/Table";
 
 export default function Text({ chapter, openLemma }) {
   const m = useMorph();
@@ -22,7 +22,7 @@ export default function Text({ chapter, openLemma }) {
     }
   };
 
-  chapter.text.forEach((item, index) => {
+  chapter.text?.forEach((item, index) => {
     // --- cas d'un mot ---
     if (item.token) {
       let tokenElement = m(item);
@@ -60,12 +60,15 @@ export default function Text({ chapter, openLemma }) {
       );
     }
 
-    // --- cas d'un tableau Noun ---
-    if (item.noun) {
-      flushParagraph(`p-${index}`);
+    // --- cas d'un tableau ---
+    if (item.table) {
+      flushParagraph(`p-${index}`); // a table cannot be rendered wthin a <p> -> p close + new div
       paragraphs.push(
         <div key={`noun-${index}`} style={{ margin: "1rem 0" }}>
-          <Noun data={item.noun} />
+          <Table
+            table={item.table}
+            renderCell={(token, morph) => m({ token, morph })}
+          />
         </div>
       );
     }

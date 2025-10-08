@@ -11,6 +11,7 @@ export default function SidebarRight() {
   const t = useTranslation();
   const enabled = useSelector((state) => state.morphology);
   const currentChapter = useSelector((state) => state.navigation.value.chapter);
+  const separatorBefore = ["nominative", "lemma", "imperative", "comparative"];
 
   return (
     <aside className={styles.rightSide}>
@@ -36,13 +37,17 @@ export default function SidebarRight() {
           {morphologyConfig
             .filter((morph) => morph.fromChapter <= currentChapter)
             .map((morph) => (
-              <CustomCheckbox
-                key={morph.key}
-                label={t(morph.key)}
-                labelClassName={morph.key}
-                checked={enabled[morph.key]}
-                onChange={() => dispatch(toggleMorphology(morph.key))}
-              />
+              <div key={morph.key}>
+                {separatorBefore.includes(morph.key) && (
+                  <div className="separator"></div>
+                )}
+                <CustomCheckbox
+                  label={t(morph.key)}
+                  labelClassName={morph.key}
+                  checked={enabled[morph.key]}
+                  onChange={() => dispatch(toggleMorphology(morph.key))}
+                />
+              </div>
             ))}
         </div>
       </div>

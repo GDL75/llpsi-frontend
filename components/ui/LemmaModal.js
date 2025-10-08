@@ -10,13 +10,13 @@ export default function LemmaModal({ lemma, onClose }) {
         className={styles.lemmaModal}
         onClick={(e) => e.stopPropagation()} // empêche la fermeture en cliquant sur le contenu
       >
-        {lemma.image && (
-          <div className={styles.imageContainer}>
-            <img src={lemma.image} alt={lemma.title} />
-          </div>
-        )}
         <div className={styles.content}>
           <h3>{lemma.title}</h3>
+          {lemma.image && (
+            <div className={styles.imageContainer}>
+              <img src={lemma.image} alt={lemma.title} />
+            </div>
+          )}
           <Text chapter={lemma} />
         </div>
       </div>

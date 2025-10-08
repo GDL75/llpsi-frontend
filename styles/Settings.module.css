@@ -21,7 +21,3 @@
   z-index: 10000; /* i.e. above the rest, brought to front */
   box-shadow: 4px 4px 8px rgba(2, 2, 2, 0.5);
 }
-.separator {
-  border-bottom: 2px solid var(--color-3);
-  margin: 10px 0px;
-}

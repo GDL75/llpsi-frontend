@@ -15,7 +15,8 @@ const translations = {
   gerund: { en: "Gerund", fr: "Gérondif", la: "Gerundivus" },
   grammar: { en: "Grammar", fr: "Grammaire", la: "Grammatica" },
   language: { en: "Language", fr: "Langue", la: "Lingua" },
-  indeclinable: { en: "Indeclinable", fr: "Indéclinable", la: "xxxxxxx" },
+  lemma: { en: "Lemma", fr: "Lemme", la: "Lemma" }, // not official translation on purpose
+  indeclinable: { en: "Indeclinable", fr: "Indéclinable", la: "Indeclinabilis" },
   imperative: { en: "Imperative", fr: "Impératif", la: "Imperativus" },
   light: { en: "Light", fr: "Clair", la: "Clarus" },
   locative: { en: "Locative", fr: "Locatif", la: "Locativus" },
