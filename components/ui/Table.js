@@ -12,24 +12,36 @@ export default function Table({ table, renderCell }) {
     (key) => key !== "rowName"
   );
 
-  // Couleur de la cellule en haut à gauche (elle ne peut aller directement en in-line style)
+  // Custom color for column headers if they represent gender
   const rootStyles = getComputedStyle(document.documentElement);
-  const colorR1C1 = rootStyles
-    .getPropertyValue(table.name.backgroundColor)
-    .trim();
+  const colorGender = {
+    masculine: rootStyles.getPropertyValue("--color-masculine").trim(),
+    feminine: rootStyles.getPropertyValue("--color-feminine").trim(),
+    neuter: rootStyles.getPropertyValue("--color-neuter").trim(),
+  };
 
   return (
     <table className={styles.table}>
       <thead>
         <tr>
           <th
-            className={styles.headerCell}
-            style={{ backgroundColor: colorR1C1 }}
+            className={styles.columnHeader}
+            style={
+              colorGender[table.r1c1] && {
+                // if a gender -> background color
+                backgroundColor: colorGender[table.r1c1],
+              }
+            }
           >
-            {t(table.name.title)}
+            {t(table.r1c1)}
           </th>
           {columns.map((col) => (
-            <th key={col} className={styles.headerCell}>
+            <th
+              key={col}
+              className={styles.columnHeader}
+              // if a gender -> background color :
+              style={colorGender[col] && { backgroundColor: colorGender[col] }}
+            >
               {t(col)}
             </th>
           ))}
@@ -37,19 +49,30 @@ export default function Table({ table, renderCell }) {
       </thead>
 
       <tbody>
-        {table.cells.map((row, i) => (
-          <tr key={i}>
-            <td className={styles.rowHeader}>{t(row.rowName)}</td>
-            {columns.map((col) => (
-              <td key={col} className={styles.cell}>
-                {renderCell
-                  ? // 3 possible arguments: cell, row header, column header
-                    renderCell(row[col], row.rowName, col)
-                  : row[col]}{" "}
-              </td>
-            ))}
-          </tr>
-        ))}
+        {table.cells.map((row, i) => {
+          if (row.separator) {
+            return (
+              <tr key={`sep-${i}`}>
+                <td
+                  colSpan={columns.length + 1}
+                  style={{ borderBottom: "3px solid black" }}
+                ></td>
+              </tr>
+            );
+          }
+          return (
+            <tr key={i}>
+              <td className={styles.rowHeader}>{t(row.rowName)}</td>
+              {columns.map((col) => (
+                <td key={col} className={styles.cell}>
+                  {renderCell
+                    ? renderCell(row[col], row.rowName, col)
+                    : row[col]}
+                </td>
+              ))}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

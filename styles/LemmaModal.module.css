@@ -13,7 +13,7 @@
 
 .lemmaModal {
   background-color: var(--background);
-  border: 1px solid var(--color-2);
+  border: 1px solid grey;
   border-radius: 10px;
   max-width: 80%;
   max-height: 80%;

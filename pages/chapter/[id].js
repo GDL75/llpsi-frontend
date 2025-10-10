@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import MainLayout from "components/layout/MainLayout";
-import Text from "components/layout/Text";
+import Text from "components/chapters/Text";
+import Vocabulary from "components/chapters/Vocabulary";
 import { chapters } from "data/chapters"; // means: from "data/chapters/index.js";
 import LemmaModal from "ui/LemmaModal";
 
@@ -19,6 +20,7 @@ export default function ChapterPage() {
   const {
     chapter,
     lemmas,
+    vocabulary,
     // grammar,
     // exercises
   } = chapterData;
@@ -51,7 +53,7 @@ export default function ChapterPage() {
               loading="lazy"
               className="responsive-img" // defined in globals.css
             />
-            <Text chapter={chapter} openLemma={handleOpenLemma} />
+            <Text data={chapter} openLemma={handleOpenLemma} />
             {openLemma && (
               <LemmaModal lemma={openLemma} onClose={handleCloseLemma} />
             )}
@@ -62,7 +64,7 @@ export default function ChapterPage() {
       case "exercises":
         return <p>Voici les exercices du chapitre {chapterData.number}.</p>;
       case "vocabulary":
-        return <p>Voici le vocabulaire du chapitre {chapterData.number}.</p>;
+        return <Vocabulary data={vocabulary} openLemma={handleOpenLemma} />;
       default:
         return <p>Sélectionne une rubrique.</p>;
     }

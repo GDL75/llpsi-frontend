@@ -6,7 +6,7 @@
   font-size: var(--fs-p);
 }
 
-.headerCell {
+.columnHeader {
   border: 1px solid #ccc;
   padding: 0.5rem 1rem;
   text-align: left;

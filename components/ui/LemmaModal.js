@@ -1,5 +1,5 @@
 import styles from "styles/LemmaModal.module.css";
-import Text from "layout/Text";
+import Text from "components/chapters/Text";
 
 export default function LemmaModal({ lemma, onClose }) {
   if (!lemma) return null;
@@ -25,7 +25,7 @@ export default function LemmaModal({ lemma, onClose }) {
           <div className={styles.content}>
             <h3>{lemma.title}</h3>
             {image}
-            <Text chapter={lemma} />
+            <Text data={lemma} />
           </div>
         ) : (
           // Portrait -> two columns : image + rest of data
@@ -33,7 +33,7 @@ export default function LemmaModal({ lemma, onClose }) {
             {image}
             <div className={styles.content}>
               <h3>{lemma.title}</h3>
-              <Text chapter={lemma} />
+              <Text data={lemma} />
             </div>
           </>
         )}

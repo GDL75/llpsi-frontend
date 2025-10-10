@@ -43,10 +43,7 @@ const lemmas09 = {
     text: [
       {
         table: {
-          name: {
-            title: "feminine",
-            backgroundColor: "--color-feminine",
-          },
+          r1c1: "feminine",
           cells: [
             { rowName: "nominative", singular: "ov-is", plural: "ov-ēs" },
             { rowName: "accusative", singular: "ov-em", plural: "ov-ēs" },
@@ -66,10 +63,7 @@ const lemmas09 = {
     text: [
       {
         table: {
-          name: {
-            title: "masculine",
-            backgroundColor: "--color-masculine",
-          },
+          r1c1: "masculine",
           cells: [
             { rowName: "nominative", singular: "pān-is", plural: "pān-ēs" },
             { rowName: "accusative", singular: "pān-em", plural: "pān-ēs" },
@@ -214,10 +208,7 @@ const lemmas09 = {
     text: [
       {
         table: {
-          name: {
-            title: "masculine",
-            backgroundColor: "--color-masculine",
-          },
+          r1c1: "masculine",
           cells: [
             { rowName: "nominative", singular: "pāstor-", plural: "pāstōr-ēs" },
             {

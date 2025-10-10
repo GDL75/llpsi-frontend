@@ -2,7 +2,7 @@ import React from "react";
 import { useMorph } from "utils/useMorph";
 import Table from "ui/Table";
 
-export default function Text({ chapter, openLemma }) {
+export default function Text({ data, openLemma }) {
   const m = useMorph();
 
   const paragraphs = [];
@@ -22,7 +22,7 @@ export default function Text({ chapter, openLemma }) {
     }
   };
 
-  chapter.text?.forEach((item, index) => {
+  data.text?.forEach((item, index) => {
     // --- cas d'un mot ---
     if (item.token) {
       let tokenElement = m(item);
@@ -103,5 +103,5 @@ export default function Text({ chapter, openLemma }) {
   // --- ajoute le dernier paragraphe s'il reste du contenu ---
   flushParagraph("last");
 
-  return <div className="chapter">{paragraphs}</div>;
+  return <div className="xxxxx">{paragraphs}</div>;
 }
