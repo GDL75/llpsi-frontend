@@ -30,14 +30,14 @@ export default function Vocabulary({ data, openLemma }) {
     "interjection",
   ];
 
-  // --- 🔹 1. Grouper par type
+  // --- 1️⃣ Grouper par type
   const groupedByType = CATEGORY_ORDER.reduce((acc, type) => {
     const items = data.filter((w) => w.type === type);
     if (items.length > 0) acc[type] = items;
     return acc;
   }, {});
 
-  // --- 🔹 2. Sous-groupes (déclinaisons / conjugaisons)
+  // --- 2️⃣ Sous-groupes
   const getSubgroups = (type, words) => {
     if (["noun", "adjective", "verb"].includes(type)) {
       const keyMap = {
@@ -47,22 +47,20 @@ export default function Vocabulary({ data, openLemma }) {
       };
       const key = keyMap[type];
       const groups = {};
-
       words.forEach((w) => {
         const num = w[key] || 0;
         if (!groups[num]) groups[num] = [];
         groups[num].push(w);
       });
-
       return Object.entries(groups)
         .sort(([a], [b]) => a - b)
         .map(([num, words]) => {
-          let title;
-          if (num === "0") {
-            title = type === "verb" ? t("irregular") : t("indeclinable");
-          } else {
-            title = t(keyMap[type]);
-          }
+          let title =
+            num === "0"
+              ? type === "verb"
+                ? t("irregular")
+                : t("indeclinable")
+              : t(keyMap[type]);
           return {
             title,
             num,
@@ -72,7 +70,6 @@ export default function Vocabulary({ data, openLemma }) {
           };
         });
     }
-
     return [
       {
         title: null,
@@ -83,9 +80,8 @@ export default function Vocabulary({ data, openLemma }) {
     ];
   };
 
-  // --- 🔹 3. Fonction isolée : rendu d’un mot
+  // --- 3️⃣ Rendu d’un mot
   const renderWord = (word) => {
-    // ---------------------- NOUNS ----------------------
     if (word.type === "noun") {
       return (
         <>
@@ -94,7 +90,6 @@ export default function Vocabulary({ data, openLemma }) {
             morph: word.forms.cells[0].rowName,
             gender: word.gender,
           })}
-
           {currentChapter > 1 && (
             <>
               {", "}
@@ -105,11 +100,9 @@ export default function Vocabulary({ data, openLemma }) {
               })}
             </>
           )}
-
           {`, ${genderAbbreviation[word.gender]}`}
         </>
       );
-      // ---------------------- ADJECTIVES & PRONOUNS ----------------------
     } else if (word.type === "adjective" || word.type === "pronoun") {
       return (
         <>
@@ -118,13 +111,13 @@ export default function Vocabulary({ data, openLemma }) {
             morph: "nominative",
             gender: "masculine",
           })}
-          {", "}
+          ,{" "}
           {m({
             token: word.forms.cells[0].feminine,
             morph: "nominative",
             gender: "feminine",
           })}
-          {", "}
+          ,{" "}
           {m({
             token: word.forms.cells[0].neuter,
             morph: "nominative",
@@ -132,47 +125,56 @@ export default function Vocabulary({ data, openLemma }) {
           })}
         </>
       );
-      // ---------------------- VERBS ----------------------
     } else if (word.type === "verb") {
       return word.llpsi;
-      // ---------------------- ALL OTHER WORDS ----------------------
     } else {
       return word.word;
     }
   };
 
-  // --- 🔹 4. Rendu principal
-  return (
-    <div className={styles.vocabulary}>
-      {Object.entries(groupedByType).map(([type, words]) => (
-        <div key={type}>
-          <h4>{t(type)}</h4>
+  // --- 4️⃣ Colonnes : première = 3 premières catégories, deuxième = reste
+  const firstCol = CATEGORY_ORDER.slice(0, 3);
+  const secondCol = CATEGORY_ORDER.slice(3);
+  const columns = [firstCol, secondCol];
 
-          {getSubgroups(type, words).map((subgroup, i) => (
-            <div key={i}>
-              {subgroup.title && (
-                <h5>
-                  {subgroup.num > 0 && ordinalNumber(
+  // --- 5️⃣ Rendu
+  const renderTypeBlock = (type) =>
+    groupedByType[type] && (
+      <div key={type}>
+        <h4>{t(type)}</h4>
+        {getSubgroups(type, groupedByType[type]).map((subgroup, i) => (
+          <div key={i}>
+            {subgroup.title && (
+              <h5>
+                {subgroup.num > 0 &&
+                  ordinalNumber(
                     Number(subgroup.num),
                     language,
                     "feminine"
                   )}{" "}
-                  {subgroup.title}
-                </h5>
-              )}
+                {subgroup.title}
+              </h5>
+            )}
+            {subgroup.words.map((word) => (
+              <p
+                key={word.id}
+                className={styles.word}
+                onClick={() => openLemma(word)}
+                style={{ marginTop: 0 }}
+              >
+                {renderWord(word)}
+              </p>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
 
-              {subgroup.words.map((word) => (
-                <p
-                  key={word.id}
-                  className={styles.word}
-                  onClick={() => openLemma(word)}
-                  style={{ marginTop: "0px" }}
-                >
-                  {renderWord(word)}
-                </p>
-              ))}
-            </div>
-          ))}
+  return (
+    <div className={styles.vocabColumns}>
+      {columns.map((colTypes, colIndex) => (
+        <div className={styles.column} key={colIndex}>
+          {colTypes.map(renderTypeBlock)}
         </div>
       ))}
     </div>

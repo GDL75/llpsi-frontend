@@ -1,3 +1,4 @@
+import styles from "styles/[id].module.css";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
@@ -64,7 +65,18 @@ export default function ChapterPage() {
       case "exercises":
         return <p>Voici les exercices du chapitre {chapterData.number}.</p>;
       case "vocabulary":
-        return <Vocabulary data={vocabulary} openLemma={handleOpenLemma} />;
+        return (
+          <div className={styles.vocabPage}>
+            <div className={styles.vocabContainer}>
+              <Vocabulary data={vocabulary} openLemma={handleOpenLemma} />
+            </div>
+            <div className={styles.lemmaPanel}>
+              {openLemma && (
+                <LemmaModal lemma={openLemma} onClose={handleCloseLemma} />
+              )}
+            </div>
+          </div>
+        );
       default:
         return <p>Sélectionne une rubrique.</p>;
     }

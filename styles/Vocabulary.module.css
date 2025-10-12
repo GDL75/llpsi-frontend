@@ -1,0 +1,11 @@
+.vocabColumns {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  width:100%
+}
+
+.column {
+  flex: 1;
+  min-width: 0;
+}
