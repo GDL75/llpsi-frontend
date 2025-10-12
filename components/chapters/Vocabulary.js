@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import styles from "styles/Vocabulary.module.css";
 import { useTranslation } from "data/translation/useTranslation";
 import { useMorph } from "utils/useMorph";
+import { ordinalNumber } from "utils/numbers";
 
 export default function Vocabulary({ data, openLemma }) {
   const t = useTranslation();
   const m = useMorph();
   const currentChapter = useSelector((state) => state.navigation.value.chapter);
+  const language = useSelector((state) => state.settings.value.language);
 
   const genderAbbreviation = {
     masculine: "m.",
@@ -57,14 +59,13 @@ export default function Vocabulary({ data, openLemma }) {
         .map(([num, words]) => {
           let title;
           if (num === "0") {
-            title = type === "verb" ? "Irregular" : "Indeclinable";
-          } else if (type === "verb") {
-            title = `${num}ᵗʰ conjugation`;
+            title = type === "verb" ? t("irregular") : t("indeclinable");
           } else {
-            title = `${num}ᵗʰ declension`;
+            title = t(keyMap[type]);
           }
           return {
             title,
+            num,
             words: words.sort((a, b) =>
               a.word.localeCompare(b.word, "la", { sensitivity: "base" })
             ),
@@ -84,6 +85,7 @@ export default function Vocabulary({ data, openLemma }) {
 
   // --- 🔹 3. Fonction isolée : rendu d’un mot
   const renderWord = (word) => {
+    // ---------------------- NOUNS ----------------------
     if (word.type === "noun") {
       return (
         <>
@@ -107,6 +109,7 @@ export default function Vocabulary({ data, openLemma }) {
           {`, ${genderAbbreviation[word.gender]}`}
         </>
       );
+      // ---------------------- ADJECTIVES & PRONOUNS ----------------------
     } else if (word.type === "adjective" || word.type === "pronoun") {
       return (
         <>
@@ -129,8 +132,10 @@ export default function Vocabulary({ data, openLemma }) {
           })}
         </>
       );
+      // ---------------------- VERBS ----------------------
     } else if (word.type === "verb") {
       return word.llpsi;
+      // ---------------------- ALL OTHER WORDS ----------------------
     } else {
       return word.word;
     }
@@ -145,7 +150,16 @@ export default function Vocabulary({ data, openLemma }) {
 
           {getSubgroups(type, words).map((subgroup, i) => (
             <div key={i}>
-              {subgroup.title && <h5>{subgroup.title}</h5>}
+              {subgroup.title && (
+                <h5>
+                  {subgroup.num > 0 && ordinalNumber(
+                    Number(subgroup.num),
+                    language,
+                    "feminine"
+                  )}{" "}
+                  {subgroup.title}
+                </h5>
+              )}
 
               {subgroup.words.map((word) => (
                 <p

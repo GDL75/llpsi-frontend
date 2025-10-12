@@ -2,7 +2,7 @@ import styles from "styles/SidebarLeft.module.css";
 import { setChapter } from "reducers/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "data/translation/useTranslation";
-import { romanNumber } from "utils/romanNumber";
+import { romanNumber } from "utils/numbers";
 
 export default function SidebarLeft() {
   const dispatch = useDispatch();
