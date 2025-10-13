@@ -70,14 +70,22 @@
 body.morph-lemma .lemma {
   text-decoration: underline;
   text-decoration-thickness: 1px; 
-  text-underline-offset: 2px; 
+  text-underline-offset: 3px; 
   text-decoration-color: gray;
   cursor: pointer;
   transition: text-decoration-color 0.2s ease;
 }
+body.morph-lemma .lemma:hover {
+  text-decoration-thickness: 3px; 
+}
 .lemma:hover {
-  /* not in nody on purpose: bold applies even when Lemma is unchecked*/
-  font-weight: var(--fw-bold);
+  /* not in body on purpose: format applies even when Lemma is unchecked*/
+  text-decoration: underline;
+  text-decoration-thickness: 3px; 
+  text-underline-offset: 3px; 
+  text-decoration-color: gray;
+  cursor: pointer;
+  transition: text-decoration-color 0.2s ease;
 }
 body.morph-masculine .masculine {
   text-shadow: 0px 2px 8px var(--color-masculine);

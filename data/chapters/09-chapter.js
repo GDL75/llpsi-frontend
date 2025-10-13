@@ -1,5 +1,5 @@
 const chapter09 = {
-  number: 9,
+  chapterId: 9,
   title: "Pastor et oves",
   text: [
     { token: "H-ic", gender: "masculine", morph: "nominative", suffix: " " },
@@ -197,7 +197,6 @@ const chapter09 = {
     { token: "Rōm-ā", gender: "feminine", morph: "ablative", suffix: " " },
     {
       token: "Brundisi-um",
-      gender: "neuter",
       morph: "accusative",
       suffix: " ",
     },

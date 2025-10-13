@@ -1,5 +1,5 @@
 import styles from "styles/LemmaModal.module.css";
-import Text from "components/chapters/Text";
+import Text from "components/ui/Text";
 
 export default function LemmaModal({ lemma, onClose }) {
   if (!lemma) return null;

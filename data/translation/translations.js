@@ -52,6 +52,7 @@ const translations = {
   signin: { en: "Sign in", fr: "Connexion", la: "Intra" },
   signup: { en: "Sign up", fr: "Inscription", la: "Adscribe tē" },
   singular: { en: "Singular", fr: "Singulier", la: "Singulāris" },
+  "sing/plur": { en: "sing./plur.", fr: "sing./plur.", la: "sing./plur." },
   subjunctive: { en: "Subjunctive", fr: "Subjonctif", la: "Subjunctīvus" },
   superlative: { en: "Superlative", fr: "Superlatif", la: "Superlativus" },
   text: { en: "Text", fr: "Texte", la: "Textus" },

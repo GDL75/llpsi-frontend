@@ -3,10 +3,11 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import MainLayout from "components/layout/MainLayout";
-import Text from "components/chapters/Text";
+import Text from "components/ui/Text";
 import Vocabulary from "components/chapters/Vocabulary";
 import { chapters } from "data/chapters"; // means: from "data/chapters/index.js";
-import LemmaModal from "ui/LemmaModal";
+import LemmaModal from "components/chapters/LemmaModal";
+import VocabularyModal from "components/chapters/VocabularyModal";
 
 export default function ChapterPage() {
   const router = useRouter();
@@ -28,7 +29,12 @@ export default function ChapterPage() {
 
   if (!id) return null; // needed because id can be null at first render. Must be placed AFTER all other hooks
   const handleOpenLemma = (lemmaId) => {
-    const lemma = lemmas[lemmaId];
+    let lemma = null;
+    if (currentSection === "text") {
+      lemma = lemmas[lemmaId];
+    } else if (currentSection === "vocabulary") {
+      lemma = lemmaId;
+    }
     setOpenLemma(lemma);
   };
 
@@ -72,7 +78,7 @@ export default function ChapterPage() {
             </div>
             <div className={styles.lemmaPanel}>
               {openLemma && (
-                <LemmaModal lemma={openLemma} onClose={handleCloseLemma} />
+                <VocabularyModal vocab={openLemma} onClose={handleCloseLemma} />
               )}
             </div>
           </div>

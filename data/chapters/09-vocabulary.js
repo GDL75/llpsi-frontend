@@ -2,7 +2,7 @@ const vocabulary09 = [
   {
     id: "herba", // without macron accents
     word: "herba",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
@@ -22,7 +22,7 @@ const vocabulary09 = [
   {
     id: "silva", // without macron accents
     word: "silva",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
@@ -42,7 +42,7 @@ const vocabulary09 = [
   {
     id: "terra", // without macron accents
     word: "terra",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
@@ -62,7 +62,7 @@ const vocabulary09 = [
   {
     id: "umbra", // without macron accents
     word: "umbra",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
@@ -82,7 +82,7 @@ const vocabulary09 = [
   {
     id: "caelum", // without macron accents
     word: "cælum",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "neuter",
     declension: 2, // from 1 to 5, 0 if undeclinable
@@ -103,7 +103,7 @@ const vocabulary09 = [
   {
     id: "campus", // without macron accents
     word: "campus",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
@@ -123,7 +123,7 @@ const vocabulary09 = [
   {
     id: "cibus", // without macron accents
     word: "cibus",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
@@ -143,7 +143,7 @@ const vocabulary09 = [
   {
     id: "lupus", // without macron accents
     word: "lupus",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
@@ -163,7 +163,7 @@ const vocabulary09 = [
   {
     id: "modus", // without macron accents
     word: "modus",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
@@ -183,7 +183,7 @@ const vocabulary09 = [
   {
     id: "rivus", // without macron accents
     word: "rīvus",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
@@ -204,7 +204,7 @@ const vocabulary09 = [
   {
     id: "vestigium", // without macron accents
     word: "vestigium",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "neuter",
     declension: 2, // from 1 to 5, 0 if undeclinable
@@ -224,7 +224,7 @@ const vocabulary09 = [
   {
     id: "arbor", // without macron accents
     word: "arbor",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -244,7 +244,7 @@ const vocabulary09 = [
   {
     id: "canis", // without macron accents
     word: "canis",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "both",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -264,7 +264,7 @@ const vocabulary09 = [
   {
     id: "clamor", // without macron accents
     word: "clāmor",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -284,7 +284,7 @@ const vocabulary09 = [
   {
     id: "collis", // without macron accents
     word: "collis",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -304,7 +304,7 @@ const vocabulary09 = [
   {
     id: "declinatio", // without macron accents
     word: "dēclīnātiō",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -348,7 +348,7 @@ const vocabulary09 = [
   {
     id: "dens", // without macron accents
     word: "dēns",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -368,7 +368,7 @@ const vocabulary09 = [
   {
     id: "mons", // without macron accents
     word: "mōns",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -388,7 +388,7 @@ const vocabulary09 = [
   {
     id: "nubes", // without macron accents
     word: "nūbēs",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -408,7 +408,7 @@ const vocabulary09 = [
   {
     id: "ovis", // without macron accents
     word: "ovis",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -424,12 +424,12 @@ const vocabulary09 = [
       ],
     },
     image: "/images/09-ovis.png",
-    translation: { en: "sheep", fr: "brebis" },
+    translation: { en: "sheep", fr: "brebis, mouton" },
   },
   {
     id: "panis", // without macron accents
     word: "pānis",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -450,7 +450,7 @@ const vocabulary09 = [
   {
     id: "pastor", // without macron accents
     word: "pāstor",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -471,7 +471,7 @@ const vocabulary09 = [
   {
     id: "sol", // without macron accents
     word: "sōl",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -491,7 +491,7 @@ const vocabulary09 = [
   {
     id: "timor", // without macron accents
     word: "timor",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -511,7 +511,7 @@ const vocabulary09 = [
   {
     id: "vallis", // without macron accents
     word: "vallis",
-    chapter: 9,
+    chapterId: 9,
     type: "noun",
     gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
@@ -531,7 +531,7 @@ const vocabulary09 = [
   {
     id: "albus", // without macron accents
     word: "albus",
-    chapter: 9,
+    chapterId: 9,
     type: "adjective",
     class: 1, // from 1 to 2
     forms: {
@@ -617,7 +617,7 @@ const vocabulary09 = [
   {
     id: "niger", // without macron accents
     word: "niger",
-    chapter: 9,
+    chapterId: 9,
     type: "adjective",
     class: 1, // from 1 to 2
     forms: {
@@ -703,7 +703,7 @@ const vocabulary09 = [
   {
     id: "balo", // without macron accents
     word: "bālō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "bālat, -ant",
@@ -715,7 +715,7 @@ const vocabulary09 = [
   {
     id: "declino", // without macron accents
     word: "dēclīnō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "dēclīnat, -ant",
@@ -727,7 +727,7 @@ const vocabulary09 = [
   {
     id: "erro", // without macron accents
     word: "errō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "errat, -ant",
@@ -739,7 +739,7 @@ const vocabulary09 = [
   {
     id: "latro", // without macron accents
     word: "lātrō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "lātrat, -ant",
@@ -751,7 +751,7 @@ const vocabulary09 = [
   {
     id: "ululo", // without macron accents
     word: "ululō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "ululat, -ant",
@@ -763,7 +763,7 @@ const vocabulary09 = [
   {
     id: "iaceo", // without macron accents
     word: "iaceō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 2, // from 1 to 4, 0 if irregular
     llpsi: "iacet, -ent",
@@ -774,7 +774,7 @@ const vocabulary09 = [
   {
     id: "luceo", // without macron accents
     word: "lūceō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 2, // from 1 to 4, 0 if irregular
     llpsi: "lūcet, -ent",
@@ -785,7 +785,7 @@ const vocabulary09 = [
   {
     id: "accurro", // without macron accents
     word: "accurrō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "accurrit, -unt",
@@ -797,7 +797,7 @@ const vocabulary09 = [
   {
     id: "bibo", // without macron accents
     word: "bibō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "bibit, -unt",
@@ -809,7 +809,7 @@ const vocabulary09 = [
   {
     id: "ducō", // without macron accents
     word: "dūcō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "dūcit, -unt",
@@ -821,7 +821,7 @@ const vocabulary09 = [
   {
     id: "impono", // without macron accents
     word: "impōnō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "impōnit, -unt",
@@ -833,7 +833,7 @@ const vocabulary09 = [
   {
     id: "peto", // without macron accents
     word: "petō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "petit, -unt",
@@ -848,7 +848,7 @@ const vocabulary09 = [
   {
     id: "quaero", // without macron accents
     word: "quærō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "quærit, -unt",
@@ -860,7 +860,7 @@ const vocabulary09 = [
   {
     id: "relinquo", // without macron accents
     word: "relinquō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "relinquit, -unt",
@@ -872,7 +872,7 @@ const vocabulary09 = [
   {
     id: "reperio", // without macron accents
     word: "reperiō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 4, // from 1 to 4, 0 if irregular
     llpsi: "reperit, -iunt",
@@ -884,7 +884,7 @@ const vocabulary09 = [
   {
     id: "edo", // without macron accents
     word: "edō",
-    chapter: 9,
+    chapterId: 9,
     type: "verb",
     conjugation: 0, // from 1 to 4, 0 if irregular
     llpsi: "ēst, edunt",
@@ -896,14 +896,14 @@ const vocabulary09 = [
   {
     id: "undecentum", // without macron accents
     word: "ūndēcentum",
-    chapter: 9,
+    chapterId: 9,
     type: "number",
     translation: { en: "ninety-nine", fr: "quatre-vingt-dix-neuf" },
   },
   {
     id: "ipse", // without macron accents
     word: "ipse",
-    chapter: 9,
+    chapterId: 9,
     type: "pronoun",
     forms: {
       r1c1: "sing/plur", // as a reminder, top left cell label
@@ -989,21 +989,21 @@ const vocabulary09 = [
   {
     id: "supra_adv", // without macron accents
     word: "suprā",
-    chapter: 9,
+    chapterId: 9,
     type: "adverb",
     translation: { en: "above", fr: "au-dessus" },
   },
   {
     id: "procul", // without macron accents
     word: "procul",
-    chapter: 9,
+    chapterId: 9,
     type: "adverb",
     translation: { en: "far from, far away", fr: "loin de" },
   },
   {
     id: "supra_pre", // without macron accents
     word: "suprā",
-    chapter: 9,
+    chapterId: 9,
     type: "preposition",
     caseAfter: ["accusative"],
     translation: { en: "above", fr: "au-dessus" },
@@ -1011,7 +1011,7 @@ const vocabulary09 = [
   {
     id: "sub_pre", // without macron accents
     word: "sub",
-    chapter: 9,
+    chapterId: 9,
     type: "preposition",
     caseAfter: ["ablative", "accusative"],
     translation: { en: "under, near", fr: "sous" },
@@ -1019,14 +1019,14 @@ const vocabulary09 = [
   {
     id: "dum_con", // without macron accents
     word: "dum",
-    chapter: 9,
+    chapterId: 9,
     type: "conjunction",
     translation: { en: "while, as long as, till", fr: "pendant que" },
   },
   {
     id: "ut_con", // without macron accents
     word: "ut",
-    chapter: 9,
+    chapterId: 9,
     type: "conjunction",
     caseAfter: ["subjunctive", "indicative"],
     translation: { en: "like, as", fr: "quand, depuis que" },

@@ -142,8 +142,8 @@ export default function Vocabulary({ data, openLemma }) {
     groupedByType[type] && (
       <div key={type}>
         <h4>{t(type)}</h4>
-        {getSubgroups(type, groupedByType[type]).map((subgroup, i) => (
-          <div key={i}>
+        {getSubgroups(type, groupedByType[type]).map((subgroup) => (
+          <div key={`${type}-${subgroup.num}`}>
             {subgroup.title && (
               <h5>
                 {subgroup.num > 0 &&
@@ -156,13 +156,10 @@ export default function Vocabulary({ data, openLemma }) {
               </h5>
             )}
             {subgroup.words.map((word) => (
-              <p
-                key={word.id}
-                className={styles.word}
-                onClick={() => openLemma(word)}
-                style={{ marginTop: 0 }}
-              >
-                {renderWord(word)}
+              <p key={word.id} className={styles.wordContainer}>
+                <span className={styles.word} onClick={() => openLemma(word)}>
+                  {renderWord(word)}
+                </span>
               </p>
             ))}
           </div>
