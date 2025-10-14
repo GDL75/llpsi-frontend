@@ -4,9 +4,6 @@
 
 //  ⚠️ For those items with styleClass, the order is the one appearing in sidebarRight
 const morphologyConfig = [
-  { key: "type", fromChapter: 1 },
-  { key: "gender", fromChapter: 1 },
-  { key: "declension", fromChapter: 1 },
   { key: "masculine", styleClass: "morph-masculine", fromChapter: 1 },
   { key: "feminine", styleClass: "morph-feminine", fromChapter: 1 },
   { key: "neuter", styleClass: "morph-neuter", fromChapter: 2 },
@@ -30,7 +27,7 @@ const morphologyConfig = [
   { key: "perfect", fromChapter: 21 },
   { key: "supine", fromChapter: 22 },
   { key: "gerund", styleClass: "morph-gerund", fromChapter: 25 },
-  { key: "lemma", styleClass: "morph-lemma", fromChapter: 1 },
+  { key: "comment", styleClass: "morph-comment", fromChapter: 1 },
 ];
 
 export default morphologyConfig;

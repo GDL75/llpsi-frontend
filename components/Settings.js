@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLanguage, setTheme } from "reducers/settings";
 import { useTranslation } from "data/translation/useTranslation";
 import CustomRadio from "ui/CustomRadio";
-import ModalPortal from "components/chapters/ModalPortal";
+import ModalPortal from "components/ModalPortal";
 
 function Settings({ bColor, tColor, onClose }) {
   const t = useTranslation();

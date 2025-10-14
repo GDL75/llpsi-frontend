@@ -2,7 +2,7 @@ import React from "react";
 import { useMorph } from "utils/useMorph";
 import Table from "ui/Table";
 
-export default function Text({ data, openLemma }) {
+export default function Text({ data, openComment }) {
   const m = useMorph();
 
   const paragraphs = [];
@@ -30,11 +30,11 @@ export default function Text({ data, openLemma }) {
       if (isItalic) tokenElement = <em>{tokenElement}</em>;
       if (isBold) tokenElement = <strong>{tokenElement}</strong>;
 
-      const styledToken = item.lemma ? (
+      const styledToken = item.comment ? (
         <span
           key={`word-${index}`}
-          className="lemma"
-          onClick={() => openLemma(item.lemma)}
+          className="comment"
+          onClick={() => openComment(item.comment)}
         >
           {tokenElement}
         </span>

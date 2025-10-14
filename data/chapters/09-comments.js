@@ -1,6 +1,5 @@
-const lemmas09 = {
+const comments09 = {
   undecentum: {
-    chapterId: 9,
     title: "ūndēcentum",
     text: [
       {
@@ -13,7 +12,6 @@ const lemmas09 = {
     ],
   },
   rivus: {
-    chapterId: 9,
     title: "Rīvus, -ī, m, 2ª",
     image: { path: "/images/09-rivus.png", orientation: "landscape" },
     text: [
@@ -37,7 +35,6 @@ const lemmas09 = {
     ],
   },
   ovis: {
-    chapterId: 9,
     title: "ovis, -is, f, 3ª",
     image: { path: "/images/09-ovis.png", orientation: "landscape" },
     text: [
@@ -57,7 +54,6 @@ const lemmas09 = {
     ],
   },
   panis: {
-    chapterId: 9,
     title: "pānis, -is, m, 3ª",
     image: { path: "/images/09-panis.png", orientation: "landscape" },
     text: [
@@ -77,7 +73,6 @@ const lemmas09 = {
     ],
   },
   albus: {
-    chapterId: 9,
     title: "albus, -a, -um",
     image: { path: "/images/09-albusNiger.png", orientation: "landscape" },
     text: [
@@ -113,7 +108,6 @@ const lemmas09 = {
     ],
   },
   niger: {
-    chapterId: 9,
     title: "niger, -ra, -rum",
     image: { path: "/images/09-albusNiger.png", orientation: "landscape" },
     text: [
@@ -149,7 +143,6 @@ const lemmas09 = {
     ],
   },
   est: {
-    chapterId: 9,
     title: "ēst edunt",
     text: [
       {
@@ -202,7 +195,6 @@ const lemmas09 = {
     ],
   },
   pastor: {
-    chapterId: 9,
     title: "pāstor, -is, m, 3ª",
     image: { path: "/images/09-pastor.png", orientation: "portrait" },
     text: [
@@ -231,4 +223,4 @@ const lemmas09 = {
   },
 };
 
-export default lemmas09;
+export default comments09;

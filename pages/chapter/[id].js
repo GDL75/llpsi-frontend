@@ -6,14 +6,14 @@ import MainLayout from "components/layout/MainLayout";
 import Text from "components/ui/Text";
 import Vocabulary from "components/chapters/Vocabulary";
 import { chapters } from "data/chapters"; // means: from "data/chapters/index.js";
-import LemmaModal from "components/chapters/LemmaModal";
+import CommentModal from "components/chapters/CommentModal";
 import VocabularyModal from "components/chapters/VocabularyModal";
 
 export default function ChapterPage() {
   const router = useRouter();
   const { id } = router.query;
 
-  const [openLemma, setOpenLemma] = useState(null);
+  const [openComment, setOpenComment] = useState(null);
   const currentSection = useSelector((state) => state.navigation.value.section);
 
   // Getting data from the requested chapter, needs to be AFTER the previous states
@@ -21,24 +21,24 @@ export default function ChapterPage() {
   if (!chapterData) return;
   const {
     chapter,
-    lemmas,
+    comments,
     vocabulary,
     // grammar,
     // exercises
   } = chapterData;
 
   if (!id) return null; // needed because id can be null at first render. Must be placed AFTER all other hooks
-  const handleOpenLemma = (lemmaId) => {
-    let lemma = null;
+  const handleOpenComment = (commentId) => {
+    let comment = null;
     if (currentSection === "text") {
-      lemma = lemmas[lemmaId];
+      comment = comments[commentId];
     } else if (currentSection === "vocabulary") {
-      lemma = lemmaId;
+      comment = commentId;
     }
-    setOpenLemma(lemma);
+    setOpenComment(comment);
   };
 
-  const handleCloseLemma = () => setOpenLemma(null);
+  const handleCloseComment = () => setOpenComment(null);
 
   if (!chapterData) {
     return (
@@ -60,9 +60,9 @@ export default function ChapterPage() {
               loading="lazy"
               className="responsive-img" // defined in globals.css
             />
-            <Text data={chapter} openLemma={handleOpenLemma} />
-            {openLemma && (
-              <LemmaModal lemma={openLemma} onClose={handleCloseLemma} />
+            <Text data={chapter} openComment={handleOpenComment} />
+            {openComment && (
+              <CommentModal comment={openComment} onClose={handleCloseComment} />
             )}
           </>
         );
@@ -74,11 +74,11 @@ export default function ChapterPage() {
         return (
           <div className={styles.vocabPage}>
             <div className={styles.vocabContainer}>
-              <Vocabulary data={vocabulary} openLemma={handleOpenLemma} />
+              <Vocabulary data={vocabulary} openComment={handleOpenComment} />
             </div>
-            <div className={styles.lemmaPanel}>
-              {openLemma && (
-                <VocabularyModal vocab={openLemma} onClose={handleCloseLemma} />
+            <div className={styles.commentPanel}>
+              {openComment && (
+                <VocabularyModal vocab={openComment} onClose={handleCloseComment} />
               )}
             </div>
           </div>

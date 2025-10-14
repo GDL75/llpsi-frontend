@@ -67,7 +67,7 @@
 }
 
 /* ========== Latin morphology ========== */
-body.morph-lemma .lemma {
+body.morph-comment .comment {
   text-decoration: underline;
   text-decoration-thickness: 1px; 
   text-underline-offset: 3px; 
@@ -75,11 +75,11 @@ body.morph-lemma .lemma {
   cursor: pointer;
   transition: text-decoration-color 0.2s ease;
 }
-body.morph-lemma .lemma:hover {
+body.morph-comment .comment:hover {
   text-decoration-thickness: 3px; 
 }
-.lemma:hover {
-  /* not in body on purpose: format applies even when Lemma is unchecked*/
+.comment:hover {
+  /* not in body on purpose: format applies even when Comment is unchecked*/
   text-decoration: underline;
   text-decoration-thickness: 3px; 
   text-underline-offset: 3px; 

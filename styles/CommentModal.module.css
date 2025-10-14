@@ -1,4 +1,4 @@
-.lemmaOverlay {
+.commentOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   z-index: 9999;
 }
 
-.lemmaModal {
+.commentModal {
   background-color: var(--background);
   border: 1px solid grey;
   border-radius: 10px;

@@ -11,7 +11,7 @@ export default function SidebarRight() {
   const t = useTranslation();
   const enabled = useSelector((state) => state.morphology);
   const currentChapter = useSelector((state) => state.navigation.value.chapter);
-  const separatorBefore = ["nominative", "lemma", "imperative", "comparative"];
+  const separatorBefore = ["nominative", "comment", "imperative", "comparative"];
 
   return (
     <aside className={styles.rightSide}>

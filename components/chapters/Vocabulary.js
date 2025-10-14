@@ -5,7 +5,7 @@ import { useTranslation } from "data/translation/useTranslation";
 import { useMorph } from "utils/useMorph";
 import { ordinalNumber } from "utils/numbers";
 
-export default function Vocabulary({ data, openLemma }) {
+export default function Vocabulary({ data, openComment }) {
   const t = useTranslation();
   const m = useMorph();
   const currentChapter = useSelector((state) => state.navigation.value.chapter);
@@ -157,7 +157,7 @@ export default function Vocabulary({ data, openLemma }) {
             )}
             {subgroup.words.map((word) => (
               <p key={word.id} className={styles.wordContainer}>
-                <span className={styles.word} onClick={() => openLemma(word)}>
+                <span className={styles.word} onClick={() => openComment(word)}>
                   {renderWord(word)}
                 </span>
               </p>

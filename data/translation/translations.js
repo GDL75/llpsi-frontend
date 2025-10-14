@@ -11,6 +11,7 @@ const translations = {
   class: { en: "Class", fr: "classe", la: "classis" },
   conjugation: { en: "Conjugation", fr: "conjugaison", la: "Conjugātiō" },
   conjunction: { en: "Conjunctions", fr: "Conjonctions", la: "Conjūctiōnēs" },
+  comment: { en: "Comment", fr: "Commentaire", la: "Commentātio" },
   comparative: { en: "Comparative", fr: "Comparatif", la: "Comparativus" },
   dark: { en: "Dark", fr: "Sombre", la: "Obscurus" },
   dative: { en: "Dative", fr: "Datif", la: "Dativus" },
@@ -22,7 +23,6 @@ const translations = {
   gerund: { en: "Gerund", fr: "Gérondif", la: "Gerundivus" },
   grammar: { en: "Grammar", fr: "Grammaire", la: "Grammatica" },
   language: { en: "Language", fr: "Langue", la: "Lingua" },
-  lemma: { en: "Lemma", fr: "Lemme", la: "Lemma" }, // not official translation on purpose
   indeclinable: {
     en: "Indeclinable",
     fr: "Indéclinable",

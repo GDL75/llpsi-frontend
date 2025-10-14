@@ -18,6 +18,7 @@ export default function VocabularyModal({ vocab }) {
     "infinitive",
     "perfect",
     "supine",
+    "note"
   ];
 
   // On filtre les clés qui existent effectivement pour ce mot
@@ -25,7 +26,7 @@ export default function VocabularyModal({ vocab }) {
 
   // from which chapter a key is available
   const chapFrom = (key) => {
-    return morphologyConfig.find((item) => item.key === key)?.fromChapter ;
+    return morphologyConfig.find((item) => item.key === key)?.fromChapter ?? 1;
   };
 
   return (

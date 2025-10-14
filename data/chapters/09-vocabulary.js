@@ -449,6 +449,7 @@ const vocabulary09 = [
       ["alb-īs", "alb-īs", "alb-īs"],
       ["alb-ī", "alb-æ", "alb-a"],
     ],
+    image: "/images/09-albusNiger.png",
     translation: { en: "white", fr: "blanc" },
   },
   {
@@ -471,6 +472,7 @@ const vocabulary09 = [
       ["nigr-īs", "nigr-īs", "nigr-īs"],
       ["nigr-ī", "nigr-æ", "nigr-a"],
     ],
+    image: "/images/09-albusNiger.png",
     translation: { en: "black", fr: "noir" },
   },
   {
@@ -693,7 +695,7 @@ const vocabulary09 = [
       ["-", "-", "-"],
     ],
     translation: { en: "myself, yourself, etc.", fr: "soi-même" },
-    note: "genitive and dative irregular",
+    note: "⚠️ genitive and dative are irregular",
   },
   {
     id: "supra_adv", // without macron accents
@@ -714,7 +716,7 @@ const vocabulary09 = [
     word: "suprā",
     chapterId: 9,
     type: "preposition",
-    caseAfter: ["accusative"],
+    note: "+accusative",
     translation: { en: "above", fr: "au-dessus" },
   },
   {
@@ -722,7 +724,7 @@ const vocabulary09 = [
     word: "sub",
     chapterId: 9,
     type: "preposition",
-    caseAfter: ["accusative"],
+    note: "+accusative",
     translation: { en: "under, near", fr: "sous" },
   },
   {
@@ -737,7 +739,7 @@ const vocabulary09 = [
     word: "ut",
     chapterId: 9,
     type: "conjunction",
-    caseAfter: ["subjunctive", "indicative"],
+    note: "+subjunctive / +indicative",
     translation: { en: "like, as", fr: "quand, depuis que" },
   },
 ];
