@@ -319,7 +319,7 @@ const vocabulary09 = [
         {
           rowName: "accusative",
           singular: "dēclīnātiōn-em",
-          plural: "coll-ēs",
+          plural: "dēclīnātiōn-ēs",
         },
         {
           rowName: "genitive",
@@ -390,10 +390,10 @@ const vocabulary09 = [
     word: "nūbēs",
     chapterId: 9,
     type: "noun",
-    gender: "masculine",
+    gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
     forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
+      r1c1: "feminine", // as a reminder, top left cell label
       cells: [
         { rowName: "nominative", singular: "nūb-ēs", plural: "nūb-ēs" },
         { rowName: "accusative", singular: "nūb-em", plural: "nūb-ēs" },
@@ -403,7 +403,7 @@ const vocabulary09 = [
         { rowName: "vocative", singular: "nūb-ēs", plural: "nūb-ēs" },
       ],
     },
-    translation: { en: "mountain", fr: "montagne" },
+    translation: { en: "cloud", fr: "nuage" },
   },
   {
     id: "ovis", // without macron accents

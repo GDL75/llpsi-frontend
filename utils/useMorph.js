@@ -8,6 +8,8 @@ export function useMorph() {
   const m = ({ token, morph, gender }) => {
     let result;
 
+    if (token === "-") {return token}
+
     // === 1) Traitement de la morphologie ===
     if (morph) {
       const parts = token.split("-");
