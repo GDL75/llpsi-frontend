@@ -1,78 +1,92 @@
 import React from "react";
 import styles from "styles/Table.module.css";
+import { useSelector } from "react-redux";
 import { useTranslation } from "data/translation/useTranslation";
+import { useMorph } from "utils/useMorph";
+import morphologyConfig from "data/morphologyConfig";
 
-export default function Table({ table, renderCell }) {
-  if (!table || !table.cells || table.cells.length === 0) return null;
+export default function Table({ word }) {
+  if (!word || !word.forms || word.forms.length === 0) return null;
 
+  const currentChapter = useSelector((state) => state.navigation.value.chapter);
   const t = useTranslation();
+  const m = useMorph();
 
-  // On déduit les colonnes dynamiquement à partir des clés du premier objet
-  const columns = Object.keys(table.cells[0]).filter(
-    (key) => key !== "rowName"
-  );
+  // Définitions d'entêtes selon le type
+  let columnHeader = [];
+  let rowHeader = [];
 
-  // Custom color for column headers if they represent gender
-  const rootStyles = getComputedStyle(document.documentElement);
-  const colorGender = {
-    masculine: rootStyles.getPropertyValue("--color-masculine").trim(),
-    feminine: rootStyles.getPropertyValue("--color-feminine").trim(),
-    neuter: rootStyles.getPropertyValue("--color-neuter").trim(),
-  };
+  if (word.type === "noun") {
+    columnHeader = ["case", "singular", "plural"];
+    rowHeader = [
+      "nominative",
+      "accusative",
+      "genitive",
+      "dative",
+      "ablative",
+      "vocative",
+    ];
+  } else if (word.type === "pronoun" || word.type === "adjective") {
+    columnHeader = ["sing/plur", "masculine", "feminine", "neuter"];
+    rowHeader = [
+      "nominative",
+      "accusative",
+      "genitive",
+      "dative",
+      "ablative",
+      "vocative",
+      "nominative",
+      "accusative",
+      "genitive",
+      "dative",
+      "ablative",
+      "vocative",
+    ];
+  } else {
+    return null;
+  }
+
+  // Filters the cases depending on chapter
+  const visibleRows = rowHeader
+    .map((rowName, index) => {
+      const morphRule = morphologyConfig.find((m) => m.key === rowName);
+      const isVisible = !morphRule || currentChapter >= morphRule.fromChapter;
+      return isVisible ? { rowName, rowIndex: index } : null;
+    })
+    .filter(Boolean);
 
   return (
     <table className={styles.table}>
       <thead>
         <tr>
-          <th
-            className={styles.columnHeader}
-            style={
-              colorGender[table.r1c1] && {
-                // if a gender -> background color
-                backgroundColor: colorGender[table.r1c1],
-              }
-            }
-          >
-            {t(table.r1c1)}
-          </th>
-          {columns.map((col) => (
-            <th
-              key={col}
-              className={styles.columnHeader}
-              // if a gender -> background color :
-              style={colorGender[col] && { backgroundColor: colorGender[col] }}
-            >
-              {t(col)}
+          {columnHeader.map((header, i) => (
+            <th className={styles.columnHeader} key={i}>
+              {t(header)}
             </th>
           ))}
         </tr>
       </thead>
-
       <tbody>
-        {table.cells.map((row, i) => {
-          if (row.separator) {
-            return (
-              <tr key={`sep-${i}`}>
-                <td
-                  colSpan={columns.length + 1}
-                  style={{ borderBottom: "3px solid black" }}
-                ></td>
-              </tr>
-            );
-          }
-          return (
-            <tr key={i}>
-              <td className={styles.rowHeader}>{t(row.rowName)}</td>
-              {columns.map((col) => (
-                <td key={col} className={styles.cell}>
-                  {renderCell
-                    ? renderCell(row[col], row.rowName, col)
-                    : row[col]}
-                </td>
-              ))}
-            </tr>
-          );
-        })}
+        {visibleRows.map(({ rowName, rowIndex }) => (
+          <tr key={rowIndex}>
+            <td className={styles.rowHeader}>{t(rowName)}</td>
+            {word.forms[rowIndex]?.map((cell, colIndex) => (
+              <td
+                className={`${styles.cell} ${
+                  word.type === "noun"
+                    ? styles[word.gender]
+                    : styles[columnHeader[colIndex + 1]]
+                }`}
+                key={colIndex}
+              >
+                {m({
+                  token: cell,
+                  morph: rowName,
+                })}
+              </td>
+            ))}
+          </tr>
+        ))}
       </tbody>
     </table>
   );

@@ -1,24 +1,55 @@
 import styles from "styles/VocabularyModal.module.css";
-import Table from "ui/Table"
-import { useMorph } from "utils/useMorph";
+import { useSelector } from "react-redux";
+import Table from "ui/Table";
+import morphologyConfig from "data/morphologyConfig";
 
 export default function VocabularyModal({ vocab }) {
-  console.log("vocab", vocab);
-  const m = useMorph();
+  const currentChapter = useSelector((state) => state.navigation.value.chapter);
+
+  if (!vocab) return null;
+
+  // Ordre d’affichage voulu
+  const orderedKeys = [
+    "type",
+    "gender",
+    "declension",
+    "class",
+    "conjugation",
+    "infinitive",
+    "perfect",
+    "supine",
+  ];
+
+  // On filtre les clés qui existent effectivement pour ce mot
+  const visibleKeys = orderedKeys.filter((key) => vocab[key] !== undefined);
+
+  // from which chapter a key is available
+  const chapFrom = (key) => {
+    return morphologyConfig.find((item) => item.key === key)?.fromChapter ;
+  };
 
   return (
-    <aside className="vocab-modal">
-      <h3>{vocab.word}</h3>
-      {vocab.image && <img src={vocab.image} alt={vocab.word} />}
-      <p>
-        <strong>{vocab.translation.fr}</strong> ({vocab.translation.en})
-      </p>
+    <aside className={styles.vocabModal}>
+      <h3>{vocab.type === "verb" ? vocab.llpsi : vocab.word}</h3>
 
-      {vocab.forms && (
-        <Table
-          table={vocab.forms}
-          renderCell={(token, morph, gender) => m({ token, morph, gender })}
-        />
+      {/* Métadonnées grammaticales */}
+      {visibleKeys.map(
+        (key) =>
+          currentChapter >= chapFrom(key) && (
+            <p key={key}>
+              <strong>{key}</strong> : {vocab[key]}
+            </p>
+          )
+      )}
+
+      {/* Tableau des formes, si présent */}
+      {vocab.forms && <Table word={vocab} />}
+
+      {/* Image à la fin */}
+      {vocab.image && (
+        <div className={styles.imageContainer}>
+          <img src={vocab.image} alt={vocab.word} className={styles.image} />
+        </div>
       )}
     </aside>
   );

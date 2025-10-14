@@ -86,16 +86,16 @@ export default function Vocabulary({ data, openLemma }) {
       return (
         <>
           {m({
-            token: word.forms.cells[0].singular,
-            morph: word.forms.cells[0].rowName,
+            token: word.forms[0][0],
+            morph: "nominative",
             gender: word.gender,
           })}
           {currentChapter > 1 && (
             <>
               {", "}
               {m({
-                token: word.forms.cells[2].singular,
-                morph: word.forms.cells[2].rowName,
+                token: word.forms[2][0],
+                morph: "genitive",
                 gender: word.gender,
               })}
             </>
@@ -107,19 +107,19 @@ export default function Vocabulary({ data, openLemma }) {
       return (
         <>
           {m({
-            token: word.forms.cells[0].masculine,
+            token: word.forms[0][0],
             morph: "nominative",
             gender: "masculine",
           })}
           ,{" "}
           {m({
-            token: word.forms.cells[0].feminine,
+            token: word.forms[0][1],
             morph: "nominative",
             gender: "feminine",
           })}
           ,{" "}
           {m({
-            token: word.forms.cells[0].neuter,
+            token: word.forms[0][2],
             morph: "nominative",
             gender: "neuter",
           })}

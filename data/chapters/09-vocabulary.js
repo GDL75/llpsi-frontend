@@ -6,17 +6,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "feminine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "herb-a", plural: "herb-æ" },
-        { rowName: "accusative", singular: "herb-am", plural: "herb-ās" },
-        { rowName: "genitive", singular: "herb-æ", plural: "herb-ārum" },
-        { rowName: "dative", singular: "herb-æ", plural: "herb-īs" },
-        { rowName: "ablative", singular: "herb-ā", plural: "herb-īs" },
-        { rowName: "vocative", singular: "herb-a", plural: "herb-æ" },
-      ],
-    },
+    forms: [
+      ["herb-a", "herb-æ"],
+      ["herb-am", "herb-ās"],
+      ["herb-æ", "herb-ārum"],
+      ["herb-æ", "herb-īs"],
+      ["herb-ā", "herb-īs"],
+      ["herb-a", "herb-æ"],
+    ],
     translation: { en: "grass, herb", fr: "herbe" },
   },
   {
@@ -26,17 +23,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "feminine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "silv-a", plural: "silv-æ" },
-        { rowName: "accusative", singular: "silv-am", plural: "silv-ās" },
-        { rowName: "genitive", singular: "silv-æ", plural: "silv-ārum" },
-        { rowName: "dative", singular: "silv-æ", plural: "silv-īs" },
-        { rowName: "ablative", singular: "silv-ā", plural: "silv-īs" },
-        { rowName: "vocative", singular: "silv-a", plural: "silv-æ" },
-      ],
-    },
+    forms: [
+      ["silv-a", "silv-æ"],
+      ["silv-am", "silv-ās"],
+      ["silv-æ", "silv-ārum"],
+      ["silv-æ", "silv-īs"],
+      ["silv-ā", "silv-īs"],
+      ["silv-a", "silv-æ"],
+    ],
     translation: { en: "wood, forest", fr: "forêt" },
   },
   {
@@ -46,17 +40,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "feminine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "terr-a", plural: "terr-æ" },
-        { rowName: "accusative", singular: "terr-am", plural: "terr-ās" },
-        { rowName: "genitive", singular: "terr-æ", plural: "terr-ārum" },
-        { rowName: "dative", singular: "terr-æ", plural: "terr-īs" },
-        { rowName: "ablative", singular: "terr-ā", plural: "terr-īs" },
-        { rowName: "vocative", singular: "terr-a", plural: "terr-æ" },
-      ],
-    },
+    forms: [
+      ["terr-a", "terr-æ"],
+      ["terr-am", "terr-ās"],
+      ["terr-æ", "terr-ārum"],
+      ["terr-æ", "terr-īs"],
+      ["terr-ā", "terr-īs"],
+      ["terr-a", "terr-æ"],
+    ],
     translation: { en: "earth, ground, country", fr: "terre" },
   },
   {
@@ -66,17 +57,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "feminine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "umbr-a", plural: "umbr-æ" },
-        { rowName: "accusative", singular: "umbr-am", plural: "umbr-ās" },
-        { rowName: "genitive", singular: "umbr-æ", plural: "umbr-ārum" },
-        { rowName: "dative", singular: "umbr-æ", plural: "umbr-īs" },
-        { rowName: "ablative", singular: "umbr-ā", plural: "umbr-īs" },
-        { rowName: "vocative", singular: "umbr-a", plural: "umbr-æ" },
-      ],
-    },
+    forms: [
+      ["umbr-a", "umbr-æ"],
+      ["umbr-am", "umbr-ās"],
+      ["umbr-æ", "umbr-ārum"],
+      ["umbr-æ", "umbr-īs"],
+      ["umbr-ā", "umbr-īs"],
+      ["umbr-a", "umbr-æ"],
+    ],
     translation: { en: "shade, shadow", fr: "ombre" },
   },
   {
@@ -86,17 +74,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "neuter",
     declension: 2, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "neuter", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "cæl-um" },
-        { rowName: "accusative", singular: "cæl-um" },
-        { rowName: "genitive", singular: "cæl-ī" },
-        { rowName: "dative", singular: "cæl-ō" },
-        { rowName: "ablative", singular: "cæl-ō" },
-        { rowName: "vocative", singular: "cæl-e" },
-      ],
-    },
+    forms: [
+      ["cæl-um", "-"],
+      ["cæl-um", "-"],
+      ["cæl-ī", "-"],
+      ["cæl-ō", "-"],
+      ["cæl-ō", "-"],
+      ["cæl-e", "-"],
+    ],
     translation: { en: "sky, heaven", fr: "ciel" },
     note: "singularis tantum",
   },
@@ -107,17 +92,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "camp-us", plural: "camp-ī" },
-        { rowName: "accusative", singular: "camp-um", plural: "camp-ōs" },
-        { rowName: "genitive", singular: "camp-ī", plural: "camp-ōrum" },
-        { rowName: "dative", singular: "camp-ō", plural: "camp-īs" },
-        { rowName: "ablative", singular: "camp-ō", plural: "camp-īs" },
-        { rowName: "vocative", singular: "camp-e", plural: "camp-ī" },
-      ],
-    },
+    forms: [
+      ["camp-us", "camp-ī"],
+      ["camp-um", "camp-ōs"],
+      ["camp-ī", "camp-ōrum"],
+      ["camp-ō", "camp-īs"],
+      ["camp-ō", "camp-īs"],
+      ["camp-e", "camp-ī"],
+    ],
     translation: { en: "plain", fr: "champ" },
   },
   {
@@ -127,17 +109,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "cib-us", plural: "cib-ī" },
-        { rowName: "accusative", singular: "cib-um", plural: "cib-ōs" },
-        { rowName: "genitive", singular: "cib-ī", plural: "cib-ōrum" },
-        { rowName: "dative", singular: "cib-ō", plural: "cib-īs" },
-        { rowName: "ablative", singular: "cib-ō", plural: "cib-īs" },
-        { rowName: "vocative", singular: "cib-e", plural: "cib-ī" },
-      ],
-    },
+    forms: [
+      ["cib-us", "cib-ī"],
+      ["cib-um", "cib-ōs"],
+      ["cib-ī", "cib-ōrum"],
+      ["cib-ō", "cib-īs"],
+      ["cib-ō", "cib-īs"],
+      ["cib-e", "cib-ī"],
+    ],
     translation: { en: "food", fr: "nourriture, provision" },
   },
   {
@@ -147,17 +126,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "lup-us", plural: "lup-ī" },
-        { rowName: "accusative", singular: "lup-um", plural: "lup-ōs" },
-        { rowName: "genitive", singular: "lup-ī", plural: "lup-ōrum" },
-        { rowName: "dative", singular: "lup-ō", plural: "lup-īs" },
-        { rowName: "ablative", singular: "lup-ō", plural: "lup-īs" },
-        { rowName: "vocative", singular: "lup-e", plural: "lup-ī" },
-      ],
-    },
+    forms: [
+      ["lup-us", "lup-ī"],
+      ["lup-um", "lup-ōs"],
+      ["lup-ī", "lup-ōrum"],
+      ["lup-ō", "lup-īs"],
+      ["lup-ō", "lup-īs"],
+      ["lup-e", "lup-ī"],
+    ],
     translation: { en: "wolf", fr: "loup" },
   },
   {
@@ -167,17 +143,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "mod-us", plural: "mod-ī" },
-        { rowName: "accusative", singular: "mod-um", plural: "mod-ōs" },
-        { rowName: "genitive", singular: "mod-ī", plural: "mod-ōrum" },
-        { rowName: "dative", singular: "mod-ō", plural: "mod-īs" },
-        { rowName: "ablative", singular: "mod-ō", plural: "mod-īs" },
-        { rowName: "vocative", singular: "mod-e", plural: "mod-ī" },
-      ],
-    },
+    forms: [
+      ["mod-us", "mod-ī"],
+      ["mod-um", "mod-ōs"],
+      ["mod-ī", "mod-ōrum"],
+      ["mod-ō", "mod-īs"],
+      ["mod-ō", "mod-īs"],
+      ["mod-e", "mod-ī"],
+    ],
     translation: { en: "manner, way", fr: "mode" },
   },
   {
@@ -187,17 +160,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 2, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "rīv-us", plural: "rīv-ī" },
-        { rowName: "accusative", singular: "rīv-um", plural: "rīv-ōs" },
-        { rowName: "genitive", singular: "rīv-ī", plural: "rīv-ōrum" },
-        { rowName: "dative", singular: "rīv-ō", plural: "rīv-īs" },
-        { rowName: "ablative", singular: "rīv-ō", plural: "rīv-īs" },
-        { rowName: "vocative", singular: "rīv-e", plural: "rīv-ī" },
-      ],
-    },
+    forms: [
+      ["rīv-us", "rīv-ī"],
+      ["rīv-um", "rīv-ōs"],
+      ["rīv-ī", "rīv-ōrum"],
+      ["rīv-ō", "rīv-īs"],
+      ["rīv-ō", "rīv-īs"],
+      ["rīv-e", "rīv-ī"],
+    ],
     image: "/images/09-rivus.png",
     translation: { en: "brook", fr: "ruisseau" },
   },
@@ -208,17 +178,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "neuter",
     declension: 2, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "neuter", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "vestigi-um", plural: "vestigi-a" },
-        { rowName: "accusative", singular: "vestigi-um", plural: "vestigi-a" },
-        { rowName: "genitive", singular: "vestigi-ī", plural: "vestigi-ōrum" },
-        { rowName: "dative", singular: "vestigi-ō", plural: "vestigi-īs" },
-        { rowName: "ablative", singular: "vestigi-ō", plural: "vestigi-īs" },
-        { rowName: "vocative", singular: "vestigi-um", plural: "vestigi-a" },
-      ],
-    },
+    forms: [
+      ["vestigi-um", "vestigi-a"],
+      ["vestigi-um", "vestigi-a"],
+      ["vestigi-ī", "vestigi-ōrum"],
+      ["vestigi-ō", "vestigi-īs"],
+      ["vestigi-ō", "vestigi-īs"],
+      ["vestigi-um", "vestigi-a"],
+    ],
     translation: { en: "footprint, trace", fr: "empreinte, trace" },
   },
   {
@@ -228,17 +195,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "feminine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "arbor-", plural: "arbor-ēs" },
-        { rowName: "accusative", singular: "arbor-em", plural: "arbor-ēs" },
-        { rowName: "genitive", singular: "arbor-is", plural: "arbor-um" },
-        { rowName: "dative", singular: "arbor-ī", plural: "arbor-ibus" },
-        { rowName: "ablative", singular: "arbor-e", plural: "arbor-ibus" },
-        { rowName: "vocative", singular: "arbor-", plural: "arbor-ēs" },
-      ],
-    },
+    forms: [
+      ["arbor-", "arbor-ēs"],
+      ["arbor-em", "arbor-ēs"],
+      ["arbor-is", "arbor-um"],
+      ["arbor-ī", "arbor-ibus"],
+      ["arbor-e", "arbor-ibus"],
+      ["arbor-", "arbor-ēs"],
+    ],
     translation: { en: "tree", fr: "arbre" },
   },
   {
@@ -248,17 +212,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "both",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masc/fem", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "can-is", plural: "can-ēs" },
-        { rowName: "accusative", singular: "can-em", plural: "can-ēs" },
-        { rowName: "genitive", singular: "can-is", plural: "can-um" },
-        { rowName: "dative", singular: "can-ī", plural: "can-ibus" },
-        { rowName: "ablative", singular: "can-e", plural: "can-ibus" },
-        { rowName: "vocative", singular: "can-is", plural: "can-ēs" },
-      ],
-    },
+    forms: [
+      ["can-is", "can-ēs"],
+      ["can-em", "can-ēs"],
+      ["can-is", "can-um"],
+      ["can-ī", "can-ibus"],
+      ["can-e", "can-ibus"],
+      ["can-is", "can-ēs"],
+    ],
     translation: { en: "dog", fr: "chien, chienne" },
   },
   {
@@ -268,17 +229,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "clāmor-", plural: "clāmōr-ēs" },
-        { rowName: "accusative", singular: "clāmōr-em", plural: "clāmōr-ēs" },
-        { rowName: "genitive", singular: "clāmōr-is", plural: "clāmōr-um" },
-        { rowName: "dative", singular: "clāmōr-ī", plural: "clāmōr-ibus" },
-        { rowName: "ablative", singular: "clāmōr-e", plural: "clāmōr-ibus" },
-        { rowName: "vocative", singular: "clāmōr-", plural: "clāmōr-ēs" },
-      ],
-    },
+    forms: [
+      ["clāmor-", "clāmōr-ēs"],
+      ["clāmōr-em", "clāmōr-ēs"],
+      ["clāmōr-is", "clāmōr-um"],
+      ["clāmōr-ī", "clāmōr-ibus"],
+      ["clāmōr-e", "clāmōr-ibus"],
+      ["clāmōr-", "clāmōr-ēs"],
+    ],
     translation: { en: "shout, shouting", fr: "cri" },
   },
   {
@@ -288,17 +246,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "coll-is", plural: "coll-ēs" },
-        { rowName: "accusative", singular: "coll-em", plural: "coll-ēs" },
-        { rowName: "genitive", singular: "coll-is", plural: "coll-ium" },
-        { rowName: "dative", singular: "coll-ī", plural: "coll-ibus" },
-        { rowName: "ablative", singular: "coll-e", plural: "coll-ibus" },
-        { rowName: "vocative", singular: "coll-", plural: "coll-ēs" },
-      ],
-    },
+    forms: [
+      ["coll-is", "coll-ēs"],
+      ["coll-em", "coll-ēs"],
+      ["coll-is", "coll-ium"],
+      ["coll-ī", "coll-ibus"],
+      ["coll-e", "coll-ibus"],
+      ["coll-", "coll-ēs"],
+    ],
     translation: { en: "hill", fr: "colline" },
   },
   {
@@ -308,41 +263,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "feminine", // as a reminder, top left cell label
-      cells: [
-        {
-          rowName: "nominative",
-          singular: "dēclīnātiō-",
-          plural: "dēclīnātiōn-ēs",
-        },
-        {
-          rowName: "accusative",
-          singular: "dēclīnātiōn-em",
-          plural: "coll-ēs",
-        },
-        {
-          rowName: "genitive",
-          singular: "dēclīnātiōn-is",
-          plural: "dēclīnātiōn-um",
-        },
-        {
-          rowName: "dative",
-          singular: "dēclīnātiōn-ī",
-          plural: "dēclīnātiōn-ibus",
-        },
-        {
-          rowName: "ablative",
-          singular: "dēclīnātiōn-e",
-          plural: "dēclīnātiōn-ibus",
-        },
-        {
-          rowName: "vocative",
-          singular: "dēclīnātiō-",
-          plural: "dēclīnātiōn-ēs",
-        },
-      ],
-    },
+    forms: [
+      ["dēclīnātiō-", "dēclīnātiōn-ēs"],
+      ["dēclīnātiōn-em", "coll-ēs"],
+      ["dēclīnātiōn-is", "dēclīnātiōn-um"],
+      ["dēclīnātiōn-ī", "dēclīnātiōn-ibus"],
+      ["dēclīnātiōn-e", "dēclīnātiōn-ibus"],
+      ["dēclīnātiō-", "dēclīnātiōn-ēs"],
+    ],
     translation: { en: "declension", fr: "déclinaison" },
   },
   {
@@ -352,17 +280,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "dēn-s", plural: "dēnt-ēs" },
-        { rowName: "accusative", singular: "dēnt-em", plural: "dēnt-ēs" },
-        { rowName: "genitive", singular: "dēnt-is", plural: "dēnt-ium" },
-        { rowName: "dative", singular: "dēnt-ī", plural: "dēnt-ibus" },
-        { rowName: "ablative", singular: "dēnt-e", plural: "dēnt-ibus" },
-        { rowName: "vocative", singular: "dēn-", plural: "dēnt-ēs" },
-      ],
-    },
+    forms: [
+      ["dēn-s", "dēnt-ēs"],
+      ["dēnt-em", "dēnt-ēs"],
+      ["dēnt-is", "dēnt-ium"],
+      ["dēnt-ī", "dēnt-ibus"],
+      ["dēnt-e", "dēnt-ibus"],
+      ["dēn-", "dēnt-ēs"],
+    ],
     translation: { en: "tooth", fr: "dent" },
   },
   {
@@ -372,17 +297,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "mōn-s", plural: "mont-ēs" },
-        { rowName: "accusative", singular: "mont-em", plural: "mont-ēs" },
-        { rowName: "genitive", singular: "mont-is", plural: "mont-ium" },
-        { rowName: "dative", singular: "mont-ī", plural: "mont-ibus" },
-        { rowName: "ablative", singular: "mont-e", plural: "mont-ibus" },
-        { rowName: "vocative", singular: "mon-s", plural: "mont-ēs" },
-      ],
-    },
+    forms: [
+      ["mōn-s", "mont-ēs"],
+      ["mont-em", "mont-ēs"],
+      ["mont-is", "mont-ium"],
+      ["mont-ī", "mont-ibus"],
+      ["mont-e", "mont-ibus"],
+      ["mon-s", "mont-ēs"],
+    ],
     translation: { en: "mountain", fr: "montagne" },
   },
   {
@@ -392,17 +314,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "nūb-ēs", plural: "nūb-ēs" },
-        { rowName: "accusative", singular: "nūb-em", plural: "nūb-ēs" },
-        { rowName: "genitive", singular: "nūb-is", plural: "nūb-ium" },
-        { rowName: "dative", singular: "nūb-ī", plural: "nūb-ibus" },
-        { rowName: "ablative", singular: "nūb-e", plural: "nūb-ibus" },
-        { rowName: "vocative", singular: "nūb-ēs", plural: "nūb-ēs" },
-      ],
-    },
+    forms: [
+      ["nūb-ēs", "nūb-ēs"],
+      ["nūb-em", "nūb-ēs"],
+      ["nūb-is", "nūb-ium"],
+      ["nūb-ī", "nūb-ibus"],
+      ["nūb-e", "nūb-ibus"],
+      ["nūb-ēs", "nūb-ēs"],
+    ],
     translation: { en: "mountain", fr: "montagne" },
   },
   {
@@ -412,17 +331,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "feminine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "ov-is", plural: "ov-ēs" },
-        { rowName: "accusative", singular: "ov-em", plural: "ov-ēs" },
-        { rowName: "genitive", singular: "ov-is", plural: "ov-ium" },
-        { rowName: "dative", singular: "ov-ī", plural: "ov-ibus" },
-        { rowName: "ablative", singular: "ov-e", plural: "ov-ibus" },
-        { rowName: "vocative", singular: "ov-is", plural: "ov-ēs" },
-      ],
-    },
+    forms: [
+      ["ov-is", "ov-ēs"],
+      ["ov-em", "ov-ēs"],
+      ["ov-is", "ov-ium"],
+      ["ov-ī", "ov-ibus"],
+      ["ov-e", "ov-ibus"],
+      ["ov-is", "ov-ēs"],
+    ],
     image: "/images/09-ovis.png",
     translation: { en: "sheep", fr: "brebis, mouton" },
   },
@@ -433,17 +349,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "pān-is", plural: "pān-ēs" },
-        { rowName: "accusative", singular: "pān-em", plural: "pān-ēs" },
-        { rowName: "genitive", singular: "pān-is", plural: "pān-um" },
-        { rowName: "dative", singular: "pān-ī", plural: "pān-ibus" },
-        { rowName: "ablative", singular: "pān-e", plural: "pān-ibus" },
-        { rowName: "vocative", singular: "pān-is", plural: "pān-ēs" },
-      ],
-    },
+    forms: [
+      ["pān-is", "pān-ēs"],
+      ["pān-em", "pān-ēs"],
+      ["pān-is", "pān-um"],
+      ["pān-ī", "pān-ibus"],
+      ["pān-e", "pān-ibus"],
+      ["pān-is", "pān-ēs"],
+    ],
     image: "/images/09-panis.png",
     translation: { en: "bread", fr: "pain" },
   },
@@ -454,17 +367,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "pāstor-", plural: "pāstōr-ēs" },
-        { rowName: "accusative", singular: "pāstōr-em", plural: "pāstōr-ēs" },
-        { rowName: "genitive", singular: "pāstōr-is", plural: "pāstōr-um" },
-        { rowName: "dative", singular: "pāstōr-ī", plural: "pāstōr-ibus" },
-        { rowName: "ablative", singular: "pāstōr-e", plural: "pāstōr-ibus" },
-        { rowName: "vocative", singular: "pāstor-", plural: "pāstōr-ēs" },
-      ],
-    },
+    forms: [
+      ["pāstor-", "pāstōr-ēs"],
+      ["pāstōr-em", "pāstōr-ēs"],
+      ["pāstōr-is", "pāstōr-um"],
+      ["pāstōr-ī", "pāstōr-ibus"],
+      ["pāstōr-e", "pāstōr-ibus"],
+      ["pāstor-", "pāstōr-ēs"],
+    ],
     image: "/images/09-pastor.png",
     translation: { en: "shepherd", fr: "berger" },
   },
@@ -475,17 +385,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "sol-", plural: "sol-ēs" },
-        { rowName: "accusative", singular: "sol-em", plural: "sol-ēs" },
-        { rowName: "genitive", singular: "sol-is", plural: "sol-um" },
-        { rowName: "dative", singular: "sol-ī", plural: "sol-ibus" },
-        { rowName: "ablative", singular: "sol-e", plural: "sol-ibus" },
-        { rowName: "vocative", singular: "sol-", plural: "sol-ēs" },
-      ],
-    },
+    forms: [
+      ["sol-", "sol-ēs"],
+      ["sol-em", "sol-ēs"],
+      ["sol-is", "sol-um"],
+      ["sol-ī", "sol-ibus"],
+      ["sol-e", "sol-ibus"],
+      ["sol-", "sol-ēs"],
+    ],
     translation: { en: "sun", fr: "soleil" },
   },
   {
@@ -495,17 +402,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "masculine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "timor-", plural: "timōr-ēs" },
-        { rowName: "accusative", singular: "timōr-em", plural: "timōr-ēs" },
-        { rowName: "genitive", singular: "timōr-is", plural: "timōr-um" },
-        { rowName: "dative", singular: "timōr-ī", plural: "timōr-ibus" },
-        { rowName: "ablative", singular: "timōr-e", plural: "timōr-ibus" },
-        { rowName: "vocative", singular: "timor-", plural: "timōr-ēs" },
-      ],
-    },
+    forms: [
+      ["timor-", "timōr-ēs"],
+      ["timōr-em", "timōr-ēs"],
+      ["timōr-is", "timōr-um"],
+      ["timōr-ī", "timōr-ibus"],
+      ["timōr-e", "timōr-ibus"],
+      ["timor-", "timōr-ēs"],
+    ],
     translation: { en: "fear", fr: "peur, crainte" },
   },
   {
@@ -515,17 +419,14 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
-    forms: {
-      r1c1: "feminine", // as a reminder, top left cell label
-      cells: [
-        { rowName: "nominative", singular: "vall-is", plural: "vall-ēs" },
-        { rowName: "accusative", singular: "vall-em", plural: "vall-ēs" },
-        { rowName: "genitive", singular: "vall-is", plural: "vall-ium" },
-        { rowName: "dative", singular: "vall-ī", plural: "vall-ibus" },
-        { rowName: "ablative", singular: "vall-e", plural: "vall-ibus" },
-        { rowName: "vocative", singular: "vall-is", plural: "vall-ēs" },
-      ],
-    },
+    forms: [
+      ["vall-is", "vall-ēs"],
+      ["vall-em", "vall-ēs"],
+      ["vall-is", "vall-ium"],
+      ["vall-ī", "vall-ibus"],
+      ["vall-e", "vall-ibus"],
+      ["vall-is", "vall-ēs"],
+    ],
     translation: { en: "valley", fr: "vallée" },
   },
   {
@@ -534,84 +435,20 @@ const vocabulary09 = [
     chapterId: 9,
     type: "adjective",
     class: 1, // from 1 to 2
-    forms: {
-      r1c1: "sing/plur", // as a reminder, top left cell label
-      cells: [
-        {
-          rowName: "nominative",
-          masculine: "alb-us",
-          feminine: "alb-a",
-          neuter: "alb-um",
-        },
-        {
-          rowName: "accusative",
-          masculine: "alb-um",
-          feminine: "alb-am",
-          neuter: "alb-um",
-        },
-        {
-          rowName: "genitive",
-          masculine: "alb-ī",
-          feminine: "alb-æ",
-          neuter: "alb-ī",
-        },
-        {
-          rowName: "dative",
-          masculine: "alb-ō",
-          feminine: "alb-æ",
-          neuter: "alb-ō",
-        },
-        {
-          rowName: "ablative",
-          masculine: "alb-ō",
-          feminine: "alb-ā",
-          neuter: "alb-ō",
-        },
-        {
-          rowName: "vocative",
-          masculine: "alb-e",
-          feminine: "alb-a",
-          neuter: "alb-um",
-        },
-        { separator: true },
-        {
-          rowName: "nominative",
-          masculine: "alb-ī",
-          feminine: "alb-æ",
-          neuter: "alb-a",
-        },
-        {
-          rowName: "accusative",
-          masculine: "alb-ōs",
-          feminine: "alb-ās",
-          neuter: "alb-a",
-        },
-        {
-          rowName: "genitive",
-          masculine: "alb-ōrum",
-          feminine: "alb-ārum",
-          neuter: "alb-ōrum",
-        },
-        {
-          rowName: "dative",
-          masculine: "alb-īs",
-          feminine: "alb-īs",
-          neuter: "alb-īs",
-        },
-        {
-          rowName: "ablative",
-          masculine: "alb-īs",
-          feminine: "alb-īs",
-          neuter: "alb-īs",
-        },
-        {
-          rowName: "vocative",
-          masculine: "alb-ī",
-          feminine: "alb-æ",
-          neuter: "alb-a",
-        },
-      ],
-    },
+    forms: [
+      ["alb-us", "alb-a", "alb-um"],
+      ["alb-um", "alb-am", "alb-um"],
+      ["alb-ī", "alb-æ", "alb-ī"],
+      ["alb-ō", "alb-æ", "alb-ō"],
+      ["alb-ō", "alb-ā", "alb-ō"],
+      ["alb-e", "alb-a", "alb-um"],
+      ["alb-ī", "alb-æ", "alb-a"],
+      ["alb-ōs", "alb-ās", "alb-a"],
+      ["alb-ōrum", "alb-ārum", "alb-ōrum"],
+      ["alb-īs", "alb-īs", "alb-īs"],
+      ["alb-īs", "alb-īs", "alb-īs"],
+      ["alb-ī", "alb-æ", "alb-a"],
+    ],
     translation: { en: "white", fr: "blanc" },
   },
   {
@@ -620,84 +457,20 @@ const vocabulary09 = [
     chapterId: 9,
     type: "adjective",
     class: 1, // from 1 to 2
-    forms: {
-      r1c1: "sing/plur", // as a reminder, top left cell label
-      cells: [
-        {
-          rowName: "nominative",
-          masculine: "nig-er",
-          feminine: "nigr-a",
-          neuter: "nigr-um",
-        },
-        {
-          rowName: "accusative",
-          masculine: "nigr-um",
-          feminine: "nigr-am",
-          neuter: "nigr-um",
-        },
-        {
-          rowName: "genitive",
-          masculine: "nigr-ī",
-          feminine: "nigr-æ",
-          neuter: "nigr-ī",
-        },
-        {
-          rowName: "dative",
-          masculine: "nigr-ō",
-          feminine: "nigr-æ",
-          neuter: "nigr-ō",
-        },
-        {
-          rowName: "ablative",
-          masculine: "nigr-ō",
-          feminine: "nigr-ā",
-          neuter: "nigr-ō",
-        },
-        {
-          rowName: "vocative",
-          masculine: "nigr-e",
-          feminine: "nigr-a",
-          neuter: "nigr-um",
-        },
-        { separator: true },
-        {
-          rowName: "nominative",
-          masculine: "nigr-ī",
-          feminine: "nigr-æ",
-          neuter: "nigr-a",
-        },
-        {
-          rowName: "accusative",
-          masculine: "nigr-ōs",
-          feminine: "nigr-ās",
-          neuter: "nigr-a",
-        },
-        {
-          rowName: "genitive",
-          masculine: "nigr-ōrum",
-          feminine: "nigr-ārum",
-          neuter: "nigr-ōrum",
-        },
-        {
-          rowName: "dative",
-          masculine: "nigr-īs",
-          feminine: "nigr-īs",
-          neuter: "nigr-īs",
-        },
-        {
-          rowName: "ablative",
-          masculine: "nigr-īs",
-          feminine: "nigr-īs",
-          neuter: "nigr-īs",
-        },
-        {
-          rowName: "vocative",
-          masculine: "nigr-ī",
-          feminine: "nigr-æ",
-          neuter: "nigr-a",
-        },
-      ],
-    },
+    forms: [
+      ["nig-er", "nigr-a", "nigr-um"],
+      ["nigr-um", "nigr-am", "nigr-um"],
+      ["nigr-ī", "nigr-æ", "nigr-ī"],
+      ["nigr-ō", "nigr-æ", "nigr-ō"],
+      ["nigr-ō", "nigr-ā", "nigr-ō"],
+      ["nigr-e", "nigr-a", "nigr-um"],
+      ["nigr-ī", "nigr-æ", "nigr-a"],
+      ["nigr-ōs", "nigr-ās", "nigr-a"],
+      ["nigr-ōrum", "nigr-ārum", "nigr-ōrum"],
+      ["nigr-īs", "nigr-īs", "nigr-īs"],
+      ["nigr-īs", "nigr-īs", "nigr-īs"],
+      ["nigr-ī", "nigr-æ", "nigr-a"],
+    ],
     translation: { en: "black", fr: "noir" },
   },
   {
@@ -790,8 +563,8 @@ const vocabulary09 = [
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "accurrit, -unt",
     perfect: "accurrī",
-    infinitive: "accursum",
-    supine: "bibitum",
+    infinitive: "accurrere",
+    supine: "styleClass",
     translation: { en: "come running", fr: "accourir" },
   },
   {
@@ -802,7 +575,7 @@ const vocabulary09 = [
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "bibit, -unt",
     perfect: "bibī",
-    infinitive: "accurrere",
+    infinitive: "bibere",
     supine: "bibitum",
     translation: { en: "come running", fr: "accourir" },
   },
@@ -905,84 +678,20 @@ const vocabulary09 = [
     word: "ipse",
     chapterId: 9,
     type: "pronoun",
-    forms: {
-      r1c1: "sing/plur", // as a reminder, top left cell label
-      cells: [
-        {
-          rowName: "nominative",
-          masculine: "ips-e",
-          feminine: "ips-a",
-          neuter: "ips-um",
-        },
-        {
-          rowName: "accusative",
-          masculine: "ips-um",
-          feminine: "ips-am",
-          neuter: "ips-um",
-        },
-        {
-          rowName: "genitive",
-          masculine: "ips-īus",
-          feminine: "ips-ī",
-          neuter: "ips-īus",
-        },
-        {
-          rowName: "dative",
-          masculine: "ips-ī",
-          feminine: "ips-ī",
-          neuter: "ips-ī",
-        },
-        {
-          rowName: "ablative",
-          masculine: "ips-ō",
-          feminine: "ips-ā",
-          neuter: "ips-ō",
-        },
-        {
-          rowName: "vocative",
-          masculine: "-",
-          feminine: "-",
-          neuter: "-",
-        },
-        { separator: true },
-        {
-          rowName: "nominative",
-          masculine: "ips-ī",
-          feminine: "ips-æ",
-          neuter: "ips-a",
-        },
-        {
-          rowName: "accusative",
-          masculine: "ips-ōs",
-          feminine: "ips-ās",
-          neuter: "ips-a",
-        },
-        {
-          rowName: "genitive",
-          masculine: "ips-ōrum",
-          feminine: "ips-ārum",
-          neuter: "ips-ōrum",
-        },
-        {
-          rowName: "dative",
-          masculine: "ips-īs",
-          feminine: "ips-īs",
-          neuter: "ips-īs",
-        },
-        {
-          rowName: "ablative",
-          masculine: "ips-īs",
-          feminine: "ips-īs",
-          neuter: "ips-īs",
-        },
-        {
-          rowName: "vocative",
-          masculine: "-",
-          feminine: "-",
-          neuter: "-",
-        },
-      ],
-    },
+    forms: [
+      ["ips-e", "ips-a", "ips-um"],
+      ["ips-um", "ips-am", "ips-um"],
+      ["ips-īus", "ips-ī", "ips-īus"],
+      ["ips-ī", "ips-ī", "ips-ī"],
+      ["ips-ō", "ips-ā", "ips-ō"],
+      ["-", "-", "-"],
+      ["ips-ī", "ips-æ", "ips-a"],
+      ["ips-ōs", "ips-ās", "ips-a"],
+      ["ips-ōrum", "ips-ārum", "ips-ōrum"],
+      ["ips-īs", "ips-īs", "ips-īs"],
+      ["ips-īs", "ips-īs", "ips-īs"],
+      ["-", "-", "-"],
+    ],
     translation: { en: "myself, yourself, etc.", fr: "soi-même" },
     note: "genitive and dative irregular",
   },
@@ -1013,7 +722,7 @@ const vocabulary09 = [
     word: "sub",
     chapterId: 9,
     type: "preposition",
-    caseAfter: ["ablative", "accusative"],
+    caseAfter: ["accusative"],
     translation: { en: "under, near", fr: "sous" },
   },
   {

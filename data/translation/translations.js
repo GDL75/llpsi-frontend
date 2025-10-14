@@ -6,6 +6,7 @@ const translations = {
   accusative: { en: "Accusative", fr: "Accusatif", la: "Accūsātīvus" },
   book1: { en: "Book 1", fr: "Livre 1", la: "Liber Iº" },
   book2: { en: "Book 2", fr: "Livre 2", la: "Liber IIº" },
+  case: { en: "Case", fr: "Cas", la: "Cāsus" },
   chapter: { en: "Chapter", fr: "Chapitre", la: "Capitulum" },
   class: { en: "Class", fr: "classe", la: "classis" },
   conjugation: { en: "Conjugation", fr: "conjugaison", la: "Conjugātiō" },

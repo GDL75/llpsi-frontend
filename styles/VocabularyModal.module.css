@@ -1,11 +1,8 @@
-.vocab-modal {
+.vocabModal {
   position: fixed;
-  right: 0;
-  top: 0;
-  width: 40%;
+  right: 100;
+  top: 240;
+  width: 29.5%;
   height: 100%;
-  background: white;
-  border-left: 1px solid #ccc;
-  padding: 1.5rem;
   overflow-y: auto;
 }

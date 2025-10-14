@@ -28,3 +28,13 @@
   text-align: left;
   min-width: 60px;
 }
+
+.masculine {
+  background-color: #DEEDFF
+}
+.feminine {
+  background-color: #FFE3FF
+}
+.neuter {
+  background-color: #FFFFED
+}
