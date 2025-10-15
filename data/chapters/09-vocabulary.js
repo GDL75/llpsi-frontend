@@ -6,6 +6,8 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
+    endingsIndex: 1,
+    radical: "herb-",
     forms: [
       ["herb-a", "herb-æ"],
       ["herb-am", "herb-ās"],
