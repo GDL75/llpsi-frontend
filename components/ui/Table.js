@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "styles/Table.module.css";
 import { useSelector } from "react-redux";
 import { useTranslation } from "data/translation/useTranslation";
@@ -12,7 +12,7 @@ export default function Table({ word }) {
   const t = useTranslation();
   const m = useMorph();
 
-  // Définitions d'entêtes selon le type
+  // --- Définition des entêtes selon le type
   let columnHeader = [];
   let rowHeader = [];
 
@@ -46,14 +46,19 @@ export default function Table({ word }) {
     return null;
   }
 
-  // Filters the cases depending on chapter
-  const visibleRows = rowHeader
-    .map((rowName, index) => {
-      const morphRule = morphologyConfig.find((m) => m.key === rowName);
-      const isVisible = !morphRule || currentChapter >= morphRule.fromChapter;
-      return isVisible ? { rowName, rowIndex: index } : null;
-    })
-    .filter(Boolean);
+  // --- Fonction utilitaire pour obtenir le chapitre minimal
+  const chapFrom = (key) =>
+    morphologyConfig.find((item) => item.key === key)?.fromChapter ?? 1;
+
+  // --- Calcul des lignes visibles avec useMemo
+  const visibleRows = useMemo(() => {
+    return rowHeader
+      .map((rowName, index) => {
+        const isVisible = currentChapter >= chapFrom(rowName);
+        return isVisible ? { rowName, rowIndex: index } : null;
+      })
+      .filter(Boolean);
+  }, [rowHeader, currentChapter]);
 
   return (
     <table className={styles.table}>
@@ -82,6 +87,7 @@ export default function Table({ word }) {
                 {m({
                   token: cell,
                   morph: rowName,
+                  gender: word.gender,
                 })}
               </td>
             ))}

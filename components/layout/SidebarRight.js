@@ -16,7 +16,7 @@ export default function SidebarRight() {
   return (
     <aside className={styles.rightSide}>
       <div className={styles.fixedContainer}>
-        <h5 className={styles.title}>{t("morphology")}</h5>
+        <h4 className={styles.title}>{t("morphology")}</h4>
         <div className={styles.btnContainer}>
           <CustomButton
             bColor="2"

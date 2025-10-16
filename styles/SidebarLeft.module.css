@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 240px;
+  width: 100%;
   padding: 12px 0;
   box-sizing: border-box;
   background: linear-gradient(
@@ -28,7 +28,7 @@
   background: transparent;
   color: var(--color-2);
   text-align: left;
-  padding-left: 40px;
+  padding-left: 30px;
   font-family: var(--font-body);
   font-size: var(--fs-p);
   cursor: pointer;
@@ -48,7 +48,7 @@
 .chapterSlider {
   position: absolute;
   left: 20px;
-  width: 200px;
+  width: 11vw;
   background: var(--color-2);
   border-radius: 50px;
   transition: top 0.3s ease;

@@ -141,7 +141,7 @@ export default function Vocabulary({ data, openComment }) {
   const renderTypeBlock = (type) =>
     groupedByType[type] && (
       <div key={type}>
-        <h4>{t(type)}</h4>
+        <h4 style={{"text-decoration": "underline"}}>{t(type)}</h4>
         {getSubgroups(type, groupedByType[type]).map((subgroup) => (
           <div key={`${type}-${subgroup.num}`}>
             {subgroup.title && (

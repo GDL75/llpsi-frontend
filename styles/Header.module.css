@@ -39,7 +39,7 @@
   z-index: 2;
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: var(--fs-p);
+  font-size: var(--fs-h5);
   font-weight: var(--fw-regular);
   transition: color 0.3s;
 }

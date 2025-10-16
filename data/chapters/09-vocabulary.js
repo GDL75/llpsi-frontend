@@ -6,8 +6,6 @@ const vocabulary09 = [
     type: "noun",
     gender: "feminine",
     declension: 1, // from 1 to 5, 0 if undeclinable
-    endingsIndex: 1,
-    radical: "herb-",
     forms: [
       ["herb-a", "herb-æ"],
       ["herb-am", "herb-ās"],
@@ -222,6 +220,7 @@ const vocabulary09 = [
       ["can-e", "can-ibus"],
       ["can-is", "can-ēs"],
     ],
+    note: "can be masculine or feminine",
     translation: { en: "dog", fr: "chien, chienne" },
   },
   {
@@ -254,7 +253,7 @@ const vocabulary09 = [
       ["coll-is", "coll-ium"],
       ["coll-ī", "coll-ibus"],
       ["coll-e", "coll-ibus"],
-      ["coll-", "coll-ēs"],
+      ["coll-is", "coll-ēs"],
     ],
     translation: { en: "hill", fr: "colline" },
   },

@@ -37,7 +37,7 @@ export default function Header() {
       <div className={styles.headerWrapper}>
         <header className={styles.header}>
           {/* left section */}
-            <div className={styles.sectionContainer}>
+            <nav className={styles.sectionContainer}>
               {/* Slider */}
               <div
                 className={styles.sectionSlider}
@@ -54,10 +54,10 @@ export default function Header() {
                   {s.label}
                 </button>
               ))}
-            </div>
+            </nav>
 
           {/* droite : settings / profile */}
-          <div className={styles.rightGroup}>
+          <nav className={styles.rightGroup}>
             <CustomButton
               bColor="3"
               tColor="0"
@@ -72,7 +72,7 @@ export default function Header() {
               text={t("settings")}
               handleFunction={() => setIsSettings((prev) => !prev)}
             />
-          </div>
+          </nav>
         </header>
 
         {/* Column Capitals */}

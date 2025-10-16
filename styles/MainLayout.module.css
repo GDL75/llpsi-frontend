@@ -6,14 +6,19 @@
 }
 
 .body {
-  display: flex;
-  flex: 1;
+  display: grid;
+  grid-template-columns: 
+    minmax(180px, 14vw)  /* Sidebar gauche : min 180px, max 12% de la largeur écran */
+    1fr                   /* Zone centrale : prend tout l’espace restant */
+    minmax(180px, 14vw);  /* Sidebar droite : un peu plus large si besoin */
+  gap: 1rem;
   width: 100%;
+  flex: 1;
+  align-items: start;
 }
 
 .main {
-  flex: 1;
-  overflow-y: auto;
+  overflow-y: visible;
   padding: 10px 20px;
   background: var(--background);
 }

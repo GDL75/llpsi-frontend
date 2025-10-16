@@ -18,7 +18,7 @@ export default function VocabularyModal({ vocab }) {
     "infinitive",
     "perfect",
     "supine",
-    "note"
+    // "note"  rejected after the table, so it is more visible
   ];
 
   // On filtre les clés qui existent effectivement pour ce mot
@@ -45,6 +45,12 @@ export default function VocabularyModal({ vocab }) {
 
       {/* Tableau des formes, si présent */}
       {vocab.forms && <Table word={vocab} />}
+
+      {vocab.note && (
+        <p>
+          <strong className="blink">Note</strong> : {vocab.note}
+        </p>
+      )}
 
       {/* Image à la fin */}
       {vocab.image && (
