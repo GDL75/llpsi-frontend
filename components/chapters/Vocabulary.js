@@ -4,6 +4,7 @@ import styles from "styles/Vocabulary.module.css";
 import { useTranslation } from "data/translation/useTranslation";
 import { useMorph } from "utils/useMorph";
 import { ordinalNumber } from "utils/numbers";
+import { addEnding } from "utils/addEnding";
 
 export default function Vocabulary({ data, openComment }) {
   const t = useTranslation();
@@ -86,7 +87,7 @@ export default function Vocabulary({ data, openComment }) {
       return (
         <>
           {m({
-            token: word.forms[0][0],
+            token: addEnding({ word, case: "nominative", number: "singular" }),
             morph: "nominative",
             gender: word.gender,
           })}
@@ -94,7 +95,11 @@ export default function Vocabulary({ data, openComment }) {
             <>
               {", "}
               {m({
-                token: word.forms[2][0],
+                token: addEnding({
+                  word,
+                  case: "genitive",
+                  number: "singular",
+                }),
                 morph: "genitive",
                 gender: word.gender,
               })}
@@ -107,19 +112,34 @@ export default function Vocabulary({ data, openComment }) {
       return (
         <>
           {m({
-            token: word.forms[0][0],
+            token: addEnding({
+              word,
+              case: "nominative",
+              number: "singular",
+              gender: "masculine",
+            }),
             morph: "nominative",
             gender: "masculine",
           })}
           ,{" "}
           {m({
-            token: word.forms[0][1],
+            token: addEnding({
+              word,
+              case: "nominative",
+              number: "singular",
+              gender: "feminine",
+            }),
             morph: "nominative",
             gender: "feminine",
           })}
           ,{" "}
           {m({
-            token: word.forms[0][2],
+            token: addEnding({
+              word,
+              case: "nominative",
+              number: "singular",
+              gender: "neuter",
+            }),
             morph: "nominative",
             gender: "neuter",
           })}
@@ -141,7 +161,7 @@ export default function Vocabulary({ data, openComment }) {
   const renderTypeBlock = (type) =>
     groupedByType[type] && (
       <div key={type}>
-        <h4 style={{"text-decoration": "underline"}}>{t(type)}</h4>
+        <h4 style={{ "text-decoration": "underline" }}>{t(type)}</h4>
         {getSubgroups(type, groupedByType[type]).map((subgroup) => (
           <div key={`${type}-${subgroup.num}`}>
             {subgroup.title && (

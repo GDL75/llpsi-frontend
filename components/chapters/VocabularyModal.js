@@ -1,6 +1,6 @@
 import styles from "styles/VocabularyModal.module.css";
 import { useSelector } from "react-redux";
-import Table from "ui/Table";
+import { TableNoun, TableAdjPro } from "ui/Table";
 import morphologyConfig from "data/morphologyConfig";
 
 export default function VocabularyModal({ vocab }) {
@@ -44,7 +44,10 @@ export default function VocabularyModal({ vocab }) {
       )}
 
       {/* Tableau des formes, si présent */}
-      {vocab.forms && <Table word={vocab} />}
+      {vocab.type === "noun" && <TableNoun word={vocab} />}
+      {(vocab.type === "adjective" || vocab.type === "pronoun") && (
+        <TableAdjPro word={vocab} />
+      )}
 
       {vocab.note && (
         <p>

@@ -62,14 +62,22 @@ export default function ChapterPage() {
             />
             <Text data={chapter} openComment={handleOpenComment} />
             {openComment && (
-              <CommentModal comment={openComment} onClose={handleCloseComment} />
+              <CommentModal
+                comment={openComment}
+                onClose={handleCloseComment}
+              />
             )}
           </>
         );
       case "grammar":
         return <p>Voici la grammaire du chapitre {chapterData.number}.</p>;
       case "exercises":
-        return <p>Voici les exercices du chapitre {chapterData.number}.</p>;
+        return (
+          <>
+            <p>Voici les exercices du chapitre {chapterData.number}.</p>
+            <p>toto</p>
+          </>
+        );
       case "vocabulary":
         return (
           <div className={styles.vocabPage}>
@@ -78,7 +86,10 @@ export default function ChapterPage() {
             </div>
             <div className={styles.commentPanel}>
               {openComment && (
-                <VocabularyModal vocab={openComment} onClose={handleCloseComment} />
+                <VocabularyModal
+                  vocab={openComment}
+                  onClose={handleCloseComment}
+                />
               )}
             </div>
           </div>

@@ -4,95 +4,159 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "data/translation/useTranslation";
 import { useMorph } from "utils/useMorph";
 import morphologyConfig from "data/morphologyConfig";
+import { addEnding } from "utils/addEnding";
 
-export default function Table({ word }) {
-  if (!word || !word.forms || word.forms.length === 0) return null;
-
-  const currentChapter = useSelector((state) => state.navigation.value.chapter);
+//--------------------------------------------------------------------------------------------
+export function TableNoun({ word }) {
   const t = useTranslation();
   const m = useMorph();
+  const currentChapter = useSelector((state) => state.navigation.value.chapter);
 
-  // --- Définition des entêtes selon le type
-  let columnHeader = [];
-  let rowHeader = [];
+  if (!word || word.type !== "noun") return null;
 
-  if (word.type === "noun") {
-    columnHeader = ["case", "singular", "plural"];
-    rowHeader = [
-      "nominative",
-      "accusative",
-      "genitive",
-      "dative",
-      "ablative",
-      "vocative",
-    ];
-  } else if (word.type === "pronoun" || word.type === "adjective") {
-    columnHeader = ["sing/plur", "masculine", "feminine", "neuter"];
-    rowHeader = [
-      "nominative",
-      "accusative",
-      "genitive",
-      "dative",
-      "ablative",
-      "vocative",
-      "nominative",
-      "accusative",
-      "genitive",
-      "dative",
-      "ablative",
-      "vocative",
-    ];
-  } else {
-    return null;
-  }
+  const rowHeader = [
+    "nominative",
+    "accusative",
+    "genitive",
+    "dative",
+    "ablative",
+    "vocative",
+  ];
+  const columnHeader = ["case", "singular", "plural"];
 
-  // --- Fonction utilitaire pour obtenir le chapitre minimal
-  const chapFrom = (key) =>
-    morphologyConfig.find((item) => item.key === key)?.fromChapter ?? 1;
+  // Filtrage selon le chapitre
+  const visibleRows = rowHeader
+    .map((rowName, index) => {
+      const morphRule = morphologyConfig.find((m) => m.key === rowName);
+      const isVisible = !morphRule || currentChapter >= morphRule.fromChapter;
+      return isVisible ? { rowName, rowIndex: index } : null;
+    })
+    .filter(Boolean);
 
-  // --- Calcul des lignes visibles avec useMemo
-  const visibleRows = useMemo(() => {
-    return rowHeader
-      .map((rowName, index) => {
-        const isVisible = currentChapter >= chapFrom(rowName);
-        return isVisible ? { rowName, rowIndex: index } : null;
-      })
-      .filter(Boolean);
-  }, [rowHeader, currentChapter]);
+  // Construction des cellules avec addEnding()
+  const tableData = visibleRows.map(({ rowName }) => ({
+    caseName: rowName,
+    singular: addEnding({ word, case: rowName, number: "singular" }),
+    plural: addEnding({ word, case: rowName, number: "plural" }),
+  }));
 
   return (
     <table className={styles.table}>
       <thead>
         <tr>
           {columnHeader.map((header, i) => (
-            <th className={styles.columnHeader} key={i}>
+            <th key={i} className={styles.columnHeader}>
               {t(header)}
             </th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {visibleRows.map(({ rowName, rowIndex }) => (
-          <tr key={rowIndex}>
-            <td className={styles.rowHeader}>{t(rowName)}</td>
-            {word.forms[rowIndex]?.map((cell, colIndex) => (
-              <td
-                className={`${styles.cell} ${
-                  word.type === "noun"
-                    ? styles[word.gender]
-                    : styles[columnHeader[colIndex + 1]]
-                }`}
-                key={colIndex}
-              >
-                {m({
-                  token: cell,
-                  morph: rowName,
-                  gender: word.gender,
-                })}
-              </td>
-            ))}
+        {tableData.map((row, i) => (
+          <tr key={i}>
+            <td className={styles.rowHeader}>{t(row.caseName)}</td>
+            <td className={`${styles.cell} ${styles[word.gender]}`}>
+              {m({
+                token: row.singular,
+                morph: row.caseName,
+              })}
+            </td>
+            <td className={`${styles.cell} ${styles[word.gender]}`}>
+              {m({
+                token: row.plural,
+                morph: row.caseName,
+              })}
+            </td>
           </tr>
         ))}
+      </tbody>
+    </table>
+  );
+}
+
+//--------------------------------------------------------------------------------------------
+export function TableAdjPro({ word }) {
+  const t = useTranslation();
+  const m = useMorph();
+  const currentChapter = useSelector((state) => state.navigation.value.chapter);
+
+  if (!word || (word.type !== "adjective" && word.type !== "pronoun"))
+    return null;
+
+  const cases = [
+    "nominative",
+    "accusative",
+    "genitive",
+    "dative",
+    "ablative",
+    "vocative",
+  ];
+  const rowHeader = [...cases, ...cases]; // twice : singular, then plural
+
+  const columnHeader = ["case", "masculine", "feminine", "neuter"];
+
+  // --- Filtrage selon le chapitre
+  const visibleRows = rowHeader
+    .map((rowName, index) => {
+      const morphRule = morphologyConfig.find((m) => m.key === rowName);
+      const isVisible = !morphRule || currentChapter >= morphRule.fromChapter;
+      return isVisible ? { rowName, rowIndex: index } : null;
+    })
+    .filter(Boolean);
+
+  // --- Construction du tableau de données avec addEnding()
+  const tableData = visibleRows.map(({ rowName, rowIndex }) => {
+    const number = rowIndex < 6 ? "singular" : "plural";
+    return {
+      caseName: rowName,
+      masculine: addEnding({
+        word,
+        case: rowName,
+        gender: "masculine",
+        number,
+      }),
+      feminine: addEnding({
+        word,
+        case: rowName,
+        gender: "feminine",
+        number,
+      }),
+      neuter: addEnding({ word, case: rowName, gender: "neuter", number }),
+    };
+  });
+
+  return (
+    <table className={styles.table}>
+      <thead>
+        <tr>
+          {columnHeader.map((header, i) => (
+            <th key={i} className={styles.columnHeader}>
+              {t(header)}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {tableData.map((row, i) => {
+          const isEndOfSingular = i === visibleRows.length / 2 - 1;
+          return (
+            <tr
+              key={i}
+              className={isEndOfSingular ? styles.sectionDivider : undefined}
+            >
+              <td className={styles.rowHeader}>{t(row.caseName)}</td>
+              <td className={`${styles.cell} ${styles.masculine}`}>
+                {m({ token: row.masculine, morph: row.caseName })}
+              </td>
+              <td className={`${styles.cell} ${styles.feminine}`}>
+                {m({ token: row.feminine, morph: row.caseName })}
+              </td>
+              <td className={`${styles.cell} ${styles.neuter}`}>
+                {m({ token: row.neuter, morph: row.caseName })}
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
