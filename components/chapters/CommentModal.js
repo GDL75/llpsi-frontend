@@ -1,42 +1,64 @@
+import React, { useMemo } from "react";
 import styles from "styles/CommentModal.module.css";
 import Text from "components/ui/Text";
+import WordSummary from "ui/WordSummary";
+import { TableNoun, TableAdjPro } from "ui/Table";
 
-export default function CommentModal({ comment, onClose }) {
+export default function CommentModal({ comment, onClose, vocabulary }) {
   if (!comment) return null;
 
-  const image = comment.image && (
+  // Recherche du mot correspondant
+  const word = useMemo(() => {
+    if (!vocabulary || !comment.id) return null;
+    return vocabulary.find((w) => w.id === comment.id) || null;
+  }, [vocabulary, comment]);
+
+  // Image (si présente)
+  const imagePath = comment.image || word?.image;
+  const image = imagePath && (
     <div className={styles.imageContainer}>
-      <img src={comment.image.path} alt={comment.title} />
+      <img src={imagePath} alt={word?.word || comment.title} />
     </div>
   );
 
-  const isLandscape = comment.image?.orientation === "landscape"; // if not -> portrait
+  const renderContent = () => {
+    if (word) {
+      return (
+        <>
+          <h3>
+            <WordSummary word={word} />
+          </h3>
+          <div className={styles.content}>
+            {/* <Text data={comment} /> */}
+            {image}
+            {word.type === "noun" && <TableNoun word={word} />}
+            {(word.type === "adjective" || word.type === "pronoun") && (
+              <TableAdjPro word={word} />
+            )}
+            {word.note && <p className={styles.note}>{word.note}</p>}
+            {comment.note && <p className={styles.note}>{comment.note}</p>}
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <h3>{comment.title}</h3>
+          <Text data={comment} />
+          {image}
+          {comment.note && <p className={styles.note}>{comment.note}</p>}
+        </>
+      );
+    }
+  };
 
   return (
     <div className={styles.commentOverlay} onClick={onClose}>
       <div
-        className={`${styles.commentModal} ${
-          isLandscape ? styles.landscapeLayout : styles.portraitLayout
-        }`}
-        onClick={(e) => e.stopPropagation()} // empêche la fermeture en cliquant sur le contenu
+        className={styles.commentModal} 
+        onClick={(e) => e.stopPropagation()}
       >
-        {isLandscape ? (
-          // Landscape -> Data in one column
-          <div className={styles.content}>
-            <h3>{comment.title}</h3>
-            {image}
-            <Text data={comment} />
-          </div>
-        ) : (
-          // Portrait -> two columns : image + rest of data
-          <>
-            {image}
-            <div className={styles.content}>
-              <h3>{comment.title}</h3>
-              <Text data={comment} />
-            </div>
-          </>
-        )}
+        {renderContent()}
       </div>
     </div>
   );

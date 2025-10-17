@@ -31,7 +31,7 @@ export default function ChapterPage() {
   const handleOpenComment = (commentId) => {
     let comment = null;
     if (currentSection === "text") {
-      comment = comments[commentId];
+      comment = comments.find((c) => c.id === commentId);
     } else if (currentSection === "vocabulary") {
       comment = commentId;
     }
@@ -65,6 +65,7 @@ export default function ChapterPage() {
               <CommentModal
                 comment={openComment}
                 onClose={handleCloseComment}
+                vocabulary={vocabulary}
               />
             )}
           </>
