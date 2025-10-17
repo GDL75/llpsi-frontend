@@ -5,6 +5,7 @@ import { useTranslation } from "data/translation/useTranslation";
 import { useMorph } from "utils/useMorph";
 import { ordinalNumber } from "utils/numbers";
 import { addEnding } from "utils/addEnding";
+import WordSummary from "ui/WordSummary"
 
 export default function Vocabulary({ data, openComment }) {
   const t = useTranslation();
@@ -81,83 +82,12 @@ export default function Vocabulary({ data, openComment }) {
     ];
   };
 
-  // --- 3️⃣ Rendu d’un mot
-  const renderWord = (word) => {
-    if (word.type === "noun") {
-      return (
-        <>
-          {m({
-            token: addEnding({ word, case: "nominative", number: "singular" }),
-            morph: "nominative",
-            gender: word.gender,
-          })}
-          {currentChapter > 1 && (
-            <>
-              {", "}
-              {m({
-                token: addEnding({
-                  word,
-                  case: "genitive",
-                  number: "singular",
-                }),
-                morph: "genitive",
-                gender: word.gender,
-              })}
-            </>
-          )}
-          {`, ${genderAbbreviation[word.gender]}`}
-        </>
-      );
-    } else if (word.type === "adjective" || word.type === "pronoun") {
-      return (
-        <>
-          {m({
-            token: addEnding({
-              word,
-              case: "nominative",
-              number: "singular",
-              gender: "masculine",
-            }),
-            morph: "nominative",
-            gender: "masculine",
-          })}
-          ,{" "}
-          {m({
-            token: addEnding({
-              word,
-              case: "nominative",
-              number: "singular",
-              gender: "feminine",
-            }),
-            morph: "nominative",
-            gender: "feminine",
-          })}
-          ,{" "}
-          {m({
-            token: addEnding({
-              word,
-              case: "nominative",
-              number: "singular",
-              gender: "neuter",
-            }),
-            morph: "nominative",
-            gender: "neuter",
-          })}
-        </>
-      );
-    } else if (word.type === "verb") {
-      return word.llpsi;
-    } else {
-      return word.word;
-    }
-  };
-
-  // --- 4️⃣ Colonnes : première = 3 premières catégories, deuxième = reste
+  // --- 3️⃣ Colonnes : première = 3 premières catégories, deuxième = reste
   const firstCol = CATEGORY_ORDER.slice(0, 3);
   const secondCol = CATEGORY_ORDER.slice(3);
   const columns = [firstCol, secondCol];
 
-  // --- 5️⃣ Rendu
+  // --- 4️⃣ Rendu
   const renderTypeBlock = (type) =>
     groupedByType[type] && (
       <div key={type}>
@@ -178,7 +108,7 @@ export default function Vocabulary({ data, openComment }) {
             {subgroup.words.map((word) => (
               <p key={word.id} className={styles.wordContainer}>
                 <span className={styles.word} onClick={() => openComment(word)}>
-                  {renderWord(word)}
+                  <WordSummary word={word} />
                 </span>
               </p>
             ))}

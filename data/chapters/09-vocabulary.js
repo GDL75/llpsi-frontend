@@ -523,7 +523,7 @@ const vocabulary09 = [
       ["-", "-", "-"],
     ],
     translation: { en: "myself, yourself, etc.", fr: "soi-même" },
-    note: "⚠️ genitive and dative are irregular",
+    note: "⚠️ singular genitive and dative are irregular",
   },
   {
     id: "supra_adv", // without macron accents

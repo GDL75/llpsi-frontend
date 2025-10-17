@@ -93,7 +93,12 @@ export function TableAdjPro({ word }) {
   ];
   const rowHeader = [...cases, ...cases]; // twice : singular, then plural
 
-  const columnHeader = ["case", "masculine", "feminine", "neuter"];
+  const columnHeader = [
+    word.type === "adjective" ? "case" : "sing/plur",
+    "masculine",
+    "feminine",
+    "neuter",
+  ];
 
   // --- Filtrage selon le chapitre
   const visibleRows = rowHeader
@@ -105,25 +110,44 @@ export function TableAdjPro({ word }) {
     .filter(Boolean);
 
   // --- Construction du tableau de données avec addEnding()
-  const tableData = visibleRows.map(({ rowName, rowIndex }) => {
-    const number = rowIndex < 6 ? "singular" : "plural";
-    return {
-      caseName: rowName,
-      masculine: addEnding({
-        word,
-        case: rowName,
-        gender: "masculine",
-        number,
-      }),
-      feminine: addEnding({
-        word,
-        case: rowName,
-        gender: "feminine",
-        number,
-      }),
-      neuter: addEnding({ word, case: rowName, gender: "neuter", number }),
-    };
-  });
+  let tableData = {};
+  if (word.type === "adjective") {
+    tableData = visibleRows.map(({ rowName, rowIndex }) => {
+      const number = rowIndex < 6 ? "singular" : "plural";
+      return {
+        caseName: rowName,
+        masculine: addEnding({
+          word,
+          case: rowName,
+          gender: "masculine",
+          number,
+        }),
+        feminine: addEnding({
+          word,
+          case: rowName,
+          gender: "feminine",
+          number,
+        }),
+        neuter: addEnding({
+          word,
+          case: rowName,
+          gender: "neuter",
+          number,
+        }),
+      };
+    });
+  } else {
+    // it is then a pronoun
+    tableData = visibleRows.map(({ rowName, rowIndex }) => {
+      const number = rowIndex < 6 ? "singular" : "plural";
+      return {
+        caseName: rowName,
+        masculine: word.forms[rowIndex][0],
+        feminine: word.forms[rowIndex][1],
+        neuter: word.forms[rowIndex][2],
+      };
+    });
+  }
 
   return (
     <table className={styles.table}>

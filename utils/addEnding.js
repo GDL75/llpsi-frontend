@@ -1,5 +1,6 @@
 import endings from "data/endings";
 
+// adds the flexible endings to declinable words
 export function addEnding({ word, case: _case, number, gender }) {
   // "case: _case" because "case" is a reserved keyword in js
   if (!word || !_case || !number) return "";
