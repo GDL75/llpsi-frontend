@@ -58,7 +58,7 @@ export default function VocabularyModal({ vocab }) {
       {/* Image à la fin */}
       {vocab.image && (
         <div className={styles.imageContainer}>
-          <img src={vocab.image} alt={vocab.word} className={styles.image} />
+          <img src={vocab.image.path} alt={vocab.word} className={styles.image} />
         </div>
       )}
     </aside>

@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import styles from "styles/CommentModal.module.css";
-import Text from "components/ui/Text";
+import Text from "ui/Text";
 import WordSummary from "ui/WordSummary";
 import { TableNoun, TableAdjPro } from "ui/Table";
 
@@ -13,8 +13,18 @@ export default function CommentModal({ comment, onClose, vocabulary }) {
     return vocabulary.find((w) => w.id === comment.id) || null;
   }, [vocabulary, comment]);
 
+  const details = (comment?.text?.length || word.note || comment.note) && (
+    <div className={styles.details}>
+      <Text data={comment} />
+      {word?.note && <p className={styles.note}>{word.note}</p>}
+      {comment.note && <p className={styles.note}>{comment.note}</p>}
+    </div>
+  );
+
   // Image (si présente)
-  const imagePath = comment.image || word?.image;
+  const imagePath = comment.image?.path || word?.image?.path;
+  const isLandscape =
+    imagePath && (comment.image?.isLandscape || word?.image?.isLandscape);
   const image = imagePath && (
     <div className={styles.imageContainer}>
       <img src={imagePath} alt={word?.word || comment.title} />
@@ -22,42 +32,33 @@ export default function CommentModal({ comment, onClose, vocabulary }) {
   );
 
   const renderContent = () => {
-    if (word) {
-      return (
-        <>
-          <h3>
-            <WordSummary word={word} />
-          </h3>
-          <div className={styles.content}>
-            {/* <Text data={comment} /> */}
+    return (
+      <>
+        <h3 className={styles.header}>
+          {word ? <WordSummary word={word} /> : comment.title}
+        </h3>
+        <div className={styles.content}>
+          {/* right column */}
+          {image && (<div className={styles.column}>
+            {isLandscape && details}
             {image}
-            {word.type === "noun" && <TableNoun word={word} />}
-            {(word.type === "adjective" || word.type === "pronoun") && (
+          </div>)}
+          <div className={styles.column}>
+            {/* left column */}
+            {!isLandscape && details}
+            {word?.type === "noun" && <TableNoun word={word} />}
+            {(word?.type === "adjective" || word?.type === "pronoun") && (
               <TableAdjPro word={word} />
             )}
-            {word.note && <p className={styles.note}>{word.note}</p>}
-            {comment.note && <p className={styles.note}>{comment.note}</p>}
           </div>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <h3>{comment.title}</h3>
-          <Text data={comment} />
-          {image}
-          {comment.note && <p className={styles.note}>{comment.note}</p>}
-        </>
-      );
-    }
+        </div>
+      </>
+    );
   };
 
   return (
     <div className={styles.commentOverlay} onClick={onClose}>
-      <div
-        className={styles.commentModal} 
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className={styles.commentModal} onClick={(e) => e.stopPropagation()}>
         {renderContent()}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import styles from "styles/[id].module.css";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import MainLayout from "components/layout/MainLayout";
 import Text from "components/ui/Text";
@@ -15,6 +15,10 @@ export default function ChapterPage() {
 
   const [openComment, setOpenComment] = useState(null);
   const currentSection = useSelector((state) => state.navigation.value.section);
+  useEffect(() => {
+    // À chaque changement de section, on ferme la modale
+    setOpenComment(null);
+  }, [currentSection]);
 
   // Getting data from the requested chapter, needs to be AFTER the previous states
   const chapterData = chapters[Number(id)];
