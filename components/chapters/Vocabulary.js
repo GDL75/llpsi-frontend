@@ -2,23 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styles from "styles/Vocabulary.module.css";
 import { useTranslation } from "data/translation/useTranslation";
-import { useMorph } from "utils/useMorph";
 import { ordinalNumber } from "utils/numbers";
-import { addEnding } from "utils/addEnding";
 import WordSummary from "ui/WordSummary"
 
 export default function Vocabulary({ data, openComment }) {
   const t = useTranslation();
-  const m = useMorph();
-  const currentChapter = useSelector((state) => state.navigation.value.chapter);
   const language = useSelector((state) => state.settings.value.language);
-
-  const genderAbbreviation = {
-    masculine: "m.",
-    feminine: "f.",
-    neuter: "n.",
-    both: "m./f.",
-  };
 
   const CATEGORY_ORDER = [
     "noun",

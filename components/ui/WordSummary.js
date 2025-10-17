@@ -74,17 +74,21 @@ export default function WordSummary({ word }) {
           morph: "nominative",
           gender: "feminine",
         })}
-        ,{" "}
-        {m({
-          token: addEnding({
-            word,
-            case: "nominative",
-            number: "singular",
-            gender: "neuter",
-          }),
-          morph: "nominative",
-          gender: "neuter",
-        })}
+        {currentChapter > 1 && (
+          <>
+            {", "}
+            {m({
+              token: addEnding({
+                word,
+                case: "nominative",
+                number: "singular",
+                gender: "neuter",
+              }),
+              morph: "nominative",
+              gender: "neuter",
+            })}
+          </>
+        )}
       </>
     );
   } else if (word.type === "pronoun") {
@@ -103,6 +107,7 @@ export default function WordSummary({ word }) {
         })}
         ,{" "}
         {m({
+          // no test here: there is no pronoun in chapter 1
           token: word.forms[0][2],
           morph: "nominative",
           gender: "neuter",

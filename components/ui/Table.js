@@ -97,7 +97,7 @@ export function TableAdjPro({ word }) {
     word.type === "adjective" ? "case" : "sing/plur",
     "masculine",
     "feminine",
-    "neuter",
+    ...(currentChapter > 1 ? ["neuter"] : []),
   ];
 
   // --- Filtrage selon le chapitre
@@ -175,9 +175,11 @@ export function TableAdjPro({ word }) {
               <td className={`${styles.cell} ${styles.feminine}`}>
                 {m({ token: row.feminine, morph: row.caseName })}
               </td>
-              <td className={`${styles.cell} ${styles.neuter}`}>
-                {m({ token: row.neuter, morph: row.caseName })}
-              </td>
+              {currentChapter > 1 && (
+                <td className={`${styles.cell} ${styles.neuter}`}>
+                  {m({ token: row.neuter, morph: row.caseName })}
+                </td>
+              )}
             </tr>
           );
         })}

@@ -511,7 +511,7 @@ const vocabulary09 = [
     forms: [
       ["ips-e", "ips-a", "ips-um"],
       ["ips-um", "ips-am", "ips-um"],
-      ["ips-īus", "ips-ī", "ips-īus"], // irregular
+      ["ips-īus", "ips-īus", "ips-īus"], // irregular
       ["ips-ī", "ips-ī", "ips-ī"], // irregular
       ["ips-ō", "ips-ā", "ips-ō"],
       ["-", "-", "-"],
