@@ -54,7 +54,7 @@ const vocabulary09 = [
     radical: "cæl-",
     limitation: "st", // st = only singular, pt = only plural
     translation: { en: "sky, heaven", fr: "ciel" },
-    note: "singularis tantum",
+    note: [{ token: "singularis tantum" }],
   },
   {
     id: "campus", // without macron accents
@@ -87,6 +87,7 @@ const vocabulary09 = [
     declension: 2, // from 1 to 5, 0 if undeclinable
     endingsType: "2m",
     radical: "lup-",
+    image: { path: "/images/09-lupus.jpg", isLandscape: true },
     translation: { en: "wolf", fr: "loup" },
   },
   {
@@ -121,6 +122,7 @@ const vocabulary09 = [
     declension: 2, // from 1 to 5, 0 if undeclinable
     endingsType: "2n",
     radical: "vestigi-",
+    image: { path: "/images/09-vestigium.jpg", isLandscape: true },
     translation: { en: "footprint, trace", fr: "empreinte, trace" },
   },
   {
@@ -132,6 +134,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf1",
     radical: ["arbor-", "arbor-"], // if 2 items, no ending is applied to the 2nd
+    image: { path: "/images/09-arbor.jpg", isLandscape: true },
     translation: { en: "tree", fr: "arbre" },
   },
   {
@@ -143,7 +146,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf1",
     radical: "can-",
-    note: "can be masculine or feminine",
+    note: [{ token: "can be masculine or feminine" }],
     translation: { en: "dog", fr: "chien, chienne" },
   },
   {
@@ -188,6 +191,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: ["dēnt-", "dēn-s"], // if 2 items, no ending is applied to the 2nd (nom./voc.)
+    image: { path: "/images/09-dens.jpg", isLandscape: false },
     translation: { en: "tooth", fr: "dent" },
   },
   {
@@ -199,6 +203,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: ["mont-", "mōn-s"], // if 2 items, no ending is applied to the 2nd (nom./voc.)
+    image: { path: "/images/09-mons.jpg", isLandscape: true },
     translation: { en: "mountain", fr: "montagne" },
   },
   {
@@ -206,10 +211,11 @@ const vocabulary09 = [
     word: "nūbēs",
     chapterId: 9,
     type: "noun",
-    gender: "masculine",
+    gender: "feminine",
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: ["nūb-", "nūb-ēs"], // if 2 items, no ending is applied to the 2nd (nom./voc.)
+    image: { path: "/images/09-nubes.jpg", isLandscape: true },
     translation: { en: "mountain", fr: "montagne" },
   },
   {
@@ -279,6 +285,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: "vall-",
+    image: { path: "/images/09-vallis.jpg", isLandscape: true },
     translation: { en: "valley", fr: "vallée" },
   },
   {
@@ -523,7 +530,7 @@ const vocabulary09 = [
       ["-", "-", "-"],
     ],
     translation: { en: "myself, yourself, etc.", fr: "soi-même" },
-    note: "⚠️ singular genitive and dative are irregular",
+    note: [{ token: "⚠️ singular genitive and dative are irregular" }],
   },
   {
     id: "supra_adv", // without macron accents
@@ -544,7 +551,12 @@ const vocabulary09 = [
     word: "suprā",
     chapterId: 9,
     type: "preposition",
-    note: "+accusative",
+    note: [
+      { markup: "i" },
+      { token: "prp ", suffix: " ", markup: "/i" },
+      { token: "+", suffix: " ", markup: "i" },
+      { token: "accūsātīvus", morph: "accusative" },
+    ],
     translation: { en: "above", fr: "au-dessus" },
   },
   {
@@ -552,7 +564,12 @@ const vocabulary09 = [
     word: "sub",
     chapterId: 9,
     type: "preposition",
-    note: "+accusative",
+    note: [
+      { markup: "i" },
+      { token: "prp ", suffix: " ", markup: "/i" },
+      { token: "+", suffix: " ", markup: "i" },
+      { token: "ablātīvus", morph: "ablative" },
+    ],
     translation: { en: "under, near", fr: "sous" },
   },
   {
@@ -567,7 +584,7 @@ const vocabulary09 = [
     word: "ut",
     chapterId: 9,
     type: "conjunction",
-    note: "+subjunctive / +indicative",
+    note: [{ token: "+subjunctive / +indicative" }],
     translation: { en: "like, as", fr: "quand, depuis que" },
   },
 ];

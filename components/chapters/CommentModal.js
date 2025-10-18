@@ -16,8 +16,7 @@ export default function CommentModal({ comment, onClose, vocabulary }) {
   const details = (comment?.text?.length || word.note || comment.note) && (
     <div className={styles.details}>
       <Text data={comment} />
-      {word?.note && <p className={styles.note}>{word.note}</p>}
-      {comment.note && <p className={styles.note}>{comment.note}</p>}
+      {word?.note && <Text data={{ text: word.note }} />}
     </div>
   );
 

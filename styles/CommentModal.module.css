@@ -40,6 +40,7 @@
   padding: 0px 10px 10px;
   border: 2px solid gray;
   border-radius: 5px;
+  margin-bottom: 1rem;
 }
 .column {
   display: flex;
@@ -49,7 +50,6 @@
 .imageContainer {
   flex: 0 0 auto; /* largeur fixe selon l'image */
   max-width: 400px;
-  padding: 1rem 0rem;
 }
 .imageContainer img {
   display: block;

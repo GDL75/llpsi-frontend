@@ -14,3 +14,9 @@
   border-radius: 1rem;
   margin-top: 1rem;
 }
+.noteContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: flex-start;
+}

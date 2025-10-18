@@ -2,6 +2,7 @@ import styles from "styles/VocabularyModal.module.css";
 import { useSelector } from "react-redux";
 import { TableNoun, TableAdjPro } from "ui/Table";
 import morphologyConfig from "data/morphologyConfig";
+import Text from "components/ui/Text";
 
 export default function VocabularyModal({ vocab }) {
   const currentChapter = useSelector((state) => state.navigation.value.chapter);
@@ -51,9 +52,10 @@ export default function VocabularyModal({ vocab }) {
       )}
 
       {vocab.note && (
-        <p>
-          <strong className="blink">Note</strong> : {vocab.note}
-        </p>
+        <div className={styles.noteContainer}>
+          <p className="blink">Note :</p>
+          <Text data={{ text: vocab.note }} />
+        </div>
       )}
 
       {/* Image à la fin */}

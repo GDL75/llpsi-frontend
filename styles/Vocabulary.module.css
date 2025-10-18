@@ -4,7 +4,6 @@
   align-items: flex-start;
   width:100%;
 }
-
 .column {
   flex: 1;
   min-width: 0;
@@ -20,7 +19,6 @@
   transition: all 0.2s ease;
   border: 1px solid transparent;
 }
-
 .word:hover {
   border: 1px solid var(--color-2);
   background-color: var(--color-0);  /* optionnel : couleur de fond au survol */
