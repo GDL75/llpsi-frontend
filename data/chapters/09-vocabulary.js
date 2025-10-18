@@ -165,7 +165,7 @@ const vocabulary09 = [
     gender: "masculine",
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
-    radical: "can-",
+    radical: "coll-",
     translation: { en: "hill", fr: "colline" },
   },
   {

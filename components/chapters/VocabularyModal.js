@@ -32,16 +32,17 @@ export default function VocabularyModal({ vocab }) {
   return (
     <aside className={styles.vocabModal}>
       <h3>{vocab.type === "verb" ? vocab.llpsi : vocab.word}</h3>
-
-      {/* Métadonnées grammaticales */}
-      {visibleKeys.map(
-        (key) =>
-          currentChapter >= chapFrom(key) && (
-            <p key={key}>
-              <strong>{key}</strong> : {vocab[key]}
-            </p>
-          )
-      )}
+      <div className={styles.details}>
+        {/* Métadonnées grammaticales */}
+        {visibleKeys.map(
+          (key) =>
+            currentChapter >= chapFrom(key) && (
+              <p key={key}>
+                <strong>{key}</strong> : {vocab[key]}
+              </p>
+            )
+        )}
+      </div>
 
       {/* Tableau des formes, si présent */}
       {vocab.type === "noun" && <TableNoun word={vocab} />}
@@ -58,7 +59,11 @@ export default function VocabularyModal({ vocab }) {
       {/* Image à la fin */}
       {vocab.image && (
         <div className={styles.imageContainer}>
-          <img src={vocab.image.path} alt={vocab.word} className={styles.image} />
+          <img
+            src={vocab.image.path}
+            alt={vocab.word}
+            className={styles.image}
+          />
         </div>
       )}
     </aside>

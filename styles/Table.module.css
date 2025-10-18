@@ -1,7 +1,6 @@
 .table {
   border-collapse: collapse;
   width: auto;
-  margin: 1rem 0;
   font-family: var(--font-body);
   font-size: var(--fs-p);
 }

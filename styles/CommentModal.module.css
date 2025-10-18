@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  padding: 20px;
   gap: 20px; 
   justify-content: center;
   align-items: center;
@@ -36,7 +36,6 @@
   justify-content: center;
 }
 .details {
-  margin-top: 1rem;
   background-color: var(--color-0);
   padding: 0px 10px 10px;
   border: 2px solid gray;
@@ -47,20 +46,11 @@
   flex-direction: column;
   padding: 0px 10px;
 }
-.layoutImageLandscape {
-  display: flex;
-}
-
-.layoutImagePortrait {
-  display: flex;
-}
-
 .imageContainer {
   flex: 0 0 auto; /* largeur fixe selon l'image */
   max-width: 400px;
   padding: 1rem 0rem;
 }
-
 .imageContainer img {
   display: block;
   width: 100%;

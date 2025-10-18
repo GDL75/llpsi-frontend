@@ -35,7 +35,7 @@ const comments09 = [
     text: [
       { token: "alb-us", morph: "nominative", suffix: " -" },
       { token: "a", morph: "nominative", suffix: " -" },
-      { token: "um", morph: "nominative", suffix: " ⟷ " },
+      { token: "um", morph: "nominative", suffix: " ⇔ " },
       { token: "nig-er", morph: "nominative", suffix: " -" },
       { token: "r-a", morph: "nominative", suffix: " -" },
       { token: "r-um", morph: "nominative" },
@@ -46,7 +46,7 @@ const comments09 = [
     text: [
       { token: "alb-us", morph: "nominative", suffix: " -" },
       { token: "a", morph: "nominative", suffix: " -" },
-      { token: "um", morph: "nominative", suffix: " ⟷ " },
+      { token: "um", morph: "nominative", suffix: " ⇔ " },
       { token: "nig-er", morph: "nominative", suffix: " -" },
       { token: "r-a", morph: "nominative", suffix: " -" },
       { token: "r-um", morph: "nominative" },

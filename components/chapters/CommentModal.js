@@ -26,7 +26,10 @@ export default function CommentModal({ comment, onClose, vocabulary }) {
   const isLandscape =
     imagePath && (comment.image?.isLandscape || word?.image?.isLandscape);
   const image = imagePath && (
-    <div className={styles.imageContainer}>
+    <div
+      className={styles.imageContainer}
+      style={{ padding: !details && "0px" }}
+    >
       <img src={imagePath} alt={word?.word || comment.title} />
     </div>
   );
