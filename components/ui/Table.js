@@ -14,14 +14,7 @@ export function TableNoun({ word }) {
 
   if (!word || word.type !== "noun") return null;
 
-  const rowHeader = [
-    "nominative",
-    "accusative",
-    "genitive",
-    "dative",
-    "ablative",
-    "vocative",
-  ];
+  const rowHeader = ["nominative", "accusative", "genitive", "dative", "ablative", "vocative"];
   const columnHeader = ["case", "singular", "plural"];
 
   // Filtrage selon le chapitre
@@ -80,17 +73,9 @@ export function TableAdjPro({ word }) {
   const m = useMorph();
   const currentChapter = useSelector((state) => state.navigation.value.chapter);
 
-  if (!word || (word.type !== "adjective" && word.type !== "pronoun"))
-    return null;
+  if (!word || (word.type !== "adjective" && word.type !== "pronoun")) return null;
 
-  const cases = [
-    "nominative",
-    "accusative",
-    "genitive",
-    "dative",
-    "ablative",
-    "vocative",
-  ];
+  const cases = ["nominative", "accusative", "genitive", "dative", "ablative", "vocative"];
   const rowHeader = [...cases, ...cases]; // twice : singular, then plural
 
   const columnHeader = [
@@ -164,21 +149,14 @@ export function TableAdjPro({ word }) {
         {tableData.map((row, i) => {
           const isEndOfSingular = i === visibleRows.length / 2 - 1;
           return (
-            <tr
-              key={i}
-              className={isEndOfSingular ? styles.sectionDivider : undefined}
-            >
+            <tr key={i} className={isEndOfSingular ? styles.sectionDivider : undefined}>
               <td className={styles.rowHeader}>{t(row.caseName)}</td>
               <td className={`${styles.cell} ${styles.masculine}`}>
                 {m({ token: row.masculine, morph: row.caseName })}
               </td>
-              <td className={`${styles.cell} ${styles.feminine}`}>
-                {m({ token: row.feminine, morph: row.caseName })}
-              </td>
+              <td className={`${styles.cell} ${styles.feminine}`}>{m({ token: row.feminine, morph: row.caseName })}</td>
               {currentChapter > 1 && (
-                <td className={`${styles.cell} ${styles.neuter}`}>
-                  {m({ token: row.neuter, morph: row.caseName })}
-                </td>
+                <td className={`${styles.cell} ${styles.neuter}`}>{m({ token: row.neuter, morph: row.caseName })}</td>
               )}
             </tr>
           );

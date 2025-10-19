@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useMorph } from "utils/useMorph";
 import Table from "ui/Table";
+import { GapInput, DropDown } from "ui/userInput";
 
 export default function Text({ data, openComment }) {
   const m = useMorph();
+
+  const [answers, setAnswers] = useState({}); // { index: { text: "xx", morph: "nominative" } }
+  const handleChange = (index, field, value) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [index]: { ...prev[index], [field]: value },
+    }));
+  };
 
   const paragraphs = [];
   let currentParagraph = [];
@@ -31,11 +40,7 @@ export default function Text({ data, openComment }) {
       if (isBold) tokenElement = <strong>{tokenElement}</strong>;
 
       const styledToken = item.comment ? (
-        <span
-          key={`word-${index}`}
-          className="comment"
-          onClick={() => openComment(item.comment)}
-        >
+        <span key={`word-${index}`} className="comment" onClick={() => openComment(item.comment)}>
           {tokenElement}
         </span>
       ) : (
@@ -47,16 +52,36 @@ export default function Text({ data, openComment }) {
       if (item.suffix) currentParagraph.push(item.suffix);
     }
 
+    // --- cas d’un gap (exercice) ---
+    if (item.gap) {
+      currentParagraph.push(
+        <GapInput
+          key={`gap-input-${index}`}
+          value={answers[index]?.text || ""}
+          onChange={(e) => handleChange(index, "text", e.target.value)}
+          placeholder=""
+          width="2em"
+          dropValue={answers[index]?.morph || ""}
+        />
+      );
+
+      currentParagraph.push(
+        <DropDown
+          key={`gap-select-${index}`}
+          listType="case"
+          value={answers[index]?.morph || ""}
+          onChange={(e) => handleChange(index, "morph", e.target.value)}
+        />
+      );
+
+      if (item.suffix) currentParagraph.push(item.suffix);
+    }
+
     // --- cas d'une image ---
     if (item.image) {
       flushParagraph(`p-${index}`);
       paragraphs.push(
-        <img
-          key={`image-${index}`}
-          src={item.image}
-          alt=""
-          style={{ display: "block", margin: "1rem 0" }}
-        />
+        <img key={`image-${index}`} src={item.image} alt="" style={{ display: "block", margin: "1rem 0" }} />
       );
     }
 
@@ -65,10 +90,7 @@ export default function Text({ data, openComment }) {
       flushParagraph(`p-${index}`); // a table cannot be rendered wthin a <p> -> p close + new div
       paragraphs.push(
         <div key={`noun-${index}`} style={{ margin: "1rem 0" }}>
-          <Table
-            table={item.table}
-            renderCell={(token, morph) => m({ token, morph })}
-          />
+          <Table table={item.table} renderCell={(token, morph) => m({ token, morph })} />
         </div>
       );
     }

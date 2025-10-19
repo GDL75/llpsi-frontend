@@ -22,13 +22,9 @@ export default function CommentModal({ comment, onClose, vocabulary }) {
 
   // Image (si présente)
   const imagePath = comment.image?.path || word?.image?.path;
-  const isLandscape =
-    imagePath && (comment.image?.isLandscape || word?.image?.isLandscape);
+  const isLandscape = imagePath && (comment.image?.isLandscape || word?.image?.isLandscape);
   const image = imagePath && (
-    <div
-      className={styles.imageContainer}
-      style={{ padding: !details && "0px" }}
-    >
+    <div className={styles.imageContainer} style={{ padding: !details && "0px" }}>
       <img src={imagePath} alt={word?.word || comment.title} />
     </div>
   );
@@ -36,22 +32,20 @@ export default function CommentModal({ comment, onClose, vocabulary }) {
   const renderContent = () => {
     return (
       <>
-        <h3 className={styles.header}>
-          {word ? <WordSummary word={word} /> : comment.title}
-        </h3>
+        <h3 className={styles.header}>{word ? <WordSummary word={word} /> : comment.title}</h3>
         <div className={styles.content}>
           {/* right column */}
-          {image && (<div className={styles.column}>
-            {isLandscape && details}
-            {image}
-          </div>)}
+          {image && (
+            <div className={styles.column}>
+              {isLandscape && details}
+              {image}
+            </div>
+          )}
           <div className={styles.column}>
             {/* left column */}
             {!isLandscape && details}
             {word?.type === "noun" && <TableNoun word={word} />}
-            {(word?.type === "adjective" || word?.type === "pronoun") && (
-              <TableAdjPro word={word} />
-            )}
+            {(word?.type === "adjective" || word?.type === "pronoun") && <TableAdjPro word={word} />}
           </div>
         </div>
       </>

@@ -110,7 +110,7 @@ const vocabulary09 = [
     declension: 2, // from 1 to 5, 0 if undeclinable
     endingsType: "2m",
     radical: "rīv-",
-    image: { path: "/images/09-rivus.png", isLandscape: true },
+    image: { path: "/images/09-rivus.jpg", isLandscape: true },
     translation: { en: "brook", fr: "ruisseau" },
   },
   {

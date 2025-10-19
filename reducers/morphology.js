@@ -2,11 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import morphologyConfig from "data/morphologyConfig";
 
 const initialState = morphologyConfig.reduce((acc, morph) => {
-  if (
-    morph.key === "masculine" ||
-    morph.key === "feminine" ||
-    morph.key === "neuter"
-  ) {
+  if (morph.key === "masculine" || morph.key === "feminine" || morph.key === "neuter") {
     acc[morph.key] = false;
   } else {
     acc[morph.key] = true;

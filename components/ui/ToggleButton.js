@@ -11,16 +11,11 @@ export default function ToggleButton({ options, onChange }) {
 
   return (
     <div className={styles.toggleContainer}>
-      <div
-        className={styles.toggleSlider}
-        style={{ left: activeIndex === 0 ? "0" : "50%" }}
-      ></div>
+      <div className={styles.toggleSlider} style={{ left: activeIndex === 0 ? "0" : "50%" }}></div>
       {options.map((opt, i) => (
         <p
           key={opt.value}
-          className={`${styles.toggleOption} ${
-            activeIndex === i ? "active" : ""
-          }`}
+          className={`${styles.toggleOption} ${activeIndex === i ? "active" : ""}`}
           onClick={() => handleClick(opt.value, i)}
         >
           {opt.label}

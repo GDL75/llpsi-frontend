@@ -15,8 +15,7 @@ function Home() {
   const router = useRouter();
   const [isSettings, setIsSettings] = useState(false);
   const book = useSelector((state) => state.navigation.value.book);
-  const image =
-    book === "book1" ? "/images/caveCanem.png" : "/images/romaAeterna.png";
+  const image = book === "book1" ? "/images/caveCanem.png" : "/images/romaAeterna.png";
 
   return (
     <>
@@ -46,9 +45,7 @@ function Home() {
           <br /> per sē illūstrāta
         </h1>
         <h3>{book === "book1" ? "Pars I" : "Pars II"}</h3>
-        <h3 style={{ marginBottom: "20px" }}>
-          {book === "book1" ? "FAMILIA RŌMĀNA" : "RŌMA ÆTERNA"}
-        </h3>
+        <h3 style={{ marginBottom: "20px" }}>{book === "book1" ? "FAMILIA RŌMĀNA" : "RŌMA ÆTERNA"}</h3>
         <div className={styles.connectionContainer}>
           <CustomButton
             bColor="3"
@@ -69,18 +66,11 @@ function Home() {
           />
         </div>
         <div className={styles.picContainer}>
-          <Image
-            src={image}
-            alt="A dog guarding a Roman villa"
-            width={624}
-            height={416}
-          />
+          <Image src={image} alt="A dog guarding a Roman villa" width={624} height={416} />
         </div>
       </main>
       {/* The Settings modal needs to be outside of <main> */}
-      {isSettings && (
-        <Settings bColor="0" onClose={() => setIsSettings(false)} />
-      )}
+      {isSettings && <Settings bColor="0" onClose={() => setIsSettings(false)} />}
     </>
   );
 }

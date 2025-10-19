@@ -21,26 +21,42 @@
   text-align: left;
 }
 
-.color { color: red; }
-.bold { font-weight: bold; }
-.italic { font-style: italic; }
-.underline { text-decoration: underline; }
-.underlineDashed { text-decoration: underline dashed; }
+.color {
+  color: red;
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  text-decoration: underline;
+}
+.underlineDashed {
+  text-decoration: underline dashed;
+}
 .underlineWavy {
   text-decoration-line: underline;
   text-decoration-style: wavy;
   text-decoration-color: green;
 }
-.highlight { background: yellow; }
-.uppercase { text-transform: uppercase; }
-.shadow { text-shadow: 2px 2px 4px gray; }
+.highlight {
+  background: yellow;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.shadow {
+  text-shadow: 2px 2px 4px gray;
+}
 .stroke {
   color: white;
   text-shadow:
     1px 1px 0 black,
-   -1px 1px 0 black,
+    -1px 1px 0 black,
     1px -1px 0 black,
-   -1px -1px 0 black;
+    -1px -1px 0 black;
 }
 .gradient {
   background: linear-gradient(90deg, orange, red);
@@ -76,5 +92,7 @@
   font-weight: bold;
 }
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }

@@ -7,6 +7,7 @@
   --color-3: #9a4109;
   --background: #ffffff;
   --text: #000000;
+  --TableHeadBackgrd: #f5f5f5;
 
   /* Fonts */
   --font-body: "GentiumW", sans-serif;
@@ -46,6 +47,7 @@
   --color-3: #f69c65;
   --background: #000000;
   --text: #ffffff;
+  --TableHeadBackgrd: #44403b;
 }
 
 [data-theme="book2-light"] {
@@ -152,12 +154,14 @@ body.morph-subjunctive .subjunctive {
   margin: 10px 0px;
 }
 .blink {
-  animation: blink .5s step-start infinite;
+  animation: blink 0.5s step-start infinite;
   color: var(--color-3);
   font-weight: bold;
 }
 @keyframes blink {
-  50% { opacity: 60%; }
+  50% {
+    opacity: 60%;
+  }
 }
 
 /* ========== GLOBAL RESET ========== */

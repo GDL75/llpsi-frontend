@@ -23,12 +23,14 @@ export default function WordSummary({ word }) {
             token: addEnding({ word, case: "nominative", number: "singular" }),
             morph: "nominative",
             gender: word.gender,
-          })}{", "}
+          })}
+          {", "}
           {m({
             token: addEnding({ word, case: "nominative", number: "plural" }),
             morph: "nominative",
             gender: word.gender,
-          })}{", "}
+          })}
+          {", "}
           {genderAbbreviation[word.gender]}
         </>
       );

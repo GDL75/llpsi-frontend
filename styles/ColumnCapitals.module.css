@@ -2,64 +2,46 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%
+  width: 100%;
 }
 .title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: white;
-  color: black
+  color: black;
 }
 .leftCapital {
   display: flex;
   flex-direction: column;
 }
-.layerLeft1 {  
-  width: 300px; 
+.layerLeft1 {
+  width: 300px;
   height: 30px;
   background: repeating-linear-gradient(90deg in oklab, var(--color-0), var(--color-1) 40px);
   border-bottom: 1px solid var(--color-2);
   border-right: 1px solid var(--color-2);
 }
-.layerLeft2 {  
-  width: 290px; 
+.layerLeft2 {
+  width: 290px;
   height: 30px;
-  background: linear-gradient(
-  to right,
-  var(--color-1) 0%, 
-  var(--color-0) 20%, 
-  var(--color-0) 80%, 
-  var(--color-1) 100% 
-);
+  background: linear-gradient(to right, var(--color-1) 0%, var(--color-0) 20%, var(--color-0) 80%, var(--color-1) 100%);
   border-radius: 0px 0px 30px 0px;
   border-bottom: 1px solid var(--color-2);
   border-right: 1px solid var(--color-2);
 }
-.layerLeft3 {  
-  width: 260px; 
+.layerLeft3 {
+  width: 260px;
   height: 30px;
-  background: linear-gradient(
-  to right,
-  var(--color-1) 0%, 
-  var(--color-0) 20%, 
-  var(--color-0) 80%, 
-  var(--color-1) 100% 
-);
+  background: linear-gradient(to right, var(--color-1) 0%, var(--color-0) 20%, var(--color-0) 80%, var(--color-1) 100%);
   border-radius: 0px 0px 5px 0px;
   border-bottom: 1px solid var(--color-2);
   border-right: 1px solid var(--color-2);
 }
-.layerLeft4 {  
-  width: 250px; 
+.layerLeft4 {
+  width: 250px;
   height: 10px;
-  background: linear-gradient(
-  to right,
-  var(--color-1) 0%, 
-  var(--color-0) 20%, 
-  var(--color-0) 80%, 
-  var(--color-1) 100% 
-);
+  background: linear-gradient(to right, var(--color-1) 0%, var(--color-0) 20%, var(--color-0) 80%, var(--color-1) 100%);
   border-radius: 0px 5px 5px 0px;
   border-bottom: 1px solid var(--color-2);
   border-right: 1px solid var(--color-2);
@@ -69,51 +51,33 @@
   flex-direction: column;
   align-items: end;
 }
-.layerRight1 {  
-  width: 300px; 
+.layerRight1 {
+  width: 300px;
   height: 30px;
   background: repeating-linear-gradient(90deg in oklab, var(--color-0), var(--color-1) 40px);
   border-bottom: 1px solid var(--color-2);
   border-left: 1px solid var(--color-2);
 }
-.layerRight2 {  
-  width: 290px; 
+.layerRight2 {
+  width: 290px;
   height: 30px;
-  background: linear-gradient(
-  to right,
-  var(--color-1) 0%, 
-  var(--color-0) 20%, 
-  var(--color-0) 80%, 
-  var(--color-1) 100% 
-);
+  background: linear-gradient(to right, var(--color-1) 0%, var(--color-0) 20%, var(--color-0) 80%, var(--color-1) 100%);
   border-radius: 0px 0px 0px 30px;
   border-bottom: 1px solid var(--color-2);
   border-left: 1px solid var(--color-2);
 }
-.layerRight3 {  
-  width: 260px; 
+.layerRight3 {
+  width: 260px;
   height: 30px;
-  background: linear-gradient(
-  to right,
-  var(--color-1) 0%, 
-  var(--color-0) 20%, 
-  var(--color-0) 80%, 
-  var(--color-1) 100% 
-);
+  background: linear-gradient(to right, var(--color-1) 0%, var(--color-0) 20%, var(--color-0) 80%, var(--color-1) 100%);
   border-radius: 0px 0px 0px 5px;
   border-bottom: 1px solid var(--color-2);
   border-left: 1px solid var(--color-2);
 }
-.layerRight4 {  
-  width: 250px; 
+.layerRight4 {
+  width: 250px;
   height: 10px;
-  background: linear-gradient(
-  to right,
-  var(--color-1) 0%, 
-  var(--color-0) 20%, 
-  var(--color-0) 80%, 
-  var(--color-1) 100% 
-);
+  background: linear-gradient(to right, var(--color-1) 0%, var(--color-0) 20%, var(--color-0) 80%, var(--color-1) 100%);
   border-radius: 5px 0px 0px 5px;
   border-bottom: 1px solid var(--color-2);
   border-left: 1px solid var(--color-2);

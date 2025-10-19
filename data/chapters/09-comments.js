@@ -7,18 +7,8 @@ const comments09 = [
   {
     id: "rivus",
     text: [
-      {
-        token: "rīv-us",
-        gender: "masculinum",
-        morph: "nominative",
-        suffix: " = ",
-      },
-      {
-        token: "parv-us",
-        gender: "masculinum",
-        morph: "nominative",
-        suffix: " ",
-      },
+      { token: "rīv-us", gender: "masculinum", morph: "nominative", suffix: " = " },
+      { token: "parv-us", gender: "masculinum", morph: "nominative", suffix: " " },
       { token: "fluvi-us", gender: "masculinum", morph: "nominative" },
     ],
   },
@@ -54,7 +44,7 @@ const comments09 = [
   },
   {
     id: "est",
-    title: "ēst edunt",
+    title: "ēst, edunt",
     text: [
       { token: "vir-", morph: "nominative", suffix: " " },
       { token: "pān-em", morph: "accusative", suffix: " " },
@@ -77,25 +67,10 @@ const comments09 = [
     id: "mons",
     text: [
       { token: "ūn-us", morph: "nominative", gender: "masculine", suffix: " " },
-      {
-        token: "mōn-s",
-        morph: "nominative",
-        gender: "masculine",
-        suffix: " ⟸[",
-      },
-      {
-        token: "mon(t)-s",
-        morph: "nominative",
-        gender: "masculine",
-        suffix: "]",
-        markup: "/p",
-      },
+      { token: "mōn-s", morph: "nominative", gender: "masculine", suffix: " ⟸[" },
+      { token: "mon(t)-s", morph: "nominative", gender: "masculine", suffix: "]", markup: "/p" },
       { token: "du-o", morph: "nominative", gender: "masculine", suffix: " " },
-      {
-        token: "mont-ēs",
-        morph: "nominative",
-        gender: "masculine",
-      },
+      { token: "mont-ēs", morph: "nominative", gender: "masculine" },
     ],
   },
   {
@@ -109,18 +84,9 @@ const comments09 = [
     id: "arbor",
     text: [
       { token: "ūn-a", morph: "nominative", gender: "feminine", suffix: " " },
-      {
-        token: "arbor-",
-        morph: "nominative",
-        gender: "feminine",
-        markup: "/p",
-      },
+      { token: "arbor-", morph: "nominative", gender: "feminine", markup: "/p" },
       { token: "du-æ", morph: "nominative", gender: "feminine", suffix: " " },
-      {
-        token: "arbor-ēs",
-        morph: "nominative",
-        gender: "feminine",
-      },
+      { token: "arbor-ēs", morph: "nominative", gender: "feminine" },
     ],
   },
   {
@@ -134,18 +100,9 @@ const comments09 = [
     id: "nubes",
     text: [
       { token: "ūn-a", morph: "nominative", gender: "feminine", suffix: " " },
-      {
-        token: "nūb-ēs",
-        morph: "nominative",
-        gender: "feminine",
-        markup: "/p",
-      },
+      { token: "nūb-ēs", morph: "nominative", gender: "feminine", markup: "/p" },
       { token: "du-æ", morph: "nominative", gender: "feminine", suffix: " " },
-      {
-        token: "nūb-ēs",
-        morph: "nominative",
-        gender: "feminine",
-      },
+      { token: "nūb-ēs", morph: "nominative", gender: "feminine" },
     ],
   },
   {
@@ -215,8 +172,8 @@ const comments09 = [
     title: "ovem ipsam",
     text: [
       { token: "ov-is", morph: "nominative", suffix: " " },
-      { token: "ips-a", morph: "nominative", suffix: " ⟹ (", markup: "i" },
-      { token: "acc", morph: "accusative", suffix: ".) ", markup: "/i" },
+      { token: "ips-a", morph: "nominative", suffix: " ⟹ ", markup: "i" },
+      { token: "accūsātīvus", morph: "accusative", suffix: " : ", markup: "/i" },
       { token: "ov-em", morph: "accusative", suffix: " " },
       { token: "ips-am", morph: "accusative" },
     ],
@@ -238,25 +195,10 @@ const comments09 = [
     id: "dens",
     text: [
       { token: "ūn-us", morph: "nominative", gender: "masculine", suffix: " " },
-      {
-        token: "dēn-s",
-        morph: "nominative",
-        gender: "masculine",
-        suffix: " ⟸[",
-      },
-      {
-        token: "den(t)-s",
-        morph: "nominative",
-        gender: "masculine",
-        suffix: "]",
-        markup: "/p",
-      },
+      { token: "dēn-s", morph: "nominative", gender: "masculine", suffix: " ⟸[" },
+      { token: "den(t)-s", morph: "nominative", gender: "masculine", suffix: "]", markup: "/p" },
       { token: "du-o", morph: "nominative", gender: "masculine", suffix: " " },
-      {
-        token: "dent-ēs",
-        morph: "nominative",
-        gender: "masculine",
-      },
+      { token: "dent-ēs", morph: "nominative", gender: "masculine" },
     ],
   },
   {
@@ -282,7 +224,7 @@ const comments09 = [
       { token: "ov-em", morph: "accusative", suffix: " in " },
       { token: "umer-ōs", morph: "accusative", suffix: " " },
       { token: "impōnit", suffix: " " },
-      { token: " ⟸ in-pōnit",},
+      { token: " ⟸ in-pōnit" },
     ],
   },
 ];

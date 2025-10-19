@@ -1,19 +1,19 @@
 /* ---------- Modal ---------- */
 .overlay {
   position: fixed;
-  inset: 0; 
+  inset: 0;
   /* background: rgba(0, 0, 0, 0.2); léger voile gris */
   z-index: 9999; /* i.e. below the modal, brought to back */
   display: flex;
   justify-content: flex-end; /* aligne à droite */
-  align-items: flex-start;    /* aligné en haut */
+  align-items: flex-start; /* aligné en haut */
   pointer-events: auto;
 }
 .modal {
-  position: relative; 
+  position: relative;
   background: var(--bColor);
-  top: 60px; 
-  right: 25px; 
+  top: 60px;
+  right: 25px;
   width: 200px;
   border: 1px solid var(--color-3);
   padding: 1rem;

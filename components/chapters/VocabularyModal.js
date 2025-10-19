@@ -47,9 +47,7 @@ export default function VocabularyModal({ vocab }) {
 
       {/* Tableau des formes, si présent */}
       {vocab.type === "noun" && <TableNoun word={vocab} />}
-      {(vocab.type === "adjective" || vocab.type === "pronoun") && (
-        <TableAdjPro word={vocab} />
-      )}
+      {(vocab.type === "adjective" || vocab.type === "pronoun") && <TableAdjPro word={vocab} />}
 
       {vocab.note && (
         <div className={styles.noteContainer}>
@@ -61,11 +59,7 @@ export default function VocabularyModal({ vocab }) {
       {/* Image à la fin */}
       {vocab.image && (
         <div className={styles.imageContainer}>
-          <img
-            src={vocab.image.path}
-            alt={vocab.word}
-            className={styles.image}
-          />
+          <img src={vocab.image.path} alt={vocab.word} className={styles.image} />
         </div>
       )}
     </aside>

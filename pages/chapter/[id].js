@@ -8,6 +8,7 @@ import Vocabulary from "components/chapters/Vocabulary";
 import { chapters } from "data/chapters"; // means: from "data/chapters/index.js";
 import CommentModal from "components/chapters/CommentModal";
 import VocabularyModal from "components/chapters/VocabularyModal";
+import { GapInput, DropDown, GapField } from "ui/userInput";
 
 export default function ChapterPage() {
   const router = useRouter();
@@ -27,8 +28,8 @@ export default function ChapterPage() {
     chapter,
     comments,
     vocabulary,
+    exercises,
     // grammar,
-    // exercises
   } = chapterData;
 
   if (!id) return null; // needed because id can be null at first render. Must be placed AFTER all other hooks
@@ -65,13 +66,7 @@ export default function ChapterPage() {
               className="responsive-img" // defined in globals.css
             />
             <Text data={chapter} openComment={handleOpenComment} />
-            {openComment && (
-              <CommentModal
-                comment={openComment}
-                onClose={handleCloseComment}
-                vocabulary={vocabulary}
-              />
-            )}
+            {openComment && <CommentModal comment={openComment} onClose={handleCloseComment} vocabulary={vocabulary} />}
           </>
         );
       case "grammar":
@@ -80,7 +75,7 @@ export default function ChapterPage() {
         return (
           <>
             <p>Voici les exercices du chapitre {chapterData.number}.</p>
-            <p>toto</p>
+            <Text data={exercises} />
           </>
         );
       case "vocabulary":
@@ -90,12 +85,7 @@ export default function ChapterPage() {
               <Vocabulary data={vocabulary} openComment={handleOpenComment} />
             </div>
             <div className={styles.commentPanel}>
-              {openComment && (
-                <VocabularyModal
-                  vocab={openComment}
-                  onClose={handleCloseComment}
-                />
-              )}
+              {openComment && <VocabularyModal vocab={openComment} onClose={handleCloseComment} />}
             </div>
           </div>
         );

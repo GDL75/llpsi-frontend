@@ -19,10 +19,7 @@ export function addEnding({ word, case: _case, number, gender }) {
 
     if (Array.isArray(word.radical)) {
       // Cas particuliers : nominatif singulier ou vocatif singulier -> index 1
-      if (
-        (_case === "nominative" || _case === "vocative") &&
-        number === "singular"
-      ) {
+      if ((_case === "nominative" || _case === "vocative") && number === "singular") {
         radical = word.radical[1];
         return radical; // pas d'ending
       } else {
@@ -48,11 +45,7 @@ export function addEnding({ word, case: _case, number, gender }) {
     // Radical : chaîne ou tableau
     let radical;
     if (Array.isArray(word.radical)) {
-      if (
-        (_case === "nominative" || _case === "vocative") &&
-        number === "singular" &&
-        gender === "masculine"
-      ) {
+      if ((_case === "nominative" || _case === "vocative") && number === "singular" && gender === "masculine") {
         radical = word.radical[1] ?? word.radical[0];
         return radical;
       } else {

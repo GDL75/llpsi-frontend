@@ -6,9 +6,7 @@ function Test() {
   return (
     <>
       <Header />
-      <div
-        style={{ display: "flex", flexDirection: "row", background: "#fef0e7" }}
-      >
+      <div style={{ display: "flex", flexDirection: "row", background: "#fef0e7" }}>
         <SidebarLeft />
         <p>Contenu</p>
         <SidebarRight />

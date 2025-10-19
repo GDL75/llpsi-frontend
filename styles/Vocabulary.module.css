@@ -2,17 +2,18 @@
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-  width:100%;
+  width: 100%;
 }
 .column {
   flex: 1;
   min-width: 0;
+  height: 100%;
 }
 .wordContainer {
   margin-top: 0px;
 }
 .word {
-  display: inline-block; 
+  display: inline-block;
   cursor: pointer;
   padding: 2px 5px;
   border-radius: 5px;
@@ -21,5 +22,5 @@
 }
 .word:hover {
   border: 1px solid var(--color-2);
-  background-color: var(--color-0);  /* optionnel : couleur de fond au survol */
+  background-color: var(--color-0); /* optionnel : couleur de fond au survol */
 }

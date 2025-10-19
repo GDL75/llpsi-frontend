@@ -37,34 +37,23 @@ export default function Header() {
       <div className={styles.headerWrapper}>
         <header className={styles.header}>
           {/* left section */}
-            <nav className={styles.sectionContainer}>
-              {/* Slider */}
-              <div
-                className={styles.sectionSlider}
-                style={{ left: `${activeIndex * 25}%` }}
-              />
-              {sections.map((s, i) => (
-                <button
-                  key={s.value}
-                  className={`${styles.sectionButton} ${
-                    currentSection === s.value ? styles.active : ""
-                  }`}
-                  onClick={() => dispatch(setSection(s.value))}
-                >
-                  {s.label}
-                </button>
-              ))}
-            </nav>
+          <nav className={styles.sectionContainer}>
+            {/* Slider */}
+            <div className={styles.sectionSlider} style={{ left: `${activeIndex * 25}%` }} />
+            {sections.map((s, i) => (
+              <button
+                key={s.value}
+                className={`${styles.sectionButton} ${currentSection === s.value ? styles.active : ""}`}
+                onClick={() => dispatch(setSection(s.value))}
+              >
+                {s.label}
+              </button>
+            ))}
+          </nav>
 
           {/* droite : settings / profile */}
           <nav className={styles.rightGroup}>
-            <CustomButton
-              bColor="3"
-              tColor="0"
-              wSize="150px"
-              text={t("profile")}
-              handleFunction={() => {}}
-            />
+            <CustomButton bColor="3" tColor="0" wSize="150px" text={t("profile")} handleFunction={() => {}} />
             <CustomButton
               bColor="3"
               tColor="0"
@@ -94,9 +83,7 @@ export default function Header() {
       </div>
 
       {/* The Settings modal needs to be outside of the main return */}
-      {isSettings && (
-        <Settings bColor="0" onClose={() => setIsSettings(false)} />
-      )}
+      {isSettings && <Settings bColor="0" onClose={() => setIsSettings(false)} />}
     </>
   );
 }

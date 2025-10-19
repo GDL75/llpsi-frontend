@@ -1,7 +1,6 @@
 import styles from "styles/CustomButton.module.css";
 
 function CustomButton({ bColor, tColor, text, wSize, handleFunction }) {
-
   return (
     <button
       className={styles.button}

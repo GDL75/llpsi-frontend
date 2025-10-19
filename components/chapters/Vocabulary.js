@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import styles from "styles/Vocabulary.module.css";
 import { useTranslation } from "data/translation/useTranslation";
 import { ordinalNumber } from "utils/numbers";
-import WordSummary from "ui/WordSummary"
+import WordSummary from "ui/WordSummary";
 
 export default function Vocabulary({ data, openComment }) {
   const t = useTranslation();
@@ -46,27 +46,18 @@ export default function Vocabulary({ data, openComment }) {
       return Object.entries(groups)
         .sort(([a], [b]) => a - b)
         .map(([num, words]) => {
-          let title =
-            num === "0"
-              ? type === "verb"
-                ? t("irregular")
-                : t("indeclinable")
-              : t(keyMap[type]);
+          let title = num === "0" ? (type === "verb" ? t("irregular") : t("indeclinable")) : t(keyMap[type]);
           return {
             title,
             num,
-            words: words.sort((a, b) =>
-              a.word.localeCompare(b.word, "la", { sensitivity: "base" })
-            ),
+            words: words.sort((a, b) => a.word.localeCompare(b.word, "la", { sensitivity: "base" })),
           };
         });
     }
     return [
       {
         title: null,
-        words: words.sort((a, b) =>
-          a.word.localeCompare(b.word, "la", { sensitivity: "base" })
-        ),
+        words: words.sort((a, b) => a.word.localeCompare(b.word, "la", { sensitivity: "base" })),
       },
     ];
   };
@@ -80,18 +71,12 @@ export default function Vocabulary({ data, openComment }) {
   const renderTypeBlock = (type) =>
     groupedByType[type] && (
       <div key={type}>
-        <h4 style={{ "text-decoration": "underline" }}>{t(type)}</h4>
+        <h4 style={{ textDecoration: "underline" }}>{t(type)}</h4>
         {getSubgroups(type, groupedByType[type]).map((subgroup) => (
           <div key={`${type}-${subgroup.num}`}>
             {subgroup.title && (
               <h5>
-                {subgroup.num > 0 &&
-                  ordinalNumber(
-                    Number(subgroup.num),
-                    language,
-                    "feminine"
-                  )}{" "}
-                {subgroup.title}
+                {subgroup.num > 0 && ordinalNumber(Number(subgroup.num), language, "feminine")} {subgroup.title}
               </h5>
             )}
             {subgroup.words.map((word) => (

@@ -35,14 +35,10 @@ export default function SidebarRight() {
         </div>
         <div className={styles.checkboxList}>
           {morphologyConfig
-            .filter(
-              (morph) => morph.fromChapter <= currentChapter && morph.styleClass
-            )
+            .filter((morph) => morph.fromChapter <= currentChapter && morph.styleClass)
             .map((morph) => (
               <div key={morph.key}>
-                {separatorBefore.includes(morph.key) && (
-                  <div className="separator"></div>
-                )}
+                {separatorBefore.includes(morph.key) && <div className="separator"></div>}
                 <CustomCheckbox
                   label={t(morph.key)}
                   labelClassName={morph.key}

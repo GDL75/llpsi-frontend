@@ -19,10 +19,7 @@ export default function SidebarLeft() {
     book2: { from: 36, to: 56 },
   };
   const bookRange = chapterList[currentBook];
-  const chapters = Array.from(
-    { length: bookRange.to - bookRange.from + 1 },
-    (_, i) => i + bookRange.from
-  );
+  const chapters = Array.from({ length: bookRange.to - bookRange.from + 1 }, (_, i) => i + bookRange.from);
 
   const activeIndex = chapters.findIndex((c) => c === currentChapter);
 
@@ -40,9 +37,7 @@ export default function SidebarLeft() {
         {chapters.map((num) => (
           <button
             key={num}
-            className={`${styles.chapterButton} ${
-              currentChapter === num ? styles.active : ""
-            }`}
+            className={`${styles.chapterButton} ${currentChapter === num ? styles.active : ""}`}
             onClick={() => dispatch(setChapter(num))}
           >
             {t("chapter")} {currentLanguage === "la" ? romanNumber(num) : num}
