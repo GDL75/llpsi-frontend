@@ -32,6 +32,14 @@ export default function Text({ data, openComment }) {
   };
 
   data.text?.forEach((item, index) => {
+    // --- cas d'un titre ---
+    if (item.markup && /^h[1-6]$/.test(item.markup)) {
+      flushParagraph(`before-${item.markup}-${index}`);
+      const Tag = item.markup;
+      paragraphs.push(<Tag key={`${item.markup}-${index}`}>{item.token || ""}</Tag>);
+      return;
+    }
+
     // --- cas d'un mot ---
     if (item.token) {
       let tokenElement = m(item);
@@ -52,7 +60,7 @@ export default function Text({ data, openComment }) {
       if (item.suffix) currentParagraph.push(item.suffix);
     }
 
-    // --- cas d’un gap (exercice) ---
+    // --- cas d’un gap (dans les exercices) ---
     if (item.gap) {
       currentParagraph.push(
         <GapInput
@@ -68,7 +76,7 @@ export default function Text({ data, openComment }) {
       currentParagraph.push(
         <DropDown
           key={`gap-select-${index}`}
-          listType="case"
+          listType={item.list}
           value={answers[index]?.morph || ""}
           onChange={(e) => handleChange(index, "morph", e.target.value)}
         />
@@ -95,7 +103,7 @@ export default function Text({ data, openComment }) {
       );
     }
 
-    // --- traite la balise markup ---
+    // --- traite la balise markup (hors grands titres, cf. ci-dessus) ---
     if (item.markup) {
       switch (item.markup) {
         case "i":

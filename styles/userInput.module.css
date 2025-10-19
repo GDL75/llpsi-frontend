@@ -5,31 +5,18 @@
   line-height: 1;
   vertical-align: middle;
   font: inherit;
-  /* next two ligns to ensure the input is aligned with previous text */
+  /* next two ligns to ensure the input is aligned with previous input text */
   position: relative;
   top: -1.5px;
 }
-.gapInput.nominative { color: var(--color-nominative) !important; }
-.gapInput.accusative { color: var(--color-accusative) !important; }
-.gapInput.genitive { color: var(--color-genitive) !important; }
-.gapInput.dative { color: var(--color-dative) !important; }
-.gapInput.ablative { color: var(--color-ablative) !important; }
-.gapInput.vocative { color: var(--color-vocative) !important; }
 
 .dropDown {
   border: none;
-  /* border-radius: 4px; */
-  /* background-color: var(--color-0); */
   color: var(--text-color);
   padding: 3px 0px;
   border: 1px solid gray;
   border-radius: 4px;
-  /* next two ligns to ensure the input is aligned with previous text */
+  /* next two ligns to ensure the input is aligned with previous input text */
   position: relative;
   top: -1.5px
-}
-.gapField {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
 }
