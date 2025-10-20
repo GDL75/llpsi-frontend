@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
 import styles from "styles/Table.module.css";
 import { useSelector } from "react-redux";
-import { useTranslation } from "data/translation/useTranslation";
-import { useMorph } from "utils/useMorph";
+import { useTranslation } from "components/hooks/useTranslation";
+import { useMorph } from "components/hooks/useMorph";
 import morphologyConfig from "data/morphologyConfig";
 import { addEnding } from "utils/addEnding";
 

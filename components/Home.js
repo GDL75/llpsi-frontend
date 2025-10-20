@@ -2,7 +2,7 @@ import styles from "styles/Home.module.css";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useTranslation } from "data/translation/useTranslation";
+import { useTranslation } from "components/hooks/useTranslation";
 import { setBook, setChapter } from "reducers/navigation";
 import CustomButton from "ui/CustomButton";
 import ToggleButton from "ui/ToggleButton";

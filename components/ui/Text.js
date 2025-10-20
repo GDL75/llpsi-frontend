@@ -1,8 +1,8 @@
 import styles from "styles/Text.module.css";
 import React, { useState } from "react";
-import { useMorph } from "utils/useMorph";
+import { useMorph } from "components/hooks/useMorph";
 import Table from "ui/Table";
-import { GapInput, DropDown } from "ui/userInput";
+import { GapInput, DropDown } from "ui/UserInput";
 import { useAudio } from "context/AudioContext";
 
 export default function Text({ data, openComment }) {
@@ -54,11 +54,7 @@ export default function Text({ data, openComment }) {
       if (item.audio) {
         const seconds = parseFloat(item.audio.split(":")[0]) * 60 + parseFloat(item.audio.split(":")[1]);
         tokenElement = (
-          <span
-            key={`audio-${index}`}
-            className={styles.audioWord}
-            onClick={() => playAt(seconds)}
-          >
+          <span key={`audio-${index}`} className={styles.audioWord} onClick={() => playAt(seconds)}>
             {tokenElement}
           </span>
         );

@@ -4,7 +4,7 @@ import { toggleMorphology, setAll } from "reducers/morphology";
 import styles from "styles/SidebarRight.module.css";
 import CustomCheckbox from "ui/CustomCheckbox";
 import CustomButton from "ui/CustomButton";
-import { useTranslation } from "data/translation/useTranslation";
+import { useTranslation } from "components/hooks/useTranslation";
 
 export default function SidebarRight() {
   const dispatch = useDispatch();

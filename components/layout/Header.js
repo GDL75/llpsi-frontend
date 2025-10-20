@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import CustomButton from "ui/CustomButton";
 import { setSection } from "reducers/navigation";
-import { useTranslation } from "data/translation/useTranslation";
+import { useTranslation } from "components/hooks/useTranslation";
 import Settings from "components/Settings";
 import titles from "data/chapterTitles";
 import AudioPlayer from "react-h5-audio-player"; // https://github.com/lhz516/react-h5-audio-player/tree/master

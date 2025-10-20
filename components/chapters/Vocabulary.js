@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styles from "styles/Vocabulary.module.css";
-import { useTranslation } from "data/translation/useTranslation";
+import { useTranslation } from "components/hooks/useTranslation";
 import { ordinalNumber } from "utils/numbers";
 import WordSummary from "ui/WordSummary";
 

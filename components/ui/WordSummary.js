@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useMorph } from "utils/useMorph";
+import { useMorph } from "components/hooks/useMorph";
 import { addEnding } from "utils/addEnding";
 
 export default function WordSummary({ word }) {

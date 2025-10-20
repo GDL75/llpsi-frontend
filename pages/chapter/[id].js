@@ -8,7 +8,6 @@ import Vocabulary from "components/chapters/Vocabulary";
 import { chapters } from "data/chapters"; // means: from "data/chapters/index.js";
 import CommentModal from "components/chapters/CommentModal";
 import VocabularyModal from "components/chapters/VocabularyModal";
-import { GapInput, DropDown, GapField } from "ui/userInput";
 
 export default function ChapterPage() {
   const router = useRouter();
