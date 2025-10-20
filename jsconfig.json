@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "data/*": ["data/*"],
+      "context/*": ["context/*"],
       "components/*": ["components/*"],
       "layout/*": ["components/layout/*"],
       "ui/*": ["components/ui/*"],

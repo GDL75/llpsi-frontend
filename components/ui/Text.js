@@ -52,9 +52,11 @@ export default function Text({ data, openComment }) {
 
       // --- si le mot déclenche l'audio ---
       if (item.audio) {
-        const seconds = parseFloat(item.audio.split(":")[0]) * 60 + parseFloat(item.audio.split(":")[1]);
+        const [min, sec] = item.audio.split(":").map((v) => parseFloat(v) || 0);
+        const seconds = min * 60 + sec;
+
         tokenElement = (
-          <span key={`audio-${index}`} className={styles.audioWord} onClick={() => playAt(seconds)}>
+          <span className={styles.audioWord} onClick={() => playAt(seconds)}>
             {tokenElement}
           </span>
         );
