@@ -1,0 +1,11 @@
+.audioWord {
+  transition: transform 0.15s ease-in-out;
+  display: inline-block; /* indispensable pour que transform fonctionne */
+  cursor: url("/images/_cursor-audio.png") 8 8, pointer; 
+}
+
+.audioWord:hover {
+  /* transform: scale(1.1); */
+  font-style: italic;
+  background-color: var(--color-0);
+}

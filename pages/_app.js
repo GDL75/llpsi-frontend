@@ -8,6 +8,7 @@ import settings from "reducers/settings";
 import navigation from "reducers/navigation";
 import morphology from "reducers/morphology";
 import morphologyConfig from "data/morphologyConfig";
+import { AudioProvider } from "context/AudioContext";
 
 const store = configureStore({
   reducer: { settings, navigation, morphology },
@@ -44,14 +45,16 @@ function BodyClasses({ children }) {
 function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Head>
-        <title>llpsi</title>
-      </Head>
-      <ThemeWrapper>
-        <BodyClasses>
-          <Component {...pageProps} />
-        </BodyClasses>
-      </ThemeWrapper>
+      <AudioProvider>
+        <Head>
+          <title>llpsi</title>
+        </Head>
+        <ThemeWrapper>
+          <BodyClasses>
+            <Component {...pageProps} />
+          </BodyClasses>
+        </ThemeWrapper>
+      </AudioProvider>
     </Provider>
   );
 }

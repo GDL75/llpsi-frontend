@@ -1,10 +1,13 @@
+import styles from "styles/Text.module.css";
 import React, { useState } from "react";
 import { useMorph } from "utils/useMorph";
 import Table from "ui/Table";
 import { GapInput, DropDown } from "ui/userInput";
+import { useAudio } from "context/AudioContext";
 
 export default function Text({ data, openComment }) {
   const m = useMorph();
+  const { playAt } = useAudio();
 
   const [answers, setAnswers] = useState({}); // { index: { text: "xx", morph: "nominative" } }
   const handleChange = (index, field, value) => {
@@ -46,6 +49,20 @@ export default function Text({ data, openComment }) {
 
       if (isItalic) tokenElement = <em>{tokenElement}</em>;
       if (isBold) tokenElement = <strong>{tokenElement}</strong>;
+
+      // --- si le mot déclenche l'audio ---
+      if (item.audio) {
+        const seconds = parseFloat(item.audio.split(":")[0]) * 60 + parseFloat(item.audio.split(":")[1]);
+        tokenElement = (
+          <span
+            key={`audio-${index}`}
+            className={styles.audioWord}
+            onClick={() => playAt(seconds)}
+          >
+            {tokenElement}
+          </span>
+        );
+      }
 
       const styledToken = item.comment ? (
         <span key={`word-${index}`} className="comment" onClick={() => openComment(item.comment)}>

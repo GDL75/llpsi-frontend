@@ -9,6 +9,7 @@
       "reducers/*": ["reducers/*"],
       "styles/*": ["styles/*"],
       "images/*": ["public/images/*"],
+      "audio/*": ["public/audio/*"],
       "fonts/*": ["public/fonts/*"],
       "pages/*": ["pages/*"],
       "utils/*": ["utils/*"]

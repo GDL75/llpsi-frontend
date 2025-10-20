@@ -73,7 +73,14 @@
   gap: 8px;
 }
 
-/* --- anciens ColumnCapitals (fusionnés ici) --- */
+.titleContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+/* ------------------ anciens ColumnCapitals (fusionnés ici) ------------------ */
 .container {
   display: flex;
   flex-direction: row;

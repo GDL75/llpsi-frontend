@@ -1,0 +1,22 @@
+.customAudio :global(.rhap_container) {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px;
+}
+.customAudio :global(.rhap_progress-bar) {
+  background-color: var(--color-2);
+  height: 5px;
+}
+
+.customAudio :global(.rhap_volume-button),
+.customAudio :global(.rhap_play-pause-button) {
+  color: var(--color-2);
+}
+
+.customAudio :global(.rhap_time) {
+  color: #333;
+}
+.customAudio :global(.rhap_additional-controls) {
+  /* to eliminate space reserved for these buttons */
+  display: none;
+}

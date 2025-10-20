@@ -1,4 +1,5 @@
 import styles from "styles/Header.module.css";
+import stylesAudio from "styles/audioPlayer.module.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -7,11 +8,15 @@ import { setSection } from "reducers/navigation";
 import { useTranslation } from "data/translation/useTranslation";
 import Settings from "components/Settings";
 import titles from "data/chapterTitles";
+import AudioPlayer from "react-h5-audio-player"; // https://github.com/lhz516/react-h5-audio-player/tree/master
+import "react-h5-audio-player/lib/styles.css";
+import { useAudio } from "context/AudioContext";
 
 export default function Header() {
   const dispatch = useDispatch();
   const t = useTranslation();
   const [isSettings, setIsSettings] = useState(false);
+  const { playerRef } = useAudio();
 
   // section courante stockée en Redux (ex: "text", "grammar", "exercises", "vocabulary")
   const currentSection = useSelector((state) => state.navigation.value.section);
@@ -72,7 +77,28 @@ export default function Header() {
             <div className={styles.layerLeft3}></div>
             <div className={styles.layerLeft4}></div>
           </div>
-          <h2 className={styles.title}>{titles[currentChapter - 1]}</h2>
+          <div className={styles.titleContainer}>
+            <h2 className={styles.title}>{titles[currentChapter - 1]}</h2>
+            {currentSection === "text" && (
+              <AudioPlayer
+                ref={playerRef}
+                src="/audio/09-audio.mp3"
+                controlsList="nodownload"
+                showJumpControls={false}
+                className={stylesAudio.customAudio}
+                customAdditionalControls={[]}
+                layout="horizontal"
+                style={{
+                  width: "100%",
+                  maxWidth: "400px",
+                  height: "60px",
+                  border: "1px solid var(--color-2)",
+                  borderRadius: "10px",
+                  backgroundColor: "var(--color-0)",
+                }}
+              />
+            )}
+          </div>
           <div className={styles.rightCapital}>
             <div className={styles.layerRight1}></div>
             <div className={styles.layerRight2}></div>
