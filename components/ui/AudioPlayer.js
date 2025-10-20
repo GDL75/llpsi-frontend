@@ -1,15 +1,17 @@
 // components/ui/AudioPlayer.js
 import React, { useRef, useEffect } from "react";
 import styles from "styles/AudioPlayer.module.css";
+import { useAudio } from "context/AudioContext";
 
-export default function AudioPlayer({ src, playerRef, visible = false }) {
+export default function AudioPlayer({ src, visible = false }) {
   const audioRef = useRef(null);
+  const { registerPlayer } = useAudio();
 
   useEffect(() => {
-    if (playerRef) {
-      playerRef.current = audioRef.current;
+    if (audioRef.current) {
+      registerPlayer(audioRef.current);
     }
-  }, [playerRef]);
+  }, [audioRef.current]); // se déclenche au montage
 
   return (
     <audio

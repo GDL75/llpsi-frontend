@@ -7,7 +7,7 @@ import { useAudio } from "context/AudioContext";
 
 export default function Text({ data, openComment }) {
   const m = useMorph();
-  const { playAt } = useAudio();
+  const { playAt, isPlaying } = useAudio();
 
   const [answers, setAnswers] = useState({}); // { index: { text: "xx", morph: "nominative" } }
   const handleChange = (index, field, value) => {
@@ -54,9 +54,11 @@ export default function Text({ data, openComment }) {
       if (item.audio) {
         const [min, sec] = item.audio.split(":").map((v) => parseFloat(v) || 0);
         const seconds = min * 60 + sec;
-
         tokenElement = (
-          <span className={styles.audioWord} onClick={() => playAt(seconds)}>
+          <span
+            className={`${styles.audioWord} ${isPlaying ? styles.audioWordPlaying : ""}`}
+            onClick={() => playAt(seconds)}
+          >
             {tokenElement}
           </span>
         );

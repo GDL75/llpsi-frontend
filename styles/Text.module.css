@@ -1,5 +1,12 @@
+/* Icons from https://fontawesome.com/icons/circle-play?s=solid :
+circle-play and circle-pause, size 32x32 */
+
 .audioWord {
   transition: transform 0.15s ease-in-out;
   display: inline-block; /* indispensable pour que transform fonctionne */
-  cursor: url("/images/_cursor-audio.png") 8 8, pointer; 
+  cursor: url("/images/_cursorPlay.png") 8 8, pointer;
+}
+
+.audioWordPlaying {
+  cursor: url("/images/_cursorPause.png") 8 8, pointer;
 }

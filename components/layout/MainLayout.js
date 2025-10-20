@@ -4,10 +4,8 @@ import SidebarLeft from "./SidebarLeft";
 import SidebarRight from "./SidebarRight";
 import Footer from "./Footer";
 import AudioPlayer from "ui/AudioPlayer";
-import { useAudio } from "context/AudioContext";
 
 export default function MainLayout({ children }) {
-  const { playerRef } = useAudio();
 
   return (
     <div className={styles.layout}>
@@ -18,8 +16,8 @@ export default function MainLayout({ children }) {
         <SidebarRight />
       </div>
       <Footer />
-      
-      <AudioPlayer src="/audio/09-audio.mp3" playerRef={playerRef} />
+
+      <AudioPlayer src="/audio/09-audio.mp3" visible={false} />
     </div>
   );
 }
