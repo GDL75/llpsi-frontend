@@ -87,7 +87,7 @@ const vocabulary09 = [
     declension: 2, // from 1 to 5, 0 if undeclinable
     endingsType: "2m",
     radical: "lup-",
-    image: { path: "/images/09-lupus.jpg", isLandscape: true },
+    image: { path: "/images/09/lupus.jpg", isLandscape: true },
     translation: { en: "wolf", fr: "loup" },
   },
   {
@@ -110,7 +110,7 @@ const vocabulary09 = [
     declension: 2, // from 1 to 5, 0 if undeclinable
     endingsType: "2m",
     radical: "rīv-",
-    image: { path: "/images/09-rivus.jpg", isLandscape: true },
+    image: { path: "/images/09/rivus.jpg", isLandscape: true },
     translation: { en: "brook", fr: "ruisseau" },
   },
   {
@@ -122,7 +122,7 @@ const vocabulary09 = [
     declension: 2, // from 1 to 5, 0 if undeclinable
     endingsType: "2n",
     radical: "vestigi-",
-    image: { path: "/images/09-vestigium.jpg", isLandscape: true },
+    image: { path: "/images/09/vestigium.jpg", isLandscape: true },
     translation: { en: "footprint, trace", fr: "empreinte, trace" },
   },
   {
@@ -134,7 +134,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf1",
     radical: ["arbor-", "arbor-"], // if 2 items, no ending is applied to the 2nd
-    image: { path: "/images/09-arbor.jpg", isLandscape: true },
+    image: { path: "/images/09/arbor.jpg", isLandscape: true },
     translation: { en: "tree", fr: "arbre" },
   },
   {
@@ -191,7 +191,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: ["dēnt-", "dēn-s"], // if 2 items, no ending is applied to the 2nd (nom./voc.)
-    image: { path: "/images/09-dens.jpg", isLandscape: false },
+    image: { path: "/images/09/dens.jpg", isLandscape: false },
     translation: { en: "tooth", fr: "dent" },
   },
   {
@@ -203,7 +203,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: ["mont-", "mōn-s"], // if 2 items, no ending is applied to the 2nd (nom./voc.)
-    image: { path: "/images/09-mons.jpg", isLandscape: true },
+    image: { path: "/images/09/mons.jpg", isLandscape: true },
     translation: { en: "mountain", fr: "montagne" },
   },
   {
@@ -215,7 +215,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: ["nūb-", "nūb-ēs"], // if 2 items, no ending is applied to the 2nd (nom./voc.)
-    image: { path: "/images/09-nubes.jpg", isLandscape: true },
+    image: { path: "/images/09/nubes.jpg", isLandscape: true },
     translation: { en: "mountain", fr: "montagne" },
   },
   {
@@ -227,7 +227,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: "ov-", // if 2 items, no ending is applied to the 2nd (nom./voc.)
-    image: { path: "/images/09-ovis.png", isLandscape: true },
+    image: { path: "/images/09/ovis.png", isLandscape: true },
     translation: { en: "sheep", fr: "brebis, mouton" },
   },
   {
@@ -239,7 +239,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf1",
     radical: "pān-", // if 2 items, no ending is applied to the 2nd (nom./voc.)
-    image: { path: "/images/09-panis.png", isLandscape: true },
+    image: { path: "/images/09/panis.png", isLandscape: true },
     translation: { en: "bread", fr: "pain" },
   },
   {
@@ -251,7 +251,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf1",
     radical: ["pāstōr-", "pāstōr-"], // if 2 items, no ending is applied to the 2nd (nom./voc.)
-    image: { path: "/images/09-pastor.png", isLandscape: false },
+    image: { path: "/images/09/pastor.png", isLandscape: false },
     translation: { en: "shepherd", fr: "berger" },
   },
   {
@@ -285,7 +285,7 @@ const vocabulary09 = [
     declension: 3, // from 1 to 5, 0 if undeclinable
     endingsType: "3mf2",
     radical: "vall-",
-    image: { path: "/images/09-vallis.jpg", isLandscape: true },
+    image: { path: "/images/09/vallis.jpg", isLandscape: true },
     translation: { en: "valley", fr: "vallée" },
   },
   {
@@ -296,7 +296,7 @@ const vocabulary09 = [
     class: 1, // from 1 to 2
     endingsType: ["2m", "1fm", "2n"],
     radical: "alb-",
-    image: { path: "/images/09-albusNiger.png", isLandscape: true },
+    image: { path: "/images/09/albusNiger.png", isLandscape: true },
     translation: { en: "white", fr: "blanc" },
   },
   {
@@ -307,7 +307,7 @@ const vocabulary09 = [
     class: 1, // from 1 to 2
     endingsType: ["2m", "1fm", "2n"],
     radical: ["nigr-", "nig-er"],
-    image: { path: "/images/09-albusNiger.png", isLandscape: true },
+    image: { path: "/images/09/albusNiger.png", isLandscape: true },
     translation: { en: "black", fr: "noir" },
   },
   {

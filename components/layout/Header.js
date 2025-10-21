@@ -6,14 +6,12 @@ import { setSection } from "reducers/navigation";
 import { useTranslation } from "components/hooks/useTranslation";
 import Settings from "components/Settings";
 import titles from "data/chapterTitles";
-import AudioPlayer from "ui/AudioPlayer";
-import { useAudio } from "context/AudioContext";
+import AudioPlayerBox from "ui/AudioPlayerBox";
 
 export default function Header() {
   const dispatch = useDispatch();
   const t = useTranslation();
   const [isSettings, setIsSettings] = useState(false);
-  const { playerRef } = useAudio();
 
   const currentSection = useSelector((state) => state.navigation.value.section);
   const currentChapter = useSelector((state) => state.navigation.value.chapter);
@@ -69,13 +67,7 @@ export default function Header() {
 
           <div className={styles.titleContainer}>
             <h2 className={styles.title}>{titles[currentChapter - 1]}</h2>
-            {currentSection === "text" && (
-              <AudioPlayer
-                src={`/audio/${String(currentChapter).padStart(2, "0")}-audio.mp3`}
-                playerRef={playerRef}
-                visible
-              />
-            )}
+            {currentSection === "text" && <AudioPlayerBox />}
           </div>
 
           <div className={styles.rightCapital}>

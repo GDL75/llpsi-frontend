@@ -59,7 +59,7 @@ export default function ChapterPage() {
         return (
           <>
             <img
-              src="/images/09-main-commented.png"
+              src="/images/09/main-commented.png"
               alt="A shepherd and his dog"
               loading="lazy"
               className="responsive-img" // defined in globals.css

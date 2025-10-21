@@ -129,7 +129,7 @@ const comments09 = [
   {
     id: "pastorIacet",
     title: "pastor iacet",
-    image: { path: "/images/09-pastorIacet.jpg", isLandscape: true },
+    image: { path: "/images/09/pastorIacet.jpg", isLandscape: true },
     text: [
       { token: "pastor-", morph: "nominative", suffix: " " },
       { token: "in " },
@@ -218,7 +218,7 @@ const comments09 = [
   {
     id: "imponit",
     title: "impōnit",
-    image: { path: "/images/09-pastorCumOve.jpg", isLandscape: false },
+    image: { path: "/images/09/pastorCumOve.jpg", isLandscape: false },
     text: [
       { token: "pastor-", morph: "nominative", suffix: " " },
       { token: "ov-em", morph: "accusative", suffix: " in " },
