@@ -6,7 +6,3 @@ circle-play and circle-pause, size 32x32 */
   display: inline-block; /* indispensable pour que transform fonctionne */
   cursor: url("/images/_cursorPlay.png") 8 8, pointer;
 }
-
-.audioWordPlaying {
-  cursor: url("/images/_cursorPause.png") 8 8, pointer;
-}

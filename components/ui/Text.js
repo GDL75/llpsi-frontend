@@ -56,7 +56,7 @@ export default function Text({ data, openComment }) {
         const seconds = min * 60 + sec;
         tokenElement = (
           <span
-            className={`${styles.audioWord} ${isPlaying ? styles.audioWordPlaying : ""}`}
+            className={styles.audioWord}
             onClick={() => playAt(seconds)}
           >
             {tokenElement}

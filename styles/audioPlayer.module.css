@@ -1,27 +1,52 @@
-/* styles/AudioPlayer.module.css */
-
-/* Lecteur invisible (dans MainLayout) */
-.hiddenPlayer {
-  display: none;
-}
-
-/* Lecteur visible (dans le Header) */
-.visiblePlayer {
+.playerWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   width: 100%;
-  max-width: 300px;
-  height: 50px;
+  max-width: 420px;
   border: 1px solid var(--color-2);
-  border-radius: 50px;
+  border-radius: 10px;
   background-color: var(--color-0);
-  padding: 4px;
+  padding: 6px 10px;
+  box-sizing: border-box;
 }
 
-.visiblePlayer::-webkit-media-controls-panel {
-  background-color: var(--color-0);
+.playIcon {
+  pointer-events: none; /* évite d’intercepter les clics */
 }
 
-.visiblePlayer::-webkit-media-controls-current-time-display,
-.visiblePlayer::-webkit-media-controls-time-remaining-display {
+.progressBar {
+  flex-grow: 1;
+  height: 5px;
+  border-radius: 5px;
+  appearance: none;
+  background: var(--color-2);
+  cursor: pointer;
+}
+
+/* Chrome / Edge / Safari */
+.progressBar::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: var(--color-3);
+  cursor: pointer;
+  /* margin-top: -3px; */
+}
+
+/* Firefox */
+.progressBar::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: var(--color-3);
+  border: none;
+}
+
+.timeDisplay {
+  font-size: rem;
   color: var(--color-2);
+  min-width: 70px;
+  text-align: right;
 }
-

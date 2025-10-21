@@ -1,4 +1,3 @@
-// context/AudioContext.js
 import { createContext, useContext, useState, useEffect } from "react";
 
 const AudioContext = createContext(null);
@@ -7,9 +6,7 @@ export function AudioProvider({ children }) {
   const [player, setPlayer] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Fonction que le lecteur appelle pour s’enregistrer
   const registerPlayer = (audioElement) => {
-    if (!audioElement) return;
     setPlayer(audioElement);
   };
 
@@ -24,25 +21,32 @@ export function AudioProvider({ children }) {
     player.addEventListener("pause", handlePause);
     player.addEventListener("ended", handleEnded);
 
+    setIsPlaying(!player.paused);
+
     return () => {
       player.removeEventListener("play", handlePlay);
       player.removeEventListener("pause", handlePause);
       player.removeEventListener("ended", handleEnded);
     };
-  }, [player]); // <— se déclenche dès que le lecteur est monté
+  }, [player]);
+
+  const togglePlay = () => {
+    if (!player) return;
+    if (player.paused) player.play();
+    else player.pause();
+  };
 
   const playAt = (seconds) => {
     if (!player) return;
-
-    if (!player.paused) {
-      player.pause();
-    } else {
-      player.currentTime = seconds;
-      player.play();
-    }
+    player.currentTime = seconds;
+    player.play();
   };
 
-  return <AudioContext.Provider value={{ registerPlayer, playAt, isPlaying }}>{children}</AudioContext.Provider>;
+  return (
+    <AudioContext.Provider value={{ registerPlayer, togglePlay, playAt, isPlaying, player }}>
+      {children}
+    </AudioContext.Provider>
+  );
 }
 
 export function useAudio() {
