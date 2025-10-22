@@ -23,20 +23,19 @@ export default function AudioPlayerBox() {
           className={styles.playIcon}
         />
       </button>
-
-      <input
-        type="range"
-        min="0"
-        max="100"
-        step="0.1"
-        value={progress}
-        onChange={handleSeek}
-        className={styles.progressBar}
-        style={{ "--fill": `${progress}%` }}
-      />
-
-      <div className={styles.timeDisplay}>
-        {formatTime(current)} / {formatTime(duration)}
+      <div className={styles.progressBarContainer}>
+        <div className={styles.timeDisplay}>{formatTime(current)}</div>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          step="0.1"
+          value={progress}
+          onChange={handleSeek}
+          className={styles.progressBar}
+          style={{ "--fill": `${progress}%` }}
+        />
+        <div className={styles.timeDisplay}>{formatTime(duration)}</div>
       </div>
 
       <input

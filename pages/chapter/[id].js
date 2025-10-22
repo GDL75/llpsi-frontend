@@ -72,10 +72,14 @@ export default function ChapterPage() {
         return <p>Voici la grammaire du chapitre {chapterData.number}.</p>;
       case "exercises":
         return (
-          <>
-            <p>Voici les exercices du chapitre {chapterData.number}.</p>
-            <Text data={exercises} />
-          </>
+          <div className={styles.exercisesPage}>
+            <div className={styles.exercises}>
+              {exercises.map((exercise) => (
+                <Text key={exercise.id} data={exercise} />
+              ))}
+            </div>
+            <div className={styles.exercisesStats}></div>
+          </div>
         );
       case "vocabulary":
         return (
@@ -83,7 +87,7 @@ export default function ChapterPage() {
             <div className={styles.vocabContainer}>
               <Vocabulary data={vocabulary} openComment={handleOpenComment} />
             </div>
-            <div className={styles.commentPanel}>
+            <div className={styles.wordDetails}>
               {openComment && <VocabularyModal vocab={openComment} onClose={handleCloseComment} />}
             </div>
           </div>

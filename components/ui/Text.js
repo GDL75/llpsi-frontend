@@ -1,21 +1,42 @@
-import styles from "styles/Text.module.css";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateAnswer, updateStats } from "reducers/exercises";
 import { useMorph } from "components/hooks/useMorph";
+import { useAudio } from "context/AudioContext";
 import Table from "ui/Table";
 import { GapInput, DropDown } from "ui/UserInput";
-import { useAudio } from "context/AudioContext";
+import styles from "styles/Text.module.css";
 
 export default function Text({ data, openComment }) {
   const m = useMorph();
-  const { playAt, isPlaying } = useAudio();
+  const { playAt } = useAudio();
+  const dispatch = useDispatch();
 
-  const [answers, setAnswers] = useState({}); // { index: { text: "xx", morph: "nominative" } }
+  // Variables used for the exercises --------------------------------------------
+  const answers = useSelector((state) => state.exercises?.answers?.[data.id]) || {};
+  const totalGaps = data.text.filter((t) => t.gap).length;
+  const totalSelects = data.text.filter((t) => t.gap && t.list).length;
+  const answeredGaps = Object.values(answers).filter((a) => a.text?.trim()).length;
+  const answeredSelects = Object.values(answers).filter((a) => a.morph?.trim()).length;
+
+  // Mise à jour automatique des stats dans Redux
+  useEffect(() => {
+    dispatch(
+      updateStats({
+        exerciseId: data.id,
+        totalGaps,
+        totalSelects,
+        answeredGaps,
+        answeredSelects,
+      })
+    );
+  }, [answeredGaps, answeredSelects, totalGaps, totalSelects, data.id, dispatch]);
+
+  // Mise à jour des réponses utilisateur
   const handleChange = (index, field, value) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [index]: { ...prev[index], [field]: value },
-    }));
+    dispatch(updateAnswer({ exerciseId: data.id, index, field, value }));
   };
+  // End of variables used for the exercises ----------------------------------------
 
   const paragraphs = [];
   let currentParagraph = [];
@@ -55,15 +76,13 @@ export default function Text({ data, openComment }) {
         const [min, sec] = item.audio.split(":").map((v) => parseFloat(v) || 0);
         const seconds = min * 60 + sec;
         tokenElement = (
-          <span
-            className={styles.audioWord}
-            onClick={() => playAt(seconds)}
-          >
+          <span className={styles.audioWord} onClick={() => playAt(seconds)}>
             {tokenElement}
           </span>
         );
       }
 
+      // si le mot contient un commentaire
       const styledToken = item.comment ? (
         <span key={`word-${index}`} className="comment" onClick={() => openComment(item.comment)}>
           {tokenElement}
@@ -85,7 +104,7 @@ export default function Text({ data, openComment }) {
           value={answers[index]?.text || ""}
           onChange={(e) => handleChange(index, "text", e.target.value)}
           placeholder=""
-          width="2em"
+          width={`${data.gapWidth}ch`}
           dropValue={answers[index]?.morph || ""}
         />
       );

@@ -1,0 +1,15 @@
+.exercicesContainer {
+  display: flex;
+  height: 100%;
+}
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 2px solid var(--color-3);
+}

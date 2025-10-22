@@ -7,11 +7,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import settings from "reducers/settings";
 import navigation from "reducers/navigation";
 import morphology from "reducers/morphology";
+import exercises from "reducers/exercises";
 import morphologyConfig from "data/morphologyConfig";
 import { AudioProvider } from "context/AudioContext";
 
 const store = configureStore({
-  reducer: { settings, navigation, morphology },
+  reducer: { settings, navigation, morphology, exercises },
 });
 
 // The theme component must be inside the <Provider>, therefore this part is isolated in a function

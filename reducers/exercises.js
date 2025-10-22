@@ -1,0 +1,39 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  answers: {}, // { [exerciseId]: { [index]: { text, morph } } }
+  stats: {}, // { [exerciseId]: { totalGaps, totalSelects, answeredGaps, answeredSelects } }
+  checked: {}, // { [exerciseId]: { correctInputs, correctSelects } }
+};
+
+const exercisesSlice = createSlice({
+  name: "exercises",
+  initialState,
+  reducers: {
+    updateAnswer: (state, action) => {
+      const { exerciseId, index, field, value } = action.payload;
+      if (!state.answers[exerciseId]) state.answers[exerciseId] = {};
+      if (!state.answers[exerciseId][index]) state.answers[exerciseId][index] = {};
+      state.answers[exerciseId][index][field] = value;
+    },
+
+    updateStats: (state, action) => {
+      const { exerciseId, totalGaps, totalSelects, answeredGaps, answeredSelects } = action.payload;
+      state.stats[exerciseId] = { totalGaps, totalSelects, answeredGaps, answeredSelects };
+    },
+
+    checkExercise: (state, action) => {
+      const { exerciseId, correctInputs, correctSelects } = action.payload;
+      state.checked[exerciseId] = { correctInputs, correctSelects };
+    },
+
+    resetExercises: (state) => {
+      state.answers = {};
+      state.stats = {};
+      state.checked = {};
+    },
+  },
+});
+
+export const { updateAnswer, updateStats, checkExercise, resetExercises } = exercisesSlice.actions;
+export default exercisesSlice.reducer;

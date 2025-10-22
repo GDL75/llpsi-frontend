@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import styles from "styles/userInput.module.css";
+import styles from "styles/UserInput.module.css";
 import morphologyConfig from "data/morphologyConfig";
 
 export function GapInput({ value, onChange, placeholder, width = "2em", dropValue }) {
@@ -24,6 +24,7 @@ export function GapInput({ value, onChange, placeholder, width = "2em", dropValu
       onChange={handleChange} // adds macron accents
       placeholder={placeholder}
       className={styles.gapInput}
+      // the color of the input depends on the value of the dropdown (Latin case)
       style={{ width, ...(enabled[dropValue] && { color: `var(--color-${dropValue})` }) }}
     />
   );
