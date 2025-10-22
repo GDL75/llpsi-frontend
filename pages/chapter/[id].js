@@ -8,6 +8,7 @@ import Vocabulary from "components/chapters/Vocabulary";
 import { chapters } from "data/chapters"; // means: from "data/chapters/index.js";
 import CommentModal from "components/chapters/CommentModal";
 import VocabularyModal from "components/chapters/VocabularyModal";
+import ExercisesStats from "components/chapters/ExercisesStats";
 
 export default function ChapterPage() {
   const router = useRouter();
@@ -78,7 +79,7 @@ export default function ChapterPage() {
                 <Text key={exercise.id} data={exercise} />
               ))}
             </div>
-            <div className={styles.exercisesStats}></div>
+            <ExercisesStats exercises={exercises} />
           </div>
         );
       case "vocabulary":

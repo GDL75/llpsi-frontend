@@ -4,6 +4,7 @@ const initialState = {
   answers: {}, // { [exerciseId]: { [index]: { text, morph } } }
   stats: {}, // { [exerciseId]: { totalGaps, totalSelects, answeredGaps, answeredSelects } }
   checked: {}, // { [exerciseId]: { correctInputs, correctSelects } }
+  checkedDetails: {}, // { [exerciseId]: { [index]: { isCorrectInput, isCorrectSelect } } }
 };
 
 const exercisesSlice = createSlice({
@@ -31,6 +32,12 @@ const exercisesSlice = createSlice({
       state.answers = {};
       state.stats = {};
       state.checked = {};
+    },
+
+    checkExercise: (state, action) => {
+      const { exerciseId, correctInputs, correctSelects, details } = action.payload;
+      state.checked[exerciseId] = { correctInputs, correctSelects };
+      state.checkedDetails[exerciseId] = details;
     },
   },
 });

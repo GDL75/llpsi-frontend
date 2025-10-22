@@ -6,6 +6,7 @@ import { useAudio } from "context/AudioContext";
 import Table from "ui/Table";
 import { GapInput, DropDown } from "ui/UserInput";
 import styles from "styles/Text.module.css";
+import inputStyles from "styles/UserInput.module.css"; 
 
 export default function Text({ data, openComment }) {
   const m = useMorph();
@@ -18,6 +19,7 @@ export default function Text({ data, openComment }) {
   const totalSelects = data.text.filter((t) => t.gap && t.list).length;
   const answeredGaps = Object.values(answers).filter((a) => a.text?.trim()).length;
   const answeredSelects = Object.values(answers).filter((a) => a.morph?.trim()).length;
+  const checkedDetails = useSelector((state) => state.exercises.checkedDetails?.[data.id] || {});
 
   // Mise à jour automatique des stats dans Redux
   useEffect(() => {
@@ -98,6 +100,10 @@ export default function Text({ data, openComment }) {
 
     // --- cas d’un gap (dans les exercices) ---
     if (item.gap) {
+      const gapStatus = checkedDetails[index];
+      const isCorrectInput = gapStatus?.isCorrectInput;
+      const isCorrectSelect = gapStatus?.isCorrectSelect;
+
       currentParagraph.push(
         <GapInput
           key={`gap-input-${index}`}
@@ -106,6 +112,13 @@ export default function Text({ data, openComment }) {
           placeholder=""
           width={`${data.gapWidth}ch`}
           dropValue={answers[index]?.morph || ""}
+          className={
+            checkedDetails[index]?.isCorrectInput === true
+              ? inputStyles.correct
+              : checkedDetails[index]?.isCorrectInput === false
+              ? inputStyles.incorrect
+              : ""
+          }
         />
       );
 
@@ -115,6 +128,13 @@ export default function Text({ data, openComment }) {
           listType={item.list}
           value={answers[index]?.morph || ""}
           onChange={(e) => handleChange(index, "morph", e.target.value)}
+          className={
+            checkedDetails[index]?.isCorrectInput === true
+              ? inputStyles.correct
+              : checkedDetails[index]?.isCorrectInput === false
+              ? inputStyles.incorrect
+              : ""
+          }
         />
       );
 

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import styles from "styles/UserInput.module.css";
 import morphologyConfig from "data/morphologyConfig";
 
-export function GapInput({ value, onChange, placeholder, width = "2em", dropValue }) {
+export function GapInput({ value, onChange, placeholder, width = "2em", dropValue , className}) {
   const enabled = useSelector((state) => state.morphology);
 
   const macronMap = { a: "ā", e: "ē", i: "ī", o: "ō", u: "ū", A: "Ā", E: "Ē", I: "Ī", O: "Ō", U: "Ū" };
@@ -23,14 +23,15 @@ export function GapInput({ value, onChange, placeholder, width = "2em", dropValu
       value={value}
       onChange={handleChange} // adds macron accents
       placeholder={placeholder}
-      className={styles.gapInput}
+      // the second className below will come from Text.js and will allow formatting depending on right/wrong answer
+      className={`${styles.gapInput} ${className || ""}`}
       // the color of the input depends on the value of the dropdown (Latin case)
       style={{ width, ...(enabled[dropValue] && { color: `var(--color-${dropValue})` }) }}
     />
   );
 }
 
-export function DropDown({ listType, value, onChange }) {
+export function DropDown({ listType, value, onChange, className }) {
   const currentChapter = useSelector((state) => state.navigation.value.chapter);
 
   const lists = {
@@ -60,7 +61,7 @@ export function DropDown({ listType, value, onChange }) {
   });
 
   return (
-    <select className={styles.dropDown} value={value} onChange={onChange}>
+    <select className={`${styles.dropDown} ${className || ""}`} value={value} onChange={onChange}>
       <option value="">—</option>
       {lists[listType]
         .filter((opt) => {
