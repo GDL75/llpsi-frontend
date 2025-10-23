@@ -16,7 +16,7 @@ export default function Text({ data, openComment }) {
   // Variables used for the exercises --------------------------------------------
   const answers = useSelector((state) => state.exercises?.answers?.[data.id]) || {};
   const totalGaps = data.text.filter((t) => t.gap).length;
-  const totalSelects = data.text.filter((t) => t.gap && t.list).length;
+  const totalSelects = data.list ? totalGaps : 0;
   const answeredGaps = Object.values(answers).filter((a) => a.text?.trim()).length;
   const answeredSelects = Object.values(answers).filter((a) => a.morph?.trim()).length;
   const checkedDetails = useSelector((state) => state.exercises.checkedDetails?.[data.id] || {});
@@ -117,18 +117,18 @@ export default function Text({ data, openComment }) {
           }
         />
       );
-
-      currentParagraph.push(
-        <DropDown
-          key={`gap-select-${index}`}
-          listType={item.list}
-          value={answers[index]?.morph || ""}
-          onChange={(e) => handleChange(index, "morph", e.target.value)}
-          className={
-            isCorrectSelect === true ? inputStyles.correct : isCorrectSelect === false ? inputStyles.incorrect : ""
-          }
-        />
-      );
+      if (data.list) {
+        currentParagraph.push(
+          <DropDown
+            key={`gap-select-${index}`}
+            listType={data.list}
+            value={answers[index]?.morph || ""}
+            onChange={(e) => handleChange(index, "morph", e.target.value)}
+            className={
+              isCorrectSelect === true ? inputStyles.correct : isCorrectSelect === false ? inputStyles.incorrect : ""
+            }
+          />
+        );}
 
       if (item.suffix) currentParagraph.push(item.suffix);
     }

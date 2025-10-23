@@ -19,6 +19,7 @@ const exercisesSlice = createSlice({
     },
 
     updateStats: (state, action) => {
+      if (!action.payload.exerciseId) return; 
       const { exerciseId, totalGaps, totalSelects, answeredGaps, answeredSelects } = action.payload;
       state.stats[exerciseId] = { totalGaps, totalSelects, answeredGaps, answeredSelects };
     },

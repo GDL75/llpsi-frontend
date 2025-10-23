@@ -8,11 +8,15 @@ export function GapInput({ value, onChange, placeholder, width = "2em", dropValu
 
   const macronMap = { a: "ā", e: "ē", i: "ī", o: "ō", u: "ū", A: "Ā", E: "Ē", I: "Ī", O: "Ō", U: "Ū" };
   // ȳ and Ȳ don't exist with Gentium
+  const ligatureMap = { a: "æ", A: "Æ", o: "œ", O: "Œ", };
 
   const handleChange = (e) => {
     let text = e.target.value;
     text = text.replace(/-([aeiouAEIOU])/g, (match, vowel) => {
       return macronMap[vowel];
+    });
+    text = text.replace(/\+([aoAO])/g, (match, letter) => {
+      return ligatureMap[letter] ;
     });
     onChange({ target: { value: text } });
   };

@@ -6,10 +6,9 @@ import styles from "styles/ExercisesStats.module.css";
 export default function ExercisesStats({ exercises }) {
   const dispatch = useDispatch();
 
-  // ✅ Sélecteurs appelés UNE SEULE FOIS
   const stats = useSelector((state) => state.exercises.stats);
   const answers = useSelector((state) => state.exercises.answers);
-  const checkedAll = useSelector((state) => state.exercises.checked); // 👈 on lit tout ici
+  const checkedAll = useSelector((state) => state.exercises.checked);
 
   const handleCheck = (exercise) => {
     const exerciseAnswers = answers[exercise.id] || {};
@@ -53,7 +52,7 @@ export default function ExercisesStats({ exercises }) {
         const allAnswered = allGapsAnswered && allSelectsAnswered;
 
         const exercise = exercises.find((e) => e.id === Number(id));
-        const checked = checkedAll?.[id]; // ✅ plus de hook dans la boucle
+        const checked = checkedAll?.[id]; 
 
         return (
           <div key={id} className={styles.statsBox}>

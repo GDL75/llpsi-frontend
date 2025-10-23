@@ -24,11 +24,11 @@
 }
 
 .correct {
-  background-color: rgba(60, 179, 113, 0.3); /* vert clair */
+  background-color: rgba(22, 135, 49, 0.1); /* vert clair */
 }
 
 .incorrect {
-  background-color: rgba(255, 99, 71, 0.3); /* rouge clair */
+  background-color: rgba(245, 73, 39, 0.2); /* rouge clair */
 }
 
 .correct:focus,
