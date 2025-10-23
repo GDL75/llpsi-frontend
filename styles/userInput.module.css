@@ -1,7 +1,7 @@
 .gapInput {
   border: none;
   border-bottom: 1px solid gray;
-  background-color: var(--color-0);
+  /* background-color: var(--color-0); */
   line-height: 1;
   vertical-align: middle;
   font: inherit;
@@ -25,12 +25,10 @@
 
 .correct {
   background-color: rgba(60, 179, 113, 0.3); /* vert clair */
-  border-color: var(--color-2);
 }
 
 .incorrect {
   background-color: rgba(255, 99, 71, 0.3); /* rouge clair */
-  border-color: var(--color-3);
 }
 
 .correct:focus,

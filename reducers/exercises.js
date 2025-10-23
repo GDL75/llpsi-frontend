@@ -23,11 +23,6 @@ const exercisesSlice = createSlice({
       state.stats[exerciseId] = { totalGaps, totalSelects, answeredGaps, answeredSelects };
     },
 
-    checkExercise: (state, action) => {
-      const { exerciseId, correctInputs, correctSelects } = action.payload;
-      state.checked[exerciseId] = { correctInputs, correctSelects };
-    },
-
     resetExercises: (state) => {
       state.answers = {};
       state.stats = {};

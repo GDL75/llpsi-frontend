@@ -113,11 +113,7 @@ export default function Text({ data, openComment }) {
           width={`${data.gapWidth}ch`}
           dropValue={answers[index]?.morph || ""}
           className={
-            checkedDetails[index]?.isCorrectInput === true
-              ? inputStyles.correct
-              : checkedDetails[index]?.isCorrectInput === false
-              ? inputStyles.incorrect
-              : ""
+            isCorrectInput === true ? inputStyles.correct : isCorrectInput === false ? inputStyles.incorrect : ""
           }
         />
       );
@@ -129,11 +125,7 @@ export default function Text({ data, openComment }) {
           value={answers[index]?.morph || ""}
           onChange={(e) => handleChange(index, "morph", e.target.value)}
           className={
-            checkedDetails[index]?.isCorrectInput === true
-              ? inputStyles.correct
-              : checkedDetails[index]?.isCorrectInput === false
-              ? inputStyles.incorrect
-              : ""
+            isCorrectSelect === true ? inputStyles.correct : isCorrectSelect === false ? inputStyles.incorrect : ""
           }
         />
       );
