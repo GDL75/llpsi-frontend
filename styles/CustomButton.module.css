@@ -7,13 +7,21 @@
   /* border: 1px solid var(--tColor); */
   border: none;
   border-radius: 20px;
-  margin: 0px 10px 0px 10px;
   background-color: var(--bColor);
   color: var(--tColor);
   transition: all 0.5s;
   cursor: pointer;
+  margin: 10px 0px;
 }
 .button:hover {
   transform: scale(1.05);
   background-color: var(--color-3);
+}
+.button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.button:not(:disabled):hover {
+  opacity: 1;
 }

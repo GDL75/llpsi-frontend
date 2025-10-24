@@ -1,7 +1,7 @@
+import styles from "styles/SidebarRight.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import morphologyConfig from "data/morphologyConfig";
 import { toggleMorphology, setAll } from "reducers/morphology";
-import styles from "styles/SidebarRight.module.css";
 import CustomCheckbox from "ui/CustomCheckbox";
 import CustomButton from "ui/CustomButton";
 import { useTranslation } from "components/hooks/useTranslation";
@@ -18,20 +18,8 @@ export default function SidebarRight() {
       <div className={styles.fixedContainer}>
         <h4 className={styles.title}>{t("morphology")}</h4>
         <div className={styles.btnContainer}>
-          <CustomButton
-            bColor="2"
-            tColor="0"
-            wSize="80px"
-            text={t("all")}
-            handleFunction={() => dispatch(setAll(true))}
-          />
-          <CustomButton
-            bColor="2"
-            tColor="0"
-            wSize="80px"
-            text={t("none")}
-            handleFunction={() => dispatch(setAll(false))}
-          />
+          <CustomButton wSize="80px" text={t("all")} onClick={() => dispatch(setAll(true))} />
+          <CustomButton wSize="80px" text={t("none")} onClick={() => dispatch(setAll(false))} />
         </div>
         <div className={styles.checkboxList}>
           {morphologyConfig

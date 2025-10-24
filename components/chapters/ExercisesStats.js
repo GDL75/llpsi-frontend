@@ -4,7 +4,7 @@ import { checkExercise } from "reducers/exercises";
 import styles from "styles/ExercisesStats.module.css";
 import { useTranslation } from "components/hooks/useTranslation";
 import { romanNumber } from "utils/numbers";
-import CustomButton from "components/ui/CustomButton";
+import CustomButton from "ui/CustomButton";
 
 export default function ExercisesStats({ exercises }) {
   const dispatch = useDispatch();
@@ -76,9 +76,12 @@ export default function ExercisesStats({ exercises }) {
               </p>
             )}
 
-            <button disabled={!allAnswered} onClick={() => handleCheck(exercise)}>
-              {t("check")}
-            </button>
+            <CustomButton
+              text={t("check")}
+              onClick={() => handleCheck(exercise)}
+              disabled={!allAnswered}
+              wSize="80px"
+            />
 
             {checked && (
               <div className={styles.results}>

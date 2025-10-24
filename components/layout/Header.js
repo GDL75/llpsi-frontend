@@ -45,13 +45,12 @@ export default function Header() {
 
           {/* droite : settings / profile */}
           <nav className={styles.rightGroup}>
-            <CustomButton bColor="3" tColor="0" wSize="150px" text={t("profile")} handleFunction={() => {}} />
+            <CustomButton bColor="3" tColor="0" wSize="150px" text={t("profile")} onClick={() => {}} />
             <CustomButton
               bColor="3"
-              tColor="0"
               wSize="150px"
               text={t("settings")}
-              handleFunction={() => setIsSettings((prev) => !prev)}
+              onClick={() => setIsSettings((prev) => !prev)}
             />
           </nav>
         </header>

@@ -37,7 +37,7 @@ function Home() {
             tColor="0"
             wSize="150px"
             text={t("settings")}
-            handleFunction={() => setIsSettings((prev) => !prev)}
+            onClick={() => setIsSettings((prev) => !prev)}
           />
         </div>
         <h1>
@@ -52,14 +52,14 @@ function Home() {
             tColor="0"
             wSize="150px"
             text={t("signup")}
-            // handleFunction={() => setIsSettings((prev) => !prev)}
+            // onClick={() => setIsSettings((prev) => !prev)}
           />
           <CustomButton
             bColor="3"
             tColor="0"
             wSize="150px"
             text={t("signin")}
-            handleFunction={() => {
+            onClick={() => {
               dispatch(setChapter(book === "book1" ? 9 : 36));
               router.push("/chapter/09");
             }}
