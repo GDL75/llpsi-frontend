@@ -14,12 +14,13 @@ export default function Text({ data, openComment }) {
   const dispatch = useDispatch();
 
   // Variables used for the exercises --------------------------------------------
+  const emptyObj = {};
   const answers = useSelector((state) => state.exercises?.answers?.[data.id]) || {};
   const totalGaps = data.text.filter((t) => t.gap).length;
   const totalSelects = data.list ? totalGaps : 0;
   const answeredGaps = Object.values(answers).filter((a) => a.text?.trim()).length;
   const answeredSelects = Object.values(answers).filter((a) => a.morph?.trim()).length;
-  const checkedDetails = useSelector((state) => state.exercises.checkedDetails?.[data.id] || {});
+  const checkedDetails = useSelector((state) => state.exercises.checkedDetails?.[data.id] || emptyObj);
 
   // Mise à jour automatique des stats dans Redux
   useEffect(() => {

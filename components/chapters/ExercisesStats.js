@@ -2,9 +2,14 @@
 import { useSelector, useDispatch } from "react-redux";
 import { checkExercise } from "reducers/exercises";
 import styles from "styles/ExercisesStats.module.css";
+import { useTranslation } from "components/hooks/useTranslation";
+import { romanNumber } from "utils/numbers";
+import CustomButton from "components/ui/CustomButton";
 
 export default function ExercisesStats({ exercises }) {
   const dispatch = useDispatch();
+  const currentLanguage = useSelector((state) => state.settings.value.language);
+  const t = useTranslation();
 
   const stats = useSelector((state) => state.exercises.stats);
   const answers = useSelector((state) => state.exercises.answers);
@@ -44,6 +49,9 @@ export default function ExercisesStats({ exercises }) {
     );
   };
 
+  // To upper case each letter of a word
+  const toProperCase = (str) => str.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+
   return (
     <div className={styles.exercisesStats}>
       {Object.entries(stats).map(([id, ex]) => {
@@ -52,20 +60,24 @@ export default function ExercisesStats({ exercises }) {
         const allAnswered = allGapsAnswered && allSelectsAnswered;
 
         const exercise = exercises.find((e) => e.id === Number(id));
-        const checked = checkedAll?.[id]; 
+        const checked = checkedAll?.[id];
 
         return (
           <div key={id} className={styles.statsBox}>
-            <h4>Exercice {id}</h4>
+            <h4>{toProperCase(exercises[Number(id) - 1].text[0].token)}</h4>
             <p>
-              Inputs complétés : {ex.answeredGaps} / {ex.totalGaps}
+              Inputs complétés : {currentLanguage === "la" ? romanNumber(ex.answeredGaps) : ex.answeredGaps} /{" "}
+              {currentLanguage === "la" ? romanNumber(ex.totalGaps) : ex.totalGaps}
             </p>
-            <p>
-              Listes complétées : {ex.answeredSelects} / {ex.totalSelects}
-            </p>
+            {exercise.list && (
+              <p>
+                Listes complétées : {currentLanguage === "la" ? romanNumber(ex.answeredSelects) : ex.answeredSelects} /{" "}
+                {currentLanguage === "la" ? romanNumber(ex.totalSelects) : ex.totalSelects}
+              </p>
+            )}
 
             <button disabled={!allAnswered} onClick={() => handleCheck(exercise)}>
-              Check
+              {t("check")}
             </button>
 
             {checked && (
@@ -73,9 +85,11 @@ export default function ExercisesStats({ exercises }) {
                 <p>
                   ✅ {checked.correctInputs} bonnes réponses sur {ex.totalGaps}
                 </p>
-                <p>
-                  🎯 {checked.correctSelects} dropdowns corrects sur {ex.totalSelects}
-                </p>
+                {exercise.list && (
+                  <p>
+                    🎯 {checked.correctSelects} dropdowns corrects sur {ex.totalSelects}
+                  </p>
+                )}
               </div>
             )}
           </div>
