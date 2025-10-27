@@ -2,7 +2,7 @@
   font-family: var(--font-body);
   font-size: var(--fs-p);
   font-weight: var(--fw-regular);
-  width: var(--wSize);
+  min-width: var(--wSize);
   height: 40px;
   /* border: 1px solid var(--tColor); */
   border: none;
@@ -11,6 +11,7 @@
   color: var(--tColor);
   transition: all 0.5s;
   cursor: pointer;
+  padding: 0px 10px;
   margin: 10px 0px;
 }
 .button:hover {

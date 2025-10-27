@@ -66,12 +66,13 @@ export default function ExercisesStats({ exercises }) {
           <div key={id} className={styles.statsBox}>
             <h4>{toProperCase(exercises[Number(id) - 1].text[0].token)}</h4>
             <p>
-              Inputs complétés : {currentLanguage === "la" ? romanNumber(ex.answeredGaps) : ex.answeredGaps} /{" "}
+              {t("completedGaps")} : {currentLanguage === "la" ? romanNumber(ex.answeredGaps) : ex.answeredGaps} /{" "}
               {currentLanguage === "la" ? romanNumber(ex.totalGaps) : ex.totalGaps}
             </p>
             {exercise.list && (
               <p>
-                Listes complétées : {currentLanguage === "la" ? romanNumber(ex.answeredSelects) : ex.answeredSelects} /{" "}
+                {t("completedLists")} :{" "}
+                {currentLanguage === "la" ? romanNumber(ex.answeredSelects) : ex.answeredSelects} /{" "}
                 {currentLanguage === "la" ? romanNumber(ex.totalSelects) : ex.totalSelects}
               </p>
             )}
@@ -86,11 +87,15 @@ export default function ExercisesStats({ exercises }) {
             {checked && (
               <div className={styles.results}>
                 <p>
-                  ✅ {checked.correctInputs} bonnes réponses sur {ex.totalGaps}
+                  ✅ {t("correctGaps")} {": "}
+                  {currentLanguage === "la" ? romanNumber(checked.correctInputs) : checked.correctInputs} /{" "}
+                  {currentLanguage === "la" ? romanNumber(ex.totalGaps) : ex.totalGaps}
                 </p>
                 {exercise.list && (
                   <p>
-                    🎯 {checked.correctSelects} dropdowns corrects sur {ex.totalSelects}
+                    🎯 {t("correctLists")} {": "}
+                    {currentLanguage === "la" ? romanNumber(checked.correctSelects) : checked.correctSelects} /{" "}
+                    {currentLanguage === "la" ? romanNumber(ex.totalSelects) : ex.totalSelects}
                   </p>
                 )}
               </div>
