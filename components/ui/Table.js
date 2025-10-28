@@ -5,6 +5,8 @@ import { useTranslation } from "components/hooks/useTranslation";
 import { useMorph } from "components/hooks/useMorph";
 import morphologyConfig from "data/morphologyConfig";
 import { addEnding } from "utils/addEnding";
+import endings from "data/endings";
+import Conjugate from "ui/Conjugate";
 
 //--------------------------------------------------------------------------------------------
 export function TableNoun({ word }) {
@@ -163,5 +165,67 @@ export function TableAdjPro({ word }) {
         })}
       </tbody>
     </table>
+  );
+}
+
+
+//--------------------------------------------------------------------------------------------
+export function TableVerb({ radical, conjugation, voice, aspect }) {
+  const data = endings.verb?.conjugation?.[conjugation]?.[voice]?.[aspect];
+  if (!data) return <p>Pas de données pour cet aspect.</p>;
+
+  const moods = Object.keys(data); // ex: ["indicative","subjunctive","imperative"] ou ["indicative","subjunctive"]
+
+  // Collecte dynamique des temps rencontrés dans tous les moods
+  const tenseSet = new Set();
+  for (const mood of moods) {
+    const tenses = Object.keys(data[mood]);
+    tenses.forEach((t) => tenseSet.add(t));
+  }
+  const tenses = Array.from(tenseSet);
+
+  // Règle générale : certaines combinaisons n'existent pas même si on a des temps différents
+  // Mais ici on s'appuie sur la présence réelle des clés dans data[mood][tense]
+  const hasCombination = (mood, tense) => {
+    return !!data?.[mood]?.[tense];
+  };
+
+  return (
+    <div className={styles.tableVerb} style={{ "--mood-count": moods.length }}>
+      <div className={styles["tableVerb-headerRow"]}>
+        <div className={styles["tableVerb-cornerCell"]} />
+        {moods.map((mood) => (
+          <div key={mood} className={styles["tableVerb-headerCell"]}>
+            {mood}
+          </div>
+        ))}
+      </div>
+
+      {tenses.map((tense) => (
+        <div key={tense} className={styles["tableVerb-tenseRow"]}>
+          <div className={styles["tableVerb-tenseLabel"]}>{tense}</div>
+          {moods.map((mood) => {
+            const exists = hasCombination(mood, tense);
+            const cellClass = exists
+              ? styles["tableVerb-brickCell"]
+              : `${styles["tableVerb-brickCell"]} ${styles["tableVerb-brickCell--empty"]}`;
+            return (
+              <div key={mood} className={cellClass}>
+                {exists && (
+                  <Conjugate
+                    radical={radical}
+                    conjugation={conjugation}
+                    voice={voice}
+                    aspect={aspect}
+                    mood={mood}
+                    tense={tense}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      ))}
+    </div>
   );
 }

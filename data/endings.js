@@ -46,7 +46,88 @@ const endings = {
       vocative: { singular: "is", plural: "ēs" },
     },
   },
-  verb: {},
+  verb: {
+    conjugation: {
+      1: {
+        active: {
+          unfinished: {
+            indicative: {
+              present: [
+                ["", "ā", "ā", "ā", "ā", "a"],
+                ["", "", "", "", "", ""],
+                ["ō", "s", "t", "mus", "tis", "nt"],
+              ],
+              preterit: [
+                ["ā", "ā", "ā", "ā", "ā", "ā"],
+                ["ba", "bā", "ba", "bā", "bā", "ba"],
+                ["m", "s", "t", "mus", "tis", "nt"],
+              ],
+              future: [
+                ["ā", "ā", "ā", "ā", "ā", "ā"],
+                ["b", "bi", "bi", "bi", "bi", "bu"],
+                ["ō", "s", "t", "mus", "tis", "nt"],
+              ],
+            },
+            subjunctive: {
+              present: [
+                ["e", "ē", "e", "ē", "ē", "e"],
+                ["", "", "", "", "", ""],
+                ["m", "s", "t", "mus", "tis", "nt"],
+              ],
+              preterit: [
+                ["ā", "ā", "ā", "ā", "ā", "ā"],
+                ["re", "rē", "re", "rē", "rē", "re"],
+                ["m", "s", "t", "mus", "tis", "nt"],
+              ],
+            },
+            imperative: {
+              present: [
+                ["-", "ā", "-", "-", "ā", "-"],
+                ["-", "", "-", "-", "", "-"],
+                ["-", "", "-", "-", "te", "-"],
+              ],
+              future: [
+                ["-", "ā", "", "-", "ā", ""],
+                ["-", "", "-", "-", "", "-"],
+                ["-", "tō", "", "-", "tōte", ""],
+              ],
+            },
+          },
+          finished: {
+            indicative: {
+              perfect: [
+                ["āv", "āv", "āv", "āv", "āv", "āv"],
+                ["", "", "", "", "", ""],
+                ["ī", "istī", "it", "imus", "istis", "ērunt"],
+              ],
+              pqp: [
+                ["āv", "āv", "āv", "āv", "āv", "āv"],
+                ["era", "erā", "era", "erā", "erā", "era"],
+                ["m", "s", "t", "mus", "tis", "nt"],
+              ],
+              future: [
+                ["āv", "āv", "āv", "āv", "āv", "āv"],
+                ["er", "eri", "eri", "eri", "eri", "eri"],
+                ["ō", "s", "t", "mus", "tis", "nt"],
+              ],
+            },
+            subjunctive: {
+              perfect: [
+                ["āv", "āv", "āv", "āv", "āv", "āv"],
+                ["eri", "eri", "eri", "eri", "eri", "eri"],
+                ["m", "s", "t", "mus", "tis", "nt"],
+              ],
+              pqp: [
+                ["āv", "āv", "āv", "āv", "āv", "āv"],
+                ["isse", "issē", "isse", "issē", "issē", "isse"],
+                ["m", "s", "t", "mus", "tis", "nt"],
+              ],
+            },
+          },
+        },
+      },
+    },
+  },
 };
 
 export default endings;
