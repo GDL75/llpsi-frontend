@@ -46,10 +46,16 @@ export default function Conjugate({
           <div key={personKey} className="brickRow">
             <span className="brickForm">
               <span className="verbForm">
-                <span>{radical}</span>
-                <span className="verbPart1">{part1}</span>
-                <span className="verbPart2">{part2}</span>
-                <span className="verbPart3">{part3}</span>
+                {part1 !== "-" ? (
+                  <>
+                    <span>{radical}</span>
+                    <span className="verbPart1">{part1}</span>
+                    <span className="verbPart2">{part2}</span>
+                    <span className="verbPart3">{part3}</span>
+                  </>
+                ) : (
+                  <span>-</span>
+                )}
               </span>
             </span>
           </div>

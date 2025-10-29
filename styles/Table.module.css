@@ -19,6 +19,8 @@
   text-align: left;
   font-weight: bold;
   background-color: var(--TableHeadBackgrd);
+  max-width: 140px;
+  overflow-wrap: break-word;
 }
 
 .cell {
@@ -28,6 +30,10 @@
   min-width: 60px;
   color: #000000; /* even in dark mode */
 }
+.empty {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .sectionDivider td {
   border-bottom: 3px solid gray;
 }
@@ -42,63 +48,36 @@
 }
 
 /* ------------- Pour les verbes ------------- */
-/* --- disposition générale --- */
 .tableVerb {
-  display: inline-block;
   border-collapse: collapse;
   margin: 1rem 0;
+  width: auto;
+  text-align: center;
   font-family: var(--font-serif, serif);
 }
 
-/* --- ligne d’en-tête (moods) --- */
-.tableVerb-headerRow {
-  display: grid;
-  grid-template-columns: auto repeat(var(--mood-count, 3), 1fr);
-  font-weight: bold;
-  text-align: center;
-  border-bottom: 2px solid var(--color-2);
-}
-
-/* --- lignes des temps --- */
-.tableVerb-tenseRow {
-  display: grid;
-  grid-template-columns: auto repeat(var(--mood-count, 3), 1fr);
-  border-bottom: 1px solid var(--color-2);
-}
-
-/* --- cellule label du temps --- */
-.tableVerb-tenseLabel {
-  font-weight: 600;
-  padding: 0.5em 0.8em;
-  text-transform: capitalize;
-  border-right: 1px solid var(--color-2);
-}
-
-/* --- cellules contenant une brique --- */
-.tableVerb-brickCell {
-  padding: 0.5em;
-  text-align: left;
+.tableVerb th,
+.tableVerb td {
+  border: 1px solid gray;
+  padding: 0.4em 0.6em;
   vertical-align: top;
 }
 
-/* --- cellules vides --- */
-.tableVerb-brickCell--empty {
-  background-color: rgba(0, 0, 0, 0.05);
+.tableVerb th {
+  background-color: var(--TableHeadBackgrd, #f7f7f7);
+  font-weight: bold;
 }
 
-/* --- brique de conjugaison --- */
-.brick {
-  display: inline-block;
+.tableVerb .tenseLabel {
   text-align: left;
-  border: 1px solid var(--color-2);
-  border-radius: 8px;
-  padding: 4px 8px;
+  max-width: 100px;
+  overflow-wrap: break-word;
 }
 
-.brickRow {
-  line-height: 1.3;
+.tableVerb .cell {
+  min-width: 120px;
 }
 
-.verbForm {
-  white-space: nowrap;
+.tableVerb .empty {
+  background-color: rgba(0, 0, 0, 0.05);
 }

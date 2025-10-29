@@ -53,7 +53,7 @@ export default function VocabularyModal({ vocab }) {
           radical={vocab.radical}
           conjugation={vocab.conjugation}
           voice="active"
-          aspect="unfinished"
+          aspect="finished"
         />
       )}
 

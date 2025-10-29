@@ -57,7 +57,7 @@ const endings = {
                 ["", "", "", "", "", ""],
                 ["ō", "s", "t", "mus", "tis", "nt"],
               ],
-              preterit: [
+              imperfect: [
                 ["ā", "ā", "ā", "ā", "ā", "ā"],
                 ["ba", "bā", "ba", "bā", "bā", "ba"],
                 ["m", "s", "t", "mus", "tis", "nt"],
@@ -74,7 +74,7 @@ const endings = {
                 ["", "", "", "", "", ""],
                 ["m", "s", "t", "mus", "tis", "nt"],
               ],
-              preterit: [
+              imperfect: [
                 ["ā", "ā", "ā", "ā", "ā", "ā"],
                 ["re", "rē", "re", "rē", "rē", "re"],
                 ["m", "s", "t", "mus", "tis", "nt"],
@@ -87,9 +87,9 @@ const endings = {
                 ["-", "", "-", "-", "te", "-"],
               ],
               future: [
-                ["-", "ā", "", "-", "ā", ""],
+                ["-", "ā", "-", "-", "ā", "-"],
                 ["-", "", "-", "-", "", "-"],
-                ["-", "tō", "", "-", "tōte", ""],
+                ["-", "tō", "-", "-", "tōte", "-"],
               ],
             },
           },
@@ -100,7 +100,7 @@ const endings = {
                 ["", "", "", "", "", ""],
                 ["ī", "istī", "it", "imus", "istis", "ērunt"],
               ],
-              pqp: [
+              pluperfect: [
                 ["āv", "āv", "āv", "āv", "āv", "āv"],
                 ["era", "erā", "era", "erā", "erā", "era"],
                 ["m", "s", "t", "mus", "tis", "nt"],
@@ -117,7 +117,7 @@ const endings = {
                 ["eri", "eri", "eri", "eri", "eri", "eri"],
                 ["m", "s", "t", "mus", "tis", "nt"],
               ],
-              pqp: [
+              pluperfect: [
                 ["āv", "āv", "āv", "āv", "āv", "āv"],
                 ["isse", "issē", "isse", "issē", "issē", "isse"],
                 ["m", "s", "t", "mus", "tis", "nt"],

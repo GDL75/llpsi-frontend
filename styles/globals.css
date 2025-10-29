@@ -144,13 +144,13 @@ body.morph-subjunctive .subjunctive {
   font-size: var(--fs-p);
 }
 .verbPart1 {
-  background-color: #fccee8;
+  color: var(--color-accusative);
 }
 .verbPart2 {
-  background-color: #fffd78;
+  color: var(--color-genitive);
 }
 .verbPart3 {
-  background-color: #73feff;
+  color: var(--color-nominative);
 }
 
 /* ========== Images ========== */
