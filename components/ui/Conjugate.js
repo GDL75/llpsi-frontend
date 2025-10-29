@@ -20,7 +20,14 @@ export default function Conjugate({
 }) {
   const persons = ["1s", "2s", "3s", "1p", "2p", "3p"];
 
-  // Récupération sécurisée des données comme dans ta version
+  // Choix du radical à utiliser
+  let chosenRadical = radical;
+  if (Array.isArray(radical) && radical.length === 2) {
+    // utiliser le 2e radical uniquement pour l’aspect "finished" à la voix "active"
+    chosenRadical = aspect === "finished" && voice === "active" ? radical[1] : radical[0];
+  }
+
+  // Récupération sécurisée des terminaisons
   const table = endings.verb?.conjugation?.[conjugation]?.[voice]?.[aspect]?.[mood]?.[tense];
 
   if (!table) {
@@ -37,7 +44,6 @@ export default function Conjugate({
   return (
     <div className="brick">
       {persons.map((personKey, idx) => {
-        // pour chaque personne, on recompose la forme finale
         const part1 = table[0]?.[idx] || "";
         const part2 = table[1]?.[idx] || "";
         const part3 = table[2]?.[idx] || "";
@@ -48,7 +54,7 @@ export default function Conjugate({
               <span className="verbForm">
                 {part1 !== "-" ? (
                   <>
-                    <span>{radical}</span>
+                    <span>{chosenRadical}</span>
                     <span className="verbPart1">{part1}</span>
                     <span className="verbPart2">{part2}</span>
                     <span className="verbPart3">{part3}</span>

@@ -1,0 +1,17 @@
+.verbOptions {
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--fs-p);
+}

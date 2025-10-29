@@ -1,7 +1,9 @@
 const translations = {
   ablative: { en: "Ablative", fr: "Ablatif", la: "Ablātīvus" },
+  active: { en: "Active", fr: "Actif", la: "Āctīvum" },
   adjective: { en: "Adjectives", fr: "Adjectifs", la: "Adjectīva" },
   adverb: { en: "Adverbs", fr: "Adverbes", la: "adverbia" },
+  aspect: { en: "Aspect", fr: "Aspect", la: "Aspectus" },
   all: { en: "All", fr: "Tous", la: "Omnia" },
   accusative: { en: "Accusative", fr: "Accusatif", la: "Accūsātīvus" },
   book1: { en: "Book 1", fr: "Livre 1", la: "Liber Iº" },
@@ -25,6 +27,7 @@ const translations = {
   exercise: { en: "Exercise", fr: "Exercice", la: "Pensum" },
   exercises: { en: "Exercises", fr: "Exercices", la: "Pensa" },
   feminine: { en: "Feminine", fr: "Féminin", la: "Feminīnum" },
+  finished: { en: "Finished", fr: "Achevé", la: "Perfectum" },
   future: { en: "Futur", fr: "Futur", la: "Futūrum" },
   genitive: { en: "Genitive", fr: "Génitif", la: "Genetīvus" },
   gerund: { en: "Gerund", fr: "Gérondif", la: "Gerundivus" },
@@ -46,6 +49,7 @@ const translations = {
   nominative: { en: "Nominative", fr: "Nominatif", la: "Nōminātīvus" },
   noun: { en: "Nouns", fr: "Noms", la: "Nōmina" },
   participle: { en: "Participle", fr: "Participe", la: "Participium" },
+  passive: { en: "Passive", fr: "Passif", la: "Passīvum" },
   perfect: { en: "Perfect", fr: "Passé simple", la: "Perfectum" },
   pluperfect: { en: "Pluperfect", fr: "Plus que parfait", la: "Plūsquam-perfectum" },
   plural: { en: "Plural", fr: "Pluriel", la: "Plurālis" },
@@ -62,9 +66,11 @@ const translations = {
   superlative: { en: "Superlative", fr: "Superlatif", la: "Superlativus" },
   text: { en: "Text", fr: "Texte", la: "Textus" },
   theme: { en: "Theme", fr: "Thème", la: "Thema" },
+  unfinished: { en: "Unfinished", fr: "En cours", la: "Infectum" },
   verb: { en: "Verbs", fr: "Verbes", la: "Verba" },
   vocabulary: { en: "Vocabulary", fr: "Vocabulaire", la: "Vocabula" },
   vocative: { en: "Vocative", fr: "Vocatif", la: "Vocātīvus" },
+  voice: { en: "Voice", fr: "Voix", la: "Vox" },
 };
 
 export default translations;

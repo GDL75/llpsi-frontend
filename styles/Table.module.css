@@ -46,38 +46,3 @@
 .neuter {
   background-color: #ffffed;
 }
-
-/* ------------- Pour les verbes ------------- */
-.tableVerb {
-  border-collapse: collapse;
-  margin: 1rem 0;
-  width: auto;
-  text-align: center;
-  font-family: var(--font-serif, serif);
-}
-
-.tableVerb th,
-.tableVerb td {
-  border: 1px solid gray;
-  padding: 0.4em 0.6em;
-  vertical-align: top;
-}
-
-.tableVerb th {
-  background-color: var(--TableHeadBackgrd, #f7f7f7);
-  font-weight: bold;
-}
-
-.tableVerb .tenseLabel {
-  text-align: left;
-  max-width: 100px;
-  overflow-wrap: break-word;
-}
-
-.tableVerb .cell {
-  min-width: 120px;
-}
-
-.tableVerb .empty {
-  background-color: rgba(0, 0, 0, 0.05);
-}

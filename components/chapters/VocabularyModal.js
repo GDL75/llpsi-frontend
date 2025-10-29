@@ -1,6 +1,8 @@
 import styles from "styles/VocabularyModal.module.css";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { TableNoun, TableAdjPro, TableVerb } from "ui/Table";
+import VerbOptions from "ui/VerbOptions";   
 import morphologyConfig from "data/morphologyConfig";
 import Text from "components/ui/Text";
 
@@ -9,32 +11,22 @@ export default function VocabularyModal({ vocab }) {
 
   if (!vocab) return null;
 
-  // Ordre d’affichage voulu
-  const orderedKeys = [
-    "type",
-    "gender",
-    "declension",
-    "class",
-    "conjugation",
-    "infinitive",
-    "perfect",
-    "supine",
-    // "note"  rejected after the table, so it is more visible
-  ];
+  // états pour voice / aspect
+  const [voice, setVoice] = useState("active");
+  const [aspect, setAspect] = useState("unfinished");
 
-  // On filtre les clés qui existent effectivement pour ce mot
+  // ordre d’affichage
+  const orderedKeys = ["type", "gender", "declension", "class", "conjugation", "infinitive", "perfect", "supine"];
+
   const visibleKeys = orderedKeys.filter((key) => vocab[key] !== undefined);
 
-  // from which chapter a key is available
-  const chapFrom = (key) => {
-    return morphologyConfig.find((item) => item.key === key)?.fromChapter ?? 1;
-  };
+  const chapFrom = (key) => morphologyConfig.find((item) => item.key === key)?.fromChapter ?? 1;
 
   return (
     <aside className={styles.vocabModal}>
       <h3>{vocab.type === "verb" ? vocab.llpsi : vocab.word}</h3>
+
       <div className={styles.details}>
-        {/* Métadonnées grammaticales */}
         {visibleKeys.map(
           (key) =>
             currentChapter >= chapFrom(key) && (
@@ -45,16 +37,14 @@ export default function VocabularyModal({ vocab }) {
         )}
       </div>
 
-      {/* Tableau des formes, si présent */}
+      {/* TABLEAU DES FORMES */}
       {vocab.type === "noun" && <TableNoun word={vocab} />}
       {(vocab.type === "adjective" || vocab.type === "pronoun") && <TableAdjPro word={vocab} />}
       {vocab.type === "verb" && (
-        <TableVerb
-          radical={vocab.radical}
-          conjugation={vocab.conjugation}
-          voice="active"
-          aspect="finished"
-        />
+        <>
+          <VerbOptions voice={voice} aspect={aspect} setVoice={setVoice} setAspect={setAspect} />
+          <TableVerb radical={vocab.radical} conjugation={vocab.conjugation} voice={voice} aspect={aspect} />
+        </>
       )}
 
       {vocab.note && (
@@ -64,7 +54,6 @@ export default function VocabularyModal({ vocab }) {
         </div>
       )}
 
-      {/* Image à la fin */}
       {vocab.image && (
         <div className={styles.imageContainer}>
           <img src={vocab.image.path} alt={vocab.word} className={styles.image} />
