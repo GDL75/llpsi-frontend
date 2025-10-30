@@ -289,7 +289,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "bālat, -ant",
-    radical: "bal",
+    radical: ["bāl", "bāl", "bālāt"], // infinitive, perfect, supine
     infinitive: "bālāre",
     supine: "bālātum",
     translation: { en: "bleat", fr: "bêler" },
@@ -300,7 +300,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "dēclīnat, -ant",
-    radical: "dēclīn",
+    radical: ["dēclīn", "dēclīn", "dēclīnāt"], // infinitive, perfect, supine
     infinitive: "dēclīnāre",
     supine: "dēclīnātum",
     translation: { en: "decline, inflect", fr: "décliner" },
@@ -311,7 +311,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "errat, -ant",
-    radical: "err",
+    radical: ["err", "err", "errat"], // infinitive, perfect, supine
     infinitive: "errāre",
     supine: "errātum",
     translation: { en: "wander, stray", fr: "errer, dévier" },
@@ -322,7 +322,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "lātrat, -ant",
-    radical: "latr",
+    radical: ["lātr", "lātr", "lātrāt"], // infinitive, perfect, supine
     infinitive: "lātrāre",
     supine: "lātrātum",
     translation: { en: "bark", fr: "aboyer" },
@@ -333,7 +333,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 1, // from 1 to 4, 0 if irregular
     llpsi: "ululat, -ant",
-    radical: "ulul",
+    radical: ["ulul", "ulul", "ululāt"], // infinitive, perfect, supine
     infinitive: "ululāre",
     supine: "ululātum",
     translation: { en: "howl", fr: "hululer, crier" },
@@ -344,7 +344,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 2, // from 1 to 4, 0 if irregular
     llpsi: "iacet, -ent",
-    radical: ["iac", "iacu"],
+    radical: ["iac", "iacu", ""], // infinitive, perfect, supine
     infinitive: "iacēre",
     translation: { en: "lie", fr: "être étendu" },
   },
@@ -354,7 +354,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 2, // from 1 to 4, 0 if irregular
     llpsi: "lūcet, -ent",
-    radical: ["lūc", "lux"],
+    radical: ["lūc", "lux", ""], // infinitive, perfect, supine
     infinitive: "lūcēre",
     translation: { en: "shine", fr: "briller" },
   },
@@ -364,7 +364,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "accurrit, -unt",
-    radical: "accurr",
+    radical: ["accurr", "accurr", "accurs"], // infinitive, perfect, supine
     infinitive: "accurrere",
     supine: "styleClass",
     translation: { en: "come running", fr: "accourir" },
@@ -375,7 +375,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "bibit, -unt",
-    radical: "bib",
+    radical: ["bib", "bib", "bibit"], // infinitive, perfect, supine
     infinitive: "bibere",
     supine: "bibitum",
     translation: { en: "come running", fr: "accourir" },
@@ -386,7 +386,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "dūcit, -unt",
-    radical: ["duc", "dux"],
+    radical: ["dūc", "dux", "duct"], // infinitive, perfect, supine
     infinitive: "dūcere",
     supine: "ductum",
     translation: { en: "guide, lead, draw, trace", fr: "conduire" },
@@ -397,7 +397,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "impōnit, -unt",
-    radical: ["impōn", "imposu"],
+    radical: ["impōn", "imposu", "imposit"], // infinitive, perfect, supine
     infinitive: "impōnere",
     supine: "impōsitum",
     translation: { en: "place in/on, put", fr: "poser sur, appliquer" },
@@ -408,7 +408,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "petit, -unt",
-    radical: ["pet", "peti"],
+    radical: ["pet", "peti", "petit"], // infinitive, perfect, supine
     infinitive: "petere",
     supine: "petitum",
     translation: {
@@ -422,7 +422,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "quærit, -unt",
-    radical: ["quær", "quæsi"],
+    radical: ["quær", "quæsi", "quæsit"], // infinitive, perfect, supine
     infinitive: "quærere",
     supine: "quæsitum",
     translation: { en: "look for, seek, ask for", fr: "chercher, quérir" },
@@ -433,7 +433,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 3, // from 1 to 4, 0 if irregular
     llpsi: "relinquit, -unt",
-    radical: ["relinqu", "reliqu"],
+    radical: ["relinqu", "reliqu", "relict"], // infinitive, perfect, supine
     infinitive: "relinquere",
     supine: "relictum",
     translation: { en: "leave", fr: "laisser en arrière, quitter" },
@@ -444,7 +444,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 4, // from 1 to 4, 0 if irregular
     llpsi: "reperit, -iunt",
-    radical: ["reper", "repper"],
+    radical: ["reper", "repper", "repert"], // infinitive, perfect, supine
     infinitive: "reperīre",
     supine: "repertum",
     translation: { en: "find", fr: "trouver, inventer" },
@@ -455,7 +455,7 @@ const vocabulary09 = [
     type: "verb",
     conjugation: 0, // from 1 to 4, 0 if irregular
     llpsi: "ēst, edunt",
-    radical: ["ēd", "edid"],
+    radical: ["ēd", "edid", "edit"], // infinitive, perfect, supine
     infinitive: "edēre",
     supine: "esum",
     translation: { en: "eat", fr: "manger" },

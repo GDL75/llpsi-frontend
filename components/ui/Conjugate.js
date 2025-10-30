@@ -22,9 +22,16 @@ export default function Conjugate({
 
   // Choix du radical à utiliser
   let chosenRadical = radical;
-  if (Array.isArray(radical) && radical.length === 2) {
-    // utiliser le 2e radical uniquement pour l’aspect "finished" à la voix "active"
-    chosenRadical = aspect === "finished" && voice === "active" ? radical[1] : radical[0];
+  let specialCase = false;
+  if (!Array.isArray(radical) || radical.length !== 3) {
+    return;
+  }
+  if (aspect === "finished" && voice === "active") {
+    chosenRadical = radical[1];
+  } else if (aspect === "finished" && voice === "passive") {
+    chosenRadical = radical[2]; specialCase=true
+  } else {
+    chosenRadical = radical[0];
   }
 
   // Récupération sécurisée des terminaisons
@@ -52,7 +59,7 @@ export default function Conjugate({
           <div key={personKey} className="brickRow">
             <span className="brickForm">
               <span className="verbForm">
-                {part1 !== "-" ? (
+                {part1 !== "-" && chosenRadical !== "" ? (
                   <>
                     <span>{chosenRadical}</span>
                     <span className="verbPart1">{part1}</span>

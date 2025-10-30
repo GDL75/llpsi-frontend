@@ -170,34 +170,33 @@ const endings = {
             },
           },
           finished: {
-            // pas complété
             indicative: {
               perfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["", "", "", "", "", ""],
-                ["ī", "istī", "it", "imus", "istis", "ērunt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["sum", "es", "est", "sumus", "estis", "sunt"],
               ],
               pluperfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["era", "erā", "era", "erā", "erā", "era"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["eram", "erās", "erat", "erāmus", "erātis", "erant"],
               ],
               future: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["er", "eri", "eri", "eri", "eri", "eri"],
-                ["ō", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["erō", "eris", "erit", "erimus", "eritis", "erunt"],
               ],
             },
             subjunctive: {
               perfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["eri", "eri", "eri", "eri", "eri", "eri"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["sim", "sīs", "sit", "sīmus", "sītis", "sint"],
               ],
               pluperfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["isse", "issē", "isse", "issē", "issē", "isse"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["essem", "essēs", "esset", "essēmus", "essētis", "essent"],
               ],
             },
           },
@@ -325,34 +324,33 @@ const endings = {
             },
           },
           finished: {
-            // pas complété
             indicative: {
               perfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["", "", "", "", "", ""],
-                ["ī", "istī", "it", "imus", "istis", "ērunt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["sum", "es", "est", "sumus", "estis", "sunt"],
               ],
               pluperfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["era", "erā", "era", "erā", "erā", "era"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["eram", "erās", "erat", "erāmus", "erātis", "erant"],
               ],
               future: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["er", "eri", "eri", "eri", "eri", "eri"],
-                ["ō", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["erō", "eris", "erit", "erimus", "eritis", "erunt"],
               ],
             },
             subjunctive: {
               perfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["eri", "eri", "eri", "eri", "eri", "eri"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["sim", "sīs", "sit", "sīmus", "sītis", "sint"],
               ],
               pluperfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["isse", "issē", "isse", "issē", "issē", "isse"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["essem", "essēs", "esset", "essēmus", "essētis", "essent"],
               ],
             },
           },
@@ -480,34 +478,33 @@ const endings = {
             },
           },
           finished: {
-            // pas complété
             indicative: {
               perfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["", "", "", "", "", ""],
-                ["ī", "istī", "it", "imus", "istis", "ērunt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["sum", "es", "est", "sumus", "estis", "sunt"],
               ],
               pluperfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["era", "erā", "era", "erā", "erā", "era"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["eram", "erās", "erat", "erāmus", "erātis", "erant"],
               ],
               future: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["er", "eri", "eri", "eri", "eri", "eri"],
-                ["ō", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["erō", "eris", "erit", "erimus", "eritis", "erunt"],
               ],
             },
             subjunctive: {
               perfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["eri", "eri", "eri", "eri", "eri", "eri"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["sim", "sīs", "sit", "sīmus", "sītis", "sint"],
               ],
               pluperfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["isse", "issē", "isse", "issē", "issē", "isse"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["essem", "essēs", "esset", "essēmus", "essētis", "essent"],
               ],
             },
           },
@@ -635,34 +632,33 @@ const endings = {
             },
           },
           finished: {
-            // pas complété
             indicative: {
               perfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["", "", "", "", "", ""],
-                ["ī", "istī", "it", "imus", "istis", "ērunt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["sum", "es", "est", "sumus", "estis", "sunt"],
               ],
               pluperfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["era", "erā", "era", "erā", "erā", "era"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["eram", "erās", "erat", "erāmus", "erātis", "erant"],
               ],
               future: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["er", "eri", "eri", "eri", "eri", "eri"],
-                ["ō", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["erō", "eris", "erit", "erimus", "eritis", "erunt"],
               ],
             },
             subjunctive: {
               perfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["eri", "eri", "eri", "eri", "eri", "eri"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["sim", "sīs", "sit", "sīmus", "sītis", "sint"],
               ],
               pluperfect: [
-                ["āv", "āv", "āv", "āv", "āv", "āv"],
-                ["isse", "issē", "isse", "issē", "issē", "isse"],
-                ["m", "s", "t", "mus", "tis", "nt"],
+                ["us-a-um", "us-a-um", "us-a-um", "ī-æ-a", "ī-æ-a", "ī-æ-a"],
+                [" ", " ", " ", " ", " ", " "],
+                ["essem", "essēs", "esset", "essēmus", "essētis", "essent"],
               ],
             },
           },
